@@ -1,4 +1,3 @@
-
 <div class="modal-content has-background-whyte py-5 px-5">
     <h3 class="title mb-6">Crear Registro</h3>
 
@@ -39,7 +38,7 @@
     <div class="field">
     <label class="label">Fecha</label>
     <div class="control">
-        <input type="date" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
+        <input type="date" name="fecha" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
     </div>
     <p class="help">Ingrese aquí la fecha en la que se hizo el abastecimiento.</p>
     </div>
@@ -53,14 +52,16 @@
         <option value="3">Sin iniciar</option>
         </select>
     </div>
+    <p class="help">Ingrese aquí el estado del abastecimiento.</p>
     </div>
+    
 
     <div class="field is-grouped">
     <div class="control">
-        <button name="create" class="button is-link">Crear</button>
+        <button value="Crear" type="submit" class="button is-link">Crear</button>
     </div>
     <div class="control">
-        <a name="cancel" href="home.php" class="button is-text">Cancelar</a>
+        <a name="cancel" href="index.php?controller=abastecimientos&action=home" class="button is-text">Cancelar</a>
     </div>
     </div>
     </form>

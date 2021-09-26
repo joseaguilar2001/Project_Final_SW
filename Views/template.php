@@ -23,7 +23,7 @@
       
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item">
+            <a class="navbar-item" href="index.php?controller=pages&action=home">
               Inicio
             </a>
       
@@ -68,7 +68,7 @@
           </div>
         </div>
       </nav>
-  <section class="section">
+  <section class="section" style="margin-top: 10px;">
     <div class="container">
       <?php include_once("./router.php"); ?>
     </div>
