@@ -15,7 +15,7 @@
         {
             if($_POST)
             {
-                print_r($_POST);
+                // print_r($_POST);
                 $idPv = $_POST['idPrv'];
                 $idPr = $_POST['idPrd'];
                 $cant = $_POST['cnt'];

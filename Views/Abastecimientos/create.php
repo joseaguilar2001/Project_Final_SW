@@ -1,6 +1,9 @@
 <div class="modal-content has-background-whyte py-5 px-5">
     <h3 class="title mb-6">Crear Registro</h3>
-
+    <p class="help is-success">
+    En está parte se ingresará los registros de los 
+    abastecimientos, por favor tener en cuenta que fecha se realizo.
+</p>
     <form action="" method="post">
 
     <div class="field">

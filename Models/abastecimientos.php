@@ -59,7 +59,14 @@
         {
             $conectionDB = DB::createInstant();
             $sql = $conectionDB->prepare("UPDATE abastecimientos SET IdProveedor = ?, IdProducto = ?, Cantidad = ?, AbasDate = ?, Estado = ?  WHERE IdAbas=?");
-            $sql->execute(array($idprov, $idprod, $cant, $date, $state, $id));
+            $sql->execute(array(
+                $idprov, 
+                $idprod, 
+                $cant, 
+                $date, 
+                $state, 
+                $id)
+            );
         }
     }
 
