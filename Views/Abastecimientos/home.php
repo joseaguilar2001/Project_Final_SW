@@ -1,6 +1,7 @@
 <h3 class="title mb-6">Registros sobre los Abastecimientos.</h3>
-
+<br>
 <a class="button is-link" href="?controller=abastecimientos&action=create">Create</a>
+<br>
 <table class="table" width="100%">
     <!-- En está parte veremos los datos de todos los abastecimientos, tener en cuenta que el tfoot es un pie de página -->
   <thead>

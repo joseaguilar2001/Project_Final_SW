@@ -34,6 +34,7 @@
 
             if($_POST)
             {
+                
                 $idPv = $_POST['idPrv'];
                 $idPr = $_POST['idPrd'];
                 $cant = $_POST['cnt'];
@@ -45,7 +46,7 @@
             include_once("./Views/Abastecimientos/edit.php");
         }
 
-        public function delete()
+        public function Delete()
         {
             print_r($_GET);
             $id = $_GET['id'];
