@@ -1,6 +1,7 @@
 <?php
     include_once("./Models/usuario.php");
     include_once("./Models/rol.php");
+    include_once("./db.php");
     DB::createInstant();
     class ControlUsuario
     {
@@ -44,7 +45,7 @@
                 Usuario::create($id, $name, $last, $usern, $pass, $mail, $cel, $rol, 1);
                 header("Location: ./index.php?controller=usuario&action=home");
             }
-            include_once("./Views/Usuario/home.php");
+            include_once("./Views/Usuario/create.php");
         }
 
         public function Edit()
@@ -70,7 +71,7 @@
                 Usuario::edit($id, $name, $last, $usern, $pass, $mail, $cel, $rol, 1);
                 header("Location: ./index.php?controller=usuario&action=home");
             }
-            include_once("./Views/Usuario/home.php");
+            include_once("./Views/Usuario/edit.php");
         }
 
         public function Delete()

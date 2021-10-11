@@ -55,9 +55,7 @@
         public static function search($id)
         {
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB -> prepare("SELECT *
-            FROM autorizaciones WHERE 
-            IdAutorizaciones = ?");
+            $sql = $conectionDB -> prepare("SELECT * FROM autorizaciones WHERE IdAutorizaciones = ?");
             $sql -> execute(array($id));
             $aut = $sql -> fetch();
             return new Autorizaciones(

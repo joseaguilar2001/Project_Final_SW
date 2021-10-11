@@ -9,13 +9,13 @@
         public function Home()
         {
             $auth = Autorizaciones::consult();
-            include_once("./Views/Areas/home.php");
+            include_once("./Views/Autorizaciones/home.php");
         }
 
         public function Create()
         {
             $solicitud = Solicitudes::consult();
-            $users = Usuario::consult();
+            $usuarios = Usuario::consult();
             if($_POST)
             {
                 $soli = $_POST['idsolicitud'];
@@ -41,6 +41,7 @@
         {
             $id = $_GET['id'];
             $auth = Autorizaciones::search($id);
+            $users = Usuario::consult();
             if($_POST)
             {
                 $soli = $_POST['idsolicitud'];
@@ -59,6 +60,7 @@
                 Autorizaciones::edit($id, $soli, $user, $fecha, $codi, $stt);
                 header("Location: ./index.php?controller=autorizaciones&action=home");
             }
+            include_once("./Views/Autorizaciones/edit.php");
         }
 
         public function Delete()

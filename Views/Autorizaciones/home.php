@@ -30,7 +30,7 @@
     foreach($auth as $a) { ?>
     
       <tr>
-        <td><?php echo $a->IdAuts; ?></td>
+        <td><?php echo $a->IdAut; ?></td>
         <td><?php echo $a->IdSoli; ?></td>
         <td><?php echo $a->IdUser; ?></td>
         <td><?php echo $a->Date; ?></td>
