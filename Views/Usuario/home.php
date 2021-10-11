@@ -30,19 +30,18 @@
           <th><abbr title="Actions">Acciones</abbr></th>
       </tr> 
   </tfoot>
-    <?php
-    foreach($user as $a) { ?>
-    
+  <tbody>
+  <?php foreach($user as $a) { ?>
       <tr>
-        <td><?php echo $a->IdUser; ?></td>
-        <td><?php echo $a->Name; ?></td>
-        <td><?php echo $a->Lastname; ?></td>
-        <td><?php echo $a->Username; ?></td>
-        <td><?php echo $a->Password; ?></td>
-        <td><?php echo $a->Email; ?></td>
-        <td><?php echo $a->Telefono; ?></td>
-        <td><?php echo $a->Rol; ?></td>
-        <td><?php echo $a->Estado; ?></td>
+        <td><?php echo $a->Id;?></td>
+        <td><?php echo $a->Nombre;?></td>
+        <td><?php echo $a->Apellido;?></td>
+        <td><?php echo $a->Usuario;?></td>
+        <td><?php echo $a->Contra;?></td>
+        <td><?php echo $a->Email;?></td>
+        <td><?php echo $a->Telefono;?></td>
+        <td><?php echo $a->Rol;?></td>
+        <td><?php echo $a->Estado;?></td>
         <td>
           <div class="field is-grouped">
             <p class="control">
@@ -59,8 +58,5 @@
         </td>
       </tr>
     <?php } ?>
-    
-  <tbody>
-      
   </tbody>
 </table>

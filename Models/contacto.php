@@ -25,7 +25,7 @@
         {
             $ListContactos = [];
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("SELECT * FROM contactos");
+            $sql=$conectionDB->query("SELECT * FROM contacto");
             foreach($sql -> fetchAll() as $cnto)
             {
                 $ListContactos = new Contacto(
@@ -45,21 +45,21 @@
         public static function create($prov, $name, $lastname, $celular, $email, $estado)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("INSERT INTO contactos(IdPRoveedor, ContactoName, ContactoApe, ContactoCell, ContactoMail, Estado) VALUES (?,?,?,?,?,?)");
+            $sql=$conectionDB->query("INSERT INTO contacto(IdPRoveedor, ContactoName, ContactoApe, ContactoCell, ContactoMail, Estado) VALUES (?,?,?,?,?,?)");
             $sql -> execute(array($prov, $name, $lastname, $celular, $email, $estado));
         }
 
         public static function delete($id)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("UPDATE contactos SET Estado = 4 WHERE IdContacto = ?");
+            $sql=$conectionDB->query("UPDATE contacto SET Estado = 4 WHERE IdContacto = ?");
             $sql -> execute($id);
         }
 
         public static function search($id)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("SELECT * FROM contactos WHERE IdContacto = ?");
+            $sql=$conectionDB->query("SELECT * FROM contacto WHERE IdContacto = ?");
             $sql -> execute($id);
             $contact = $sql -> fetch();
             return new Contacto(

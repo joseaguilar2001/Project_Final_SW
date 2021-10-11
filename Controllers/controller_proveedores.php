@@ -20,7 +20,7 @@
                 Proveedores::create($name, $direccion, $email, $estado);
                 header("Location: ./index.php?controller=proveedores&action=home");
             }
-            include_once("./Views/Proveedores/home.php");
+            include_once("./Views/Proveedores/create.php");
         }
         public function Edit()
         {
@@ -35,7 +35,7 @@
                 Proveedores::edit($id, $name, $direccion, $email, $estado);
                 header("Location: ./index.php?controller=proveedores&action=home");
             }
-            include_once("./Views/Proveedores/home.php");
+            include_once("./Views/Proveedores/edit.php");
         }
         public function Delete()
         {

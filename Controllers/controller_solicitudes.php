@@ -1,7 +1,7 @@
 <?php
     include_once("./Models/solicitudes.php");
-    include_once("./Models/area.php");
-    include_once("./Models/producto.php");
+    include_once("./Models/areas.php");
+    include_once("./Models/productos.php");
     include_once("./Models/usuario.php");
     include_once("./db.php");
     DB::createInstant();

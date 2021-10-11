@@ -2,7 +2,7 @@
     include_once("./Models/productos.php");
     include_once("./db.php");
     DB::createInstant();
-    class ControlProducto
+    class ControlProductos
     {
         public function Home()
         {

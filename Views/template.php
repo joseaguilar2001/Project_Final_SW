@@ -2,7 +2,8 @@
 <html>  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Sistema BIORAD
+    </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="../node_modules/datatables-bulma/css/dataTables.bulma.css">
@@ -28,10 +29,10 @@
   <body>
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
-            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+          
+          <a class="navbar-item" href="../index.php">
+            <img src="../logo_svg.svg" width="112" height="50">
           </a>
-      
           <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -41,7 +42,7 @@
       
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item" href="index.php?controller=pages&action=home">
+            <a class="navbar-item" href="index.php">
               Inicio
             </a>
       

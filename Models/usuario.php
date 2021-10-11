@@ -24,11 +24,11 @@
             $estado
         )
         {
-            $this -> IdUser = $id;
-            $this -> Name = $name;
-            $this -> Lastname = $lastname;
-            $this -> Username = $username;
-            $this -> Password = $password;
+            $this -> Id = $id;
+            $this -> Nombre = $name;
+            $this -> Apellido = $lastname;
+            $this -> Usuario = $username;
+            $this -> Contra = $password;
             $this -> Email = $email;
             $this -> Telefono = $tel;
             $this -> Rol = $rol;
@@ -47,7 +47,7 @@
                     $user['NombreUsuario'],
                     $user['ApellidoUsuario'],
                     $user['Username'],
-                    $user['Password'],
+                    $user['PasswordUser'],
                     $user['Email'],
                     $user['Telefono'],
                     $user['Rol'],
@@ -60,7 +60,7 @@
         public static function create($id, $name, $lastname, $user, $password, $email, $tel, $rol, $estado)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("INSERT INTO usuario(idUsuario, NombreUsuario, ApellidoUsario, Username, Password, Email, Telefono, Rol, Estado) VALUES (?,?,?,?,?,?,?,?)");
+            $sql=$conectionDB->query("INSERT INTO usuario(idUsuario, NombreUsuario, ApellidoUsario, Username, PasswordUser, Email, Telefono, Rol, Estado) VALUES (?,?,?,?,?,?,?,?)");
             $sql -> execute(array($id, $name, $lastname, $user, $password, $email, $tel, $rol, $estado));
         }
 

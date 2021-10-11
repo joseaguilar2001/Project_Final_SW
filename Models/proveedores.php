@@ -37,6 +37,7 @@
                     $prvo['Estado'] 
                 );
             }
+            return $listPr;
         }
 
         public static function create($name, $provad, $email, $estado)
