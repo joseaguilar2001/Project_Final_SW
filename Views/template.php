@@ -80,7 +80,7 @@
         <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
+          <a class="button is-primary" href="index.php?controller=usuario&action=edit&id=<?php echo $_SESSION['id'];?>">
             <strong><?php echo $_SESSION['nameuser'];?></strong>
           </a>
           <a class="button is-light" href="../closesesion.php">
