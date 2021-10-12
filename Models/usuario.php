@@ -101,7 +101,7 @@
             $val = false;
             $conectionDB = DB::createInstant();
             $sql = $conectionDB->prepare("SELECT * FROM usuario WHERE idUsuario = ?");
-            $sql -> execute($id);
+            $sql -> execute(array($id));
             $existe = $sql -> rowCount();
             if($existe > 0 || $existe != '0') 
             {
