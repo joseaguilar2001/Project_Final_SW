@@ -5,40 +5,55 @@
         solicitudes, por favor tener en cuenta que fecha se realizo.
         </p>
     <form method="POST" action="">
+    <div class="field">
+    <label class="label">Escoger el Área:</label>
+    <div class="control">
     <div class="select">
     <select name="idarea">
-        <option value="<?php echo $soli -> Area; ?>" selected>Seleccione es area:</option>
+        <option value="0" selected>Seleccione es area:</option>
         <?php foreach($area as $ar){ ?>
         <option value="<?php echo $ar -> IdAreas; ?>"><?php echo $ar -> NombreArea; ?></option>
         <?php } ?>
         </select>
     </div>
+    </div>
+    </div>
+    <div class="field">
+    <label class="label">Escoger el producto:</label>
+    <div class="control">
     <div class="select">
     <select name="idprod">
-        <option value="<?php echo $soli -> Producto; ?>" selected>Selecciones el producto: </option>
+        <option value="0" selected>Selecciones el producto: </option>
         <?php foreach($prod as $pr){ ?>
         <option value="<?php echo $pr -> IdProd; ?>"><?php echo $pr -> Name; ?></option>
         <?php } ?>
     </select>
     </div>
+    </div>
+    </div>
+    <div class="field">
+    <label class="label">Escoger el Usuario:</label>
+    <div class="control">
     <div class="select">
   <select name="user">
-    <option value="<?php echo $soli -> Usuario; ?>" selected>Selecciones el usuario</option>
+    <option value="0" selected>Selecciones el usuario</option>
     <?php foreach($user as $us){ ?>
     <option value="<?php echo $us -> IdUser; ?>"><?php echo $us -> Name . " " . $us -> Lastname; ?></option>
     <?php } ?>
   </select>
+    </div>
+    </div>
 </div>
 <div class="field">
   <label class="label">Fecha</label>
   <div class="control">
-    <input class="input" type="date" value="<?php echo $soli -> Fecha; ?>" placeholder="Fecha Solicitud">
+    <input class="input" name="fecha" type="date" value="<?php echo $soli -> Fecha; ?>" placeholder="Fecha Solicitud">
   </div>
 </div>
 <div class="field">
   <label class="label">Cantidad</label>
   <div class="control">
-    <input class="input" value="<?php echo $soli -> Cantidad; ?>" type="text" placeholder="Cantidad del producto">
+    <input class="input" name="cant" value="<?php echo $soli -> Cantidad; ?>" type="text" placeholder="Cantidad del producto">
   </div>
 </div>
 <div class="select">

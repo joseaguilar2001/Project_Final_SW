@@ -42,7 +42,7 @@
             $sql=$conectionDB->query("SELECT * FROM usuario");
             foreach($sql -> fetchAll() as $user)
             {
-                $ListUsers = new Usuario(
+                $ListUsers []= new Usuario(
                     $user['idUsuario'],
                     $user['NombreUsuario'],
                     $user['ApellidoUsuario'],
@@ -60,29 +60,29 @@
         public static function create($id, $name, $lastname, $user, $password, $email, $tel, $rol, $estado)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("INSERT INTO usuario(idUsuario, NombreUsuario, ApellidoUsuario, Username, PasswordUser, Email, Telefono, Rol, Estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $sql=$conectionDB->prepare("INSERT INTO usuario(idUsuario, NombreUsuario, ApellidoUsuario, Username, PasswordUser, Email, Telefono, Rol, Estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $sql->execute(array($id, $name, $lastname, $user, $password, $email, $tel, $rol, $estado));
         }
 
         public static function delete($id)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("UPDATE usuario SET Estado = 4 WHERE idUsuario = ?");
+            $sql=$conectionDB->prepare("UPDATE usuario SET Estado = 4 WHERE idUsuario = ?");
             $sql -> execute($id);
         }
 
         public static function search($id)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("SELECT * FROM usuario WHERE idUsuario = ?");
-            $sql -> execute($id);
+            $sql=$conectionDB->prepare("SELECT * FROM usuario WHERE idUsuario = ?");
+            $sql -> execute(array($id));
             $iusers = $sql -> fetch();
             return new Usuario(
                 $iusers['idUsuario'],
                 $iusers['NombreUsuario'],
                 $iusers['ApellidoUsuario'],
                 $iusers['Username'],
-                $iusers['Password'],
+                $iusers['PasswordUser'],
                 $iusers['Email'],
                 $iusers['Telefono'],
                 $iusers['Rol'],
@@ -92,7 +92,7 @@
         public static function edit($id, $name, $lastname, $user, $password, $email, $tel, $rol, $estado)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("UPDATE usuario SET NombreUsuario = ?, ApellidoUsuario = ?, Username = ?, PasswordUser = ?, Email = ?, Telefono = ?, Rol = ?, Estado = ? WHERE idUsuario = ?");
+            $sql=$conectionDB->prepare("UPDATE usuario SET NombreUsuario = ?, ApellidoUsuario = ?, Username = ?, PasswordUser = ?, Email = ?, Telefono = ?, Rol = ?, Estado = ? WHERE idUsuario = ?");
             $sql -> execute(array($name, $lastname, $user, $password, $email, $tel, $rol, $estado, $id));
         }
 
@@ -100,8 +100,8 @@
         {
             $val = false;
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB->query("SELECT * FROM usuario WHERE idUsuario = ?");
-            $sql -> execute($id);
+            $sql = $conectionDB->prepare("SELECT * FROM usuario WHERE idUsuario = ?");
+            $sql -> execute(array($id));
             $existe = $sql -> rowCount();
             if($existe > 0 || $existe != '0') 
             {
@@ -117,7 +117,7 @@
         public static function existUser($user)
         {
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB->query("SELECT COUNT(NombreUsuario) AS Nombre FROM usuario WHERE NombreUsuario = ?");
+            $sql = $conectionDB->prepare("SELECT COUNT(NombreUsuario) FROM usuario WHERE NombreUsuario = ?");
             $sql -> execute(array($user));
             $existe = (int) $sql -> fetch();
             if($existe > 0)
@@ -133,7 +133,7 @@
         public static function existEmail($email)
         {
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB->query("SELECT COUNT(Email) FROM usuario WHERE Email = ?");
+            $sql = $conectionDB->prepare("SELECT COUNT(Email) FROM usuario WHERE Email = ?");
             $sql -> execute(array($email));
             $existe = (int) $sql -> fetch();
             if($existe > 0)

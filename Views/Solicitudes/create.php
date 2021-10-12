@@ -5,29 +5,46 @@
         solicitudes, por favor tener en cuenta que fecha se realizo.
         </p>
     <form method="POST" action="">
+
+    <div class="field">
+    <label class="label">Escoger el Área:</label>
+    <div class="control">
     <div class="select">
     <select name="idarea">
-        <option value="0" selected>Seleccione es area:</option>
+        <option value="0" selected>Area desconocida:</option>
         <?php foreach($area as $ar){ ?>
         <option value="<?php echo $ar -> IdAreas; ?>"><?php echo $ar -> NombreArea; ?></option>
         <?php } ?>
         </select>
     </div>
+    </div>
+    </div>
+    <div class="field">
+    <label class="label">Escoger el producto:</label>
+    <div class="control">
     <div class="select">
     <select name="idprod">
-        <option value="0" selected>Selecciones el producto: </option>
+        <option value="0" selected>Producto desconocido </option>
         <?php foreach($prod as $pr){ ?>
         <option value="<?php echo $pr -> IdProd; ?>"><?php echo $pr -> Name; ?></option>
         <?php } ?>
     </select>
     </div>
+    </div>
+    </div>
+
+    <div class="field">
+    <label class="label">Escoger el Usuario:</label>
+    <div class="control">
     <div class="select">
   <select name="user">
-    <option value="0" selected>Selecciones el usuario</option>
+    <option value="0" selected>Usuario desconocido</option>
     <?php foreach($user as $us){ ?>
     <option value="<?php echo $us -> IdUser; ?>"><?php echo $us -> Name . " " . $us -> Lastname; ?></option>
     <?php } ?>
   </select>
+    </div>
+    </div>
 </div>
 <div class="field">
   <label class="label">Fecha</label>
@@ -51,7 +68,7 @@
 </div>
         <div class="field is-grouped">
           <div class="control">
-            <button type="submit" class="button is-link">Actualizar</button>
+            <button type="submit" value="Crear" class="button is-link">Crear</button>
           </div>
           <div class="control">
           <a href="index.php?controller=solicitudes&action=home" class="button is-text">Cancelar</a>

@@ -2,11 +2,11 @@
 <br>
 <a class="button is-link" href="?controller=productos&action=create">Create</a>
 <br>
-<table class="table" width="100%">
+<table class="table" width="100%" id="tabla">
     <!-- En está parte veremos los datos de todos los abastecimientos, tener en cuenta que el tfoot es un pie de página -->
   <thead>
       <tr>
-          <th><abbr title="IdProd">IdAbas</abbr></th>
+          <th><abbr title="IdProd">IdProducto</abbr></th>
           <th><abbr title="Name">Nombre</abbr></th>
           <th><abbr title="Price">Precio</abbr></th>
           <th><abbr title="Exist">Existencias</abbr></th>
@@ -19,7 +19,7 @@
   </thead>
   <tfoot>
       <tr>
-      <th><abbr title="IdProd">IdAbas</abbr></th>
+      <th><abbr title="IdProd">IdProducto</abbr></th>
           <th><abbr title="Name">Nombre</abbr></th>
           <th><abbr title="Price">Precio</abbr></th>
           <th><abbr title="Exist">Existencias</abbr></th>
@@ -30,9 +30,9 @@
           <th><abbr title="Actions">Acciones</abbr></th>
       </tr> 
   </tfoot>
-    <?php
-    foreach($producto as $prod) { ?>
-    
+  <tbody>
+    <?php foreach($producto as $prod) { ?>
+    <?php if($prod -> Estado != '4' || $prod -> Estado < 4){ ?>
       <tr>
         <td><?php echo $prod->IdProd; ?></td>
         <td><?php echo $prod->Name; ?></td>
@@ -41,7 +41,7 @@
         <td><?php echo $prod->Medida; ?></td>
         <td><?php echo $prod->Limite; ?></td>
         <td><?php echo $prod->DateOff; ?></td>
-        <td><?php echo $a->Estado; ?></td>
+        <td><?php echo $prod->Estado; ?></td>
         <td>
           <div class="field is-grouped">
             <p class="control">
@@ -57,9 +57,16 @@
           </div>
         </td>
       </tr>
-    <?php } ?>
-    
-  <tbody>
-      
+      <?php } ?>
+    <?php } ?>  
   </tbody>
 </table>
+<tbody>
+<script>
+  var tabla = document.querySelector("#tabla");
+
+  var dataTable = new DataTable(tabla, {
+    perPage:5,
+    perPageSelect:[5, 10, 15, 20]
+  });
+</script>

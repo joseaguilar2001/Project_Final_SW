@@ -37,19 +37,16 @@
             }
             return $listAu;
         }
-        public static function create($idSol, $user, $date, 
-        $codA, $state)
+        public static function create($idSol, $user, $date, $codA, $state)
         {
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB -> prepare("INSERT INTO autorizaciones(IdSolicitud, Usuario_ID, Fecha, CodigoAuth, Estado) VALUES (?,?,?,?,?)");
-            $sql -> execute(array($idSol, $user, $date,
-            $codA, $state));
+            $sql = $conectionDB -> prepare("INSERT INTO autorizaciones(IdSolicitud, Usuario_ID, Fecha, CodigoAuth, Estado) VALUES (?, ?, ?, ?, ?)");
+            $sql -> execute(array($idSol, $user, $date, $codA, $state));
         }
         public static function delete($id)
         {
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB -> prepare("UPDATE 
-            autorizaciones SET Estado = 4 WHERE IdAutorizaciones=?");
+            $sql = $conectionDB -> prepare("UPDATE autorizaciones SET Estado = 4 WHERE IdAutorizaciones=?");
             $sql -> execute(array($id));
         }
         public static function search($id)
@@ -71,23 +68,8 @@
         $codA, $state)
         {
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB -> prepare("UPDATE
-            autorizaciones 
-            SET IdSolicitud = ?,
-            Usuario_ID = ?,
-            Fecha = ?, 
-            CodigoAuth = ?, 
-            Estado = ?
-            WHERE 
-            IdAutorizaciones = ?");
-            $sql -> execute(array(
-                $idSol,
-                $user, 
-                $date,
-                $codA,
-                $state,
-                $id
-            ));
+            $sql = $conectionDB -> prepare("UPDATE autorizaciones SET IdSolicitud = ?, Usuario_ID = ?, Fecha = ?, CodigoAuth = ?, Estado = ? WHERE IdAutorizaciones = ?");
+            $sql -> execute(array( $idSol, $user, $date, $codA, $state, $id));
         }
     }    
 

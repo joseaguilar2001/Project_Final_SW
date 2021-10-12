@@ -25,11 +25,11 @@
                 $stt = $_POST['estado'];
                 if($soli == '0')
                 {
-                    $soli = 'null';
+                    $soli = null;
                 }
-                else if($user == '0')
+                if($user == '0')
                 {
-                    $user = 'null';
+                    $user = null;
                 }
                 Autorizaciones::create($soli, $user, $fecha, $codi, $stt);
                 header("Location: ./index.php?controller=autorizaciones&action=home");

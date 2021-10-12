@@ -7,8 +7,8 @@
     </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="../node_modules/datatables-bulma/css/dataTables.bulma.css">
-    <link  rel="stylesheet" href="../node_modules/datatables-bulma/css/dataTables.bulma.min.css">
+    <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
     <style type="text/css">
       body{
       padding: 0;
@@ -95,12 +95,6 @@
       <?php include_once("./router.php"); ?>
     </div>
   </section>
-  <script type="text/javascript" src="../node_modules/datatables-bulma/js/dataTables.bulma.min.js"></script>
-  <script type="text/javascript" src="../node_modules/datatables-bulma/js/dataTables.bulma.js"></script>
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
-  <script type="text/javascript">
-    $(selector).DataTable();
-  </script>
 
   </body>
 </html>

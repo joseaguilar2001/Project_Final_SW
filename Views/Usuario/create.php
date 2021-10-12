@@ -46,9 +46,9 @@
   <div class="control">
     <div class="select">
       <select name="rol">
-        <option value="0">Seleccione el rol:</option>
+        <option value="0" >Rol desconocido</option>
         <?php foreach($rol as $r){ ?>
-        <option value="<?php echo $r -> Id; ?>" ><?php echo $r -> Nombre; ?></option>
+        <option value="<?php echo $r -> Id; ?>" ><?php echo $r->Nombre; ?></option>
         <?php } ?>
       </select>
     </div>

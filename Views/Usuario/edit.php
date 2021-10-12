@@ -8,25 +8,25 @@
     <div class="field">
     <label class="label">Nombre</label>
     <div class="control">
-        <input value="<?php echo $user -> Name; ?>" class="input" name="nombre" type="text" placeholder="Text input">
+        <input value="<?php echo $user -> Nombre; ?>" class="input" name="nombre" type="text" placeholder="Text input">
     </div>
     </div>
     <div class="field">
   <label class="label">Apellido</label>
   <div class="control">
-    <input class="input" value="<?php echo $user -> Lastname; ?>" name="apellido" type="text" placeholder="Text input">
+    <input class="input" value="<?php echo $user -> Apellido; ?>" name="apellido" type="text" placeholder="Text input">
   </div>
 </div>
 <div class="field">
   <label class="label">Username</label>
   <div class="control">
-    <input class="input" type="text" value="<?php echo $user -> Username; ?>" name="username" placeholder="Text input">
+    <input class="input" type="text" value="<?php echo $user -> Usuario; ?>" name="username" placeholder="Text input">
   </div>
 </div>
 <div class="field">
   <label class="label">Password</label>
   <div class="control">
-    <input class="input" type="password" value="<?php echo $user -> Password; ?>" name="contra" placeholder="Text input">
+    <input class="input" type="password"  name="contra" placeholder="Text input">
   </div>
 </div>
 <div class="field">
@@ -54,6 +54,9 @@
     </div>
   </div>
 </div>
+<div class="field">
+  <label class="label">Rol</label>
+  <div class="control">
 <div class="select">
   <select name="estado">
     <option value="0" selected>Selecciones el estado</option>
@@ -61,6 +64,8 @@
     <option value="2">En progreso</option>
     <option value="3">Inactivo</option>
   </select>
+</div>
+  </div>
 </div>
 <div class="field is-grouped">
           <div class="control">
