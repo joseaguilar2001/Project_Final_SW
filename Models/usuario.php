@@ -60,8 +60,8 @@
         public static function create($id, $name, $lastname, $user, $password, $email, $tel, $rol, $estado)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("INSERT INTO usuario(idUsuario, NombreUsuario, ApellidoUsario, Username, PasswordUser, Email, Telefono, Rol, Estado) VALUES (?,?,?,?,?,?,?,?)");
-            $sql -> execute(array($id, $name, $lastname, $user, $password, $email, $tel, $rol, $estado));
+            $sql=$conectionDB->query("INSERT INTO usuario(idUsuario, NombreUsuario, ApellidoUsuario, Username, PasswordUser, Email, Telefono, Rol, Estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $sql->execute(array($id, $name, $lastname, $user, $password, $email, $tel, $rol, $estado));
         }
 
         public static function delete($id)
@@ -92,24 +92,26 @@
         public static function edit($id, $name, $lastname, $user, $password, $email, $tel, $rol, $estado)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("UPDATE usuario SET NombreUsuario = ?, ApellidoUsuario = ?, Username = ?, Password = ?, Email = ?, Telefono = ?, Rol = ?, Estado = ? WHERE idUsuario = ?");
-            $sql -> execute($name, $lastname, $user, $password, $email, $tel, $rol, $estado, $id);
+            $sql=$conectionDB->query("UPDATE usuario SET NombreUsuario = ?, ApellidoUsuario = ?, Username = ?, PasswordUser = ?, Email = ?, Telefono = ?, Rol = ?, Estado = ? WHERE idUsuario = ?");
+            $sql -> execute(array($name, $lastname, $user, $password, $email, $tel, $rol, $estado, $id));
         }
 
         public static function existId($id)
         {
+            $val = false;
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB->query("SELECT COUNT(idUsuario) AS Nombre FROM usuario WHERE idUsuario = ?");
-            $sql -> execute(array($id));
-            $existe = (int) $sql -> fetch();
-            if($existe > 0)
+            $sql = $conectionDB->query("SELECT * FROM usuario WHERE idUsuario = ?");
+            $sql -> execute($id);
+            $existe = $sql -> rowCount();
+            if($existe > 0 || $existe != '0') 
             {
-                return true;
+                $val = true;
             }
-            else if($existe == 0)
+            else if($existe == 0 || $existe == '0')
             {
-                return false;
+                $val = false;
             }
+            return $val;
         }
 
         public static function existUser($user)
