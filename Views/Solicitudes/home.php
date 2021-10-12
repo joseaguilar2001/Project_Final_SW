@@ -2,7 +2,7 @@
 <br>
 <a class="button is-link" href="?controller=solicitudes&action=create">Create</a>
 <br>
-<table class="table" width="100%">
+<table class="table" width="100%" id="tabla">
     <!-- En está parte veremos los datos de todos los abastecimientos, tener en cuenta que el tfoot es un pie de página -->
   <thead>
       <tr>
@@ -28,6 +28,7 @@
           <th><abbr title="Actions">Acciones</abbr></th>
       </tr> 
   </tfoot>
+  <tbody> 
     <?php foreach($solicitudes as $a) { ?>
     <?php if($a -> Estado != '4' || $a -> Estado < 4){ ?>
       <tr>
@@ -55,8 +56,13 @@
       </tr>
       <?php } ?>
     <?php } ?>
-    
-  <tbody>
-      
   </tbody>
 </table>
+<script>
+  var tabla = document.querySelector("#tabla");
+
+  var dataTable = new DataTable(tabla, {
+    perPage:5,
+    perPageSelect:[5, 10, 15, 20]
+  });
+</script>
