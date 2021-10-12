@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>  <head>
     <meta charset="utf-8">
@@ -46,46 +47,48 @@
               Inicio
             </a>
       
-            <a class="navbar-item">
-              Documentación
+            <a class="navbar-item" href="index.php?controller=usuario&action=home">
+              Usuarios
             </a>
-      
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                Páginas
-              </a>
-      
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  About
-                </a>
-                <a class="navbar-item">
-                  Jobs
-                </a>
-                <a class="navbar-item">
-                  Contact
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Report an issue
-                </a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-primary">
-                  <strong>Registrarse</strong>
-                </a>
-                <a class="button is-light">
-                  Inicio Sesión
-                </a>
-              </div>
-            </div>
+            <a class="navbar-item" href="index.php?controller=abastecimientos&action=home">
+              Abastecimientos
+            </a>
+            <a class="navbar-item" href="index.php?controller=autorizaciones&action=home">
+              Autorizaciones
+            </a>
+            <a class="navbar-item" href="index.php?controller=productos&action=home">
+              Productos
+            </a>
+            <a class="navbar-item" href="index.php?controller=Solicitudes&action=home">
+              Solicitudes
+            </a>
+            <a class="navbar-item" href="index.php?controller=Proveedores&action=home">
+              Proveedores
+            </a>
+            <a class="navbar-item" href="index.php?controller=contacto&action=home">
+              Contactos
+            </a>
+            <a class="navbar-item" href="index.php?controller=areas&action=home">
+              Areas
+            </a>
+            <a class="navbar-item" href="index.php?controller=rol&action=home">
+              Roles de usuario
+            </a>
           </div>
         </div>
+
+        <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary">
+            <strong><?php echo $_SESSION['nameuser'];?></strong>
+          </a>
+          <a class="button is-light" href="../closesesion.php">
+            Cerrar Sesion
+          </a>
+        </div>
+      </div>
+    </div>
       </nav>
   <section class="section" style="margin-top: 10px;">
     <div class="container">
