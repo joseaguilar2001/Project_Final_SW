@@ -28,9 +28,8 @@
         <th><abbr title="Actions">Acciones</abbr></th>
       </tr> 
   </tfoot>
-    <?php
-    foreach($contactos as $a) { ?>
-    
+    <?php foreach($contactos as $a) { ?>
+    <?php if($a -> Estado != '4' || $a -> Estado < 4) ?>
       <tr>
         <td><?php echo $a->IdContacto; ?></td>
         <td><?php echo $a->Proveedor; ?></td>

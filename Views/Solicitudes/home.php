@@ -1,4 +1,4 @@
-<h3 class="title mb-6">Registros sobre los Contactos.</h3>
+<h3 class="title mb-6">Registros sobre las Solicitudes.</h3>
 <br>
 <a class="button is-link" href="?controller=solicitudes&action=create">Create</a>
 <br>
@@ -28,9 +28,8 @@
           <th><abbr title="Actions">Acciones</abbr></th>
       </tr> 
   </tfoot>
-    <?php
-    foreach($solicitudes as $a) { ?>
-    
+    <?php foreach($solicitudes as $a) { ?>
+    <?php if($a -> Estado != '4' || $a -> Estado < 4){ ?>
       <tr>
         <td><?php echo $a->IdSolicitud; ?></td>
         <td><?php echo $a->Area; ?></td>
@@ -47,13 +46,14 @@
               </a>
             </p>
             <p class="control">
-              <a class="button is-danger" href="?controller=abastecimientos&action=delete&id=<?php echo $a->IdSolicitud; ?>">
+              <a class="button is-danger" href="?controller=solicitudes&action=delete&id=<?php echo $a->IdSolicitud; ?>">
                 Borrar
               </a>
             </p>
           </div>
         </td>
       </tr>
+      <?php } ?>
     <?php } ?>
     
   <tbody>

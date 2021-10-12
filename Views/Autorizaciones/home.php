@@ -26,9 +26,8 @@
           <th><abbr title="Actions">Acciones</abbr></th>
       </tr> 
   </tfoot>
-    <?php
-    foreach($auth as $a) { ?>
-    
+    <?php foreach($auth as $a) { ?>
+    <?php if($a -> Estado != '4' || $a -> Estado < 4){ ?>
       <tr>
         <td><?php echo $a->IdAut; ?></td>
         <td><?php echo $a->IdSoli; ?></td>
@@ -51,6 +50,7 @@
           </div>
         </td>
       </tr>
+      <?php } ?>
     <?php } ?>
     
   <tbody>

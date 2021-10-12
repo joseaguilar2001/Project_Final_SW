@@ -40,7 +40,7 @@
         public static function create($name, $price, $exist, $medida, $limite, $dateoff, $state)
         {
             $conectionDB=DB::createInstant();
-            $sql = $conectionDB->prepare("INSERT INTO productos(ProdName, ProdPrice, Existencias, ProdMedida, ProdLimite, ProdDateOff, Estado) VALUES (?,?,?,?,?,?)");
+            $sql = $conectionDB->prepare("INSERT INTO productos(ProdName, ProdPrice, Existencias, ProdMedida, ProdLimite, ProdDateOff, Estado) VALUES (?,?,?,?,?,?,?)");
             $sql -> execute(array($name, $price, $exist, $medida, $limite, $dateoff, $state)); 
         }
 

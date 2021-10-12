@@ -27,15 +27,15 @@
                 $stado = $_POST['estado'];
                 if($area == '0')
                 {
-                    $area = 'null';
+                    $area = null;
                 }
                 if($prod == '0')
                 {
-                    $prod = 'null;';
+                    $prod = null;
                 }
                 if($user == '0')
                 {
-                    $user = 'null';
+                    $user = null;
                 }
                 Solicitudes::create($area, $prod, $user, $fecha, $cant, $stado);
                 header("Location: ./index.php?controller=solicitudes&action=home");
@@ -59,15 +59,15 @@
                 $stado = $_POST['estado'];
                 if($area == '0')
                 {
-                    $area = 'null';
+                    $area = null;
                 }
                 if($prod == '0')
                 {
-                    $prod = 'null;';
+                    $prod = null;
                 }
                 if($user == '0')
                 {
-                    $user = 'null';
+                    $user = null;
                 }
                 Solicitudes::edit($id,$area, $prod, $user, $fecha, $cant, $stado);
                 header("Location: ./index.php?controller=solicitudes&action=home");

@@ -52,28 +52,28 @@
         public static function create($area, $product, $user, $date, $cant, $estado)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("INSERT INTO solicitudes(IdArea, IdProducto, idUsario, Fecha, Cantidad, Estado) VALUES (?, ?, ?, ?, ?, ?)");
+            $sql=$conectionDB->prepare("INSERT INTO solicitudes(IdArea, IdProducto, idUsuario, Fecha, Cantidad, Estado) VALUES (?, ?, ?, ?, ?, ?)");
             $sql -> execute(array($area, $product, $user, $date, $cant, $estado));
         }
 
         public static function delete($id)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("UPDATE solicitudes SET Estado = 4 WHERE IdSolicitud = ?");
+            $sql=$conectionDB->prepare("UPDATE solicitudes SET Estado = 4 WHERE IdSolicitud = ?");
             $sql -> execute(array($id));
         }
 
         public static function search($id)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("SELECT * FROM solicitudes WHERE IdSolicitud = ?");
+            $sql=$conectionDB->prepare("SELECT * FROM solicitudes WHERE IdSolicitud = ?");
             $sql -> execute(array($id));
             $solicitud = $sql -> fetch();
             return new Solicitudes(
                 $solicitud['IdSolicitud'],
                 $solicitud['IdArea'],
                 $solicitud['IdProducto'],
-                $solicitud['idUser'],
+                $solicitud['idUsuario'],
                 $solicitud['Fecha'],
                 $solicitud['Cantidad'],
                 $solicitud['Estado']
@@ -83,7 +83,7 @@
         public static function edit($id, $area, $product, $user, $date, $cant, $estado)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("UPDATE solicitudes SET IdArea = ?, IdProducto = ?, idUser = ?, Fecha = ?, Cantidad = ?, Estado = ? WHERE IdSolicitud = ?");
+            $sql=$conectionDB->prepare("UPDATE solicitudes SET IdArea = ?, IdProducto = ?, idUsuario = ?, Fecha = ?, Cantidad = ?, Estado = ? WHERE IdSolicitud = ?");
             $sql -> execute(array($area, $product, $user, $date, $cant, $estado, $id));
         }
     }

@@ -27,7 +27,7 @@
             $sql=$conectionDB->query("SELECT * FROM rol");
             foreach($sql -> fetchAll() as $rol)
             {
-                $listRol = new Rol(
+                $listRol[] = new Rol(
                     $rol['idRol'],
                     $rol['Nombre_Rol'],
                     $rol['Descripcion'],
@@ -40,21 +40,21 @@
         public static function create($id, $name, $desc, $estado)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("INSERT INTO rol(idRol, Nombre_Rol, Descripcion, Estado) VALUE (?, ?, ?, ?)");
+            $sql=$conectionDB->prepare("INSERT INTO rol(idRol, Nombre_Rol, Descripcion, Estado) VALUE (?, ?, ?, ?)");
             $sql -> execute(array($id, $name, $desc, $estado));
         }
 
         public static function delete($id)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("UPDATE rol SET Estado = 4 WHERE idRol = ?");
+            $sql=$conectionDB->prepare("UPDATE rol SET Estado = 4 WHERE idRol = ?");
             $sql -> execute(array($id));
         }
 
         public static function search($id)
         {
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB->query("SELECT * FROM rol WHERE idRol = ?");
+            $sql = $conectionDB->prepare("SELECT * FROM rol WHERE idRol = ?");
             $sql -> execute(array($id));
             $roles = $sql -> fetch();
             return new Rol(
@@ -65,11 +65,11 @@
             );
         }
 
-        public static function edit($id, $name, $desc, $estado)
+        public static function edit($id, $name, $desc, $estado, $idnew)
         {
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB->query("UPDATE rol SET idRol = ?, Nombre_Rol = ?, Descripcion = ?, Estado = ? WHERE idRol = ?");
-            $sql -> execute(array($id, $name, $desc, $estado, $id));
+            $sql = $conectionDB->prepare("UPDATE rol SET idRol = ?, Nombre_Rol = ?, Descripcion = ?, Estado = ? WHERE idRol = ?");
+            $sql -> execute(array($idnew, $name, $desc, $estado, $id));
         }
     }
 

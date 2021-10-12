@@ -23,7 +23,7 @@
                 $esta = $_POST['estado'];
 
                 Productos::create($name, $precio, $exist, $medida, $limit, $fecha, $esta);
-                header("Location: ./index.php?controller=producto&action=home");
+                header("Location: ./index.php?controller=productos&action=home");
             }
             include_once("./Views/Productos/create.php");
         }
@@ -42,7 +42,7 @@
                 $fecha = $_POST['fecha'];
                 $esta = $_POST['estado'];
                 Productos::edit($id, $name, $precio, $exist, $medida, $limit, $fecha, $esta);
-                header("Location: ./index.php?controller=producto&action=home");
+                header("Location: ./index.php?controller=productos&action=home");
             }
             include_once("./Views/Productos/edit.php");
         }
@@ -51,7 +51,7 @@
         {
             $id = $_GET['id'];
             Productos::delete($id);
-            header("Location: ./index.php?controller=producto&action=home");
+            header("Location: ./index.php?controller=productos&action=home");
         }
     }
 

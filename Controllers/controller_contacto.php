@@ -25,9 +25,10 @@
                 $stado = $_POST['estado'];
                 if($pro == '0')
                 {
-                    $pro = 'null';
+                    $pro = null;
                 }
                 Contacto::create($pro, $name, $lstna, $cel, $mail, $stado);
+                header("Location: ./index.php?controller=contacto&action=home");
             }
             include_once("./Views/Contacto/create.php");
         }
@@ -47,7 +48,7 @@
                 $stado = $_POST['estado'];
                 if($pro == '0')
                 {
-                    $pro = 'null';
+                    $pro = null;
                 }
                 Contacto::edit($id, $pro, $name, $lstna, $cel, $mail, $stado);
                 header("Location: ./index.php?controller=contacto&action=home");

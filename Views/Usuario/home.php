@@ -32,6 +32,7 @@
   </tfoot>
   <tbody>
   <?php foreach($user as $a) { ?>
+    <?php if($a -> Estado != '4' || $a -> Estado < 4){ ?>
       <tr>
         <td><?php echo $a->Id;?></td>
         <td><?php echo $a->Nombre;?></td>
@@ -45,18 +46,19 @@
         <td>
           <div class="field is-grouped">
             <p class="control">
-              <a class="button is-warning" href="?controller=usuario&action=edit&id=<?php echo $a->IdUser; ?>">
+              <a class="button is-warning" href="?controller=usuario&action=edit&id=<?php echo$a->Id; ?>">
                 Editar
               </a>
             </p>
             <p class="control">
-              <a class="button is-danger" href="?controller=usuario&action=delete&id=<?php echo $a->IdUser; ?>">
+              <a class="button is-danger" href="?controller=usuario&action=delete&id=<?php echo$a->Id; ?>">
                 Borrar
               </a>
             </p>
           </div>
         </td>
       </tr>
+      <?php } ?>
     <?php } ?>
   </tbody>
 </table>

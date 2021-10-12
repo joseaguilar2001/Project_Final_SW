@@ -1,4 +1,4 @@
-<h3 class="title mb-6">Registros sobre los Áreas.</h3>
+<h3 class="title mb-6">Registros sobre las Áreas.</h3>
 <br>
 <a class="button is-link" href="?controller=areas&action=create">Create</a>
 <br>
@@ -16,7 +16,7 @@
       <tr>
         <th><abbr title="IdAreas">IdAreas</abbr></th>
         <th><abbr title="Nombre">Nombre</abbr></th>
-        <th><abbr title="Descripcion">Descripcon</abbr></th>
+        <th><abbr title="Descripcion">Descripción</abbr></th>
         <th><abbr title="Cantidad">Acciones</abbr></th>
       </tr> 
   </tfoot>

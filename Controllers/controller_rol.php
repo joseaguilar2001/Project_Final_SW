@@ -30,7 +30,7 @@
                 }
                 $vRol = $rol . "-". rand(0, 10);
                 Rol::create($vRol, $name, $dscrip, $stado);
-                header("Location: ./index.php?controller=proveedores&action=home");
+                header("Location: ./index.php?controller=rol&action=home");
             }
             include_once("./Views/Rol/create.php");
         }
@@ -56,16 +56,18 @@
                     }
                     
                 }
-            }
                 $vRol = $rol . "-". rand(0, 10);
-                Rol::create($vRol, $name, $dscrip, $stado);
+                Rol::edit($id, $name, $dscrip, $stado, $vRol);
+                header("Location: ./index.php?controller=rol&action=home");
+            }
+                
             include_once("./Views/Rol/edit.php");
         }
         public function Delete()
         {
             $id = $_GET['id'];
             Rol::delete($id);
-            header("Location: ./index.php?controller=proveedores&action=home");
+            header("Location: ./index.php?controller=rol&action=home");
         }
     } 
 ?>

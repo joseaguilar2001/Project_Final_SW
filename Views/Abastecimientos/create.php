@@ -7,24 +7,28 @@
     <form action="" method="post">
 
     <div class="field">
-    <label class="label">Proveedor</label>
+    <label class="label">Escoger el Proveedor:</label>
     <div class="control">
         <div class="select">
         <select name="idPrv">
-            <option>Proveedor 1</option>
-            <option>Proveedor 2</option>
+            <option value="0">Proveedor desconocido</option>
+            <?php foreach($proveedores as $prov){ ?>
+            <option value="<?php echo $prov -> IdProv; ?>"><?php echo $prov -> Name; ?></option>
+            <?php } ?>
         </select>
         </div>
     </div>
     </div>
 
     <div class="field">
-    <label class="label">Producto</label>
+    <label class="label">Escoger Productos:</label>
     <div class="control">
         <div class="select">
         <select name="idPrd">
-            <option>Producto 1</option>
-            <option>Producto 2</option>
+            <option value="0">Producto Desconocido</option>
+            <?php foreach($productos as $prod){ ?>
+            <option value="<?php echo $prod -> IdProd; ?>"><?php echo $prod -> Name; ?></option>
+            <?php } ?>
         </select>
         </div>
     </div>
@@ -33,7 +37,7 @@
     <div class="field">
     <label class="label">Cantidad</label>
     <div class="control">
-        <input class="input" pattern="^[0-9]?$" type="text" name="cnt" placeholder="Cantidad">
+        <input class="input" pattern="^[0-9]{0,100}?$" type="text" name="cnt" placeholder="Cantidad">
     </div>
     <p class="help">Ingrese aquí la cantidad de productos.</p>
     </div>

@@ -1,4 +1,4 @@
-<h3 class="title mb-6">Registros sobre los Contactos.</h3>
+<h3 class="title mb-6">Registros sobre los Proveedores.</h3>
 <br>
 <a class="button is-link" href="?controller=proveedores&action=create">Create</a>
 <br>
@@ -26,7 +26,7 @@
   </tfoot>    
   <tbody>
   <?php foreach($prov as $a) { ?>
-    
+    <?php if($a -> Estado != '4' || $a -> Estado < 4){ ?>
     <tr>
       <td><?php echo $a->IdProv; ?></td>
       <td><?php echo $a->Name; ?></td>
@@ -36,18 +36,19 @@
       <td>
         <div class="field is-grouped">
           <p class="control">
-            <a class="button is-warning" href="?controller=abastecimientos&action=edit&id=<?php echo $a->IdProv; ?>">
+            <a class="button is-warning" href="?controller=proveedores&action=edit&id=<?php echo $a->IdProv; ?>">
               Editar
             </a>
           </p>
           <p class="control">
-            <a class="button is-danger" href="?controller=abastecimientos&action=delete&id=<?php echo $a->IdProv; ?>">
+            <a class="button is-danger" href="?controller=proveedores&action=delete&id=<?php echo $a->IdProv; ?>">
               Borrar
             </a>
           </p>
         </div>
       </td>
     </tr>
+    <?php } ?>
   <?php } ?>
   </tbody>
 </table>

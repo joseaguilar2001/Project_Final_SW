@@ -24,18 +24,14 @@
                 $mail = $_POST['mail'];
                 $cel = $_POST['cel'];
                 $rol = $_POST['rol'];
-
-                if($rol == '0' || $rol = 0)
+                if($rol == '0')
                 {
-                    $rol = 'null';
+                    $rol = null;
                 }
-                //$userName = Usuario::existId($id);
-                //while($userName == true)
-                // {
-                //    $id = Usuario::IdUser(10);
-                //    $userName = Usuario::existId($id);
-                //}
+                $idN = Usuario::existId($id);
+                
                 Usuario::create($id, $name, $last, $usern, $pass, $mail, $cel, $rol, 1);
+                
                 header("Location: ./index.php?controller=usuario&action=home");
             }
             include_once("./Views/Usuario/create.php");

@@ -16,7 +16,9 @@
       <label class="label">
     Descripcion:</label>
       <div class="control">
-        <textarea value="<?php echo $rol -> Descripcion; ?>" class="textarea" name="dscrip" placeholder="Rol"></textarea>
+        <textarea value="<?php echo $rol -> Descripcion; ?>" class="textarea" name="dscrip" placeholder="Rol">
+          <?php echo $rol -> Descripcion; ?>
+        </textarea>
       </div>
     </div>
     <div class="select">

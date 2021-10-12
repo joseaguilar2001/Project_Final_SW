@@ -26,9 +26,8 @@
         <th><abbr title="Actions">Acciones</abbr></th>
       </tr> 
   </tfoot>
-    <?php
-    foreach($abas as $a) { ?>
-    
+    <?php foreach($abas as $a) { ?>
+    <?php if($a -> Estado != '4' || $a -> Estado < 4){ ?>
       <tr>
         <td><?php echo $a->Idbas; ?></td>
         <td><?php echo $a->IdProveedor; ?></td>
@@ -51,6 +50,7 @@
           </div>
         </td>
       </tr>
+      <?php } ?>
     <?php } ?>
     
   <tbody>
