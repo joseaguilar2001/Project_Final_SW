@@ -75,5 +75,13 @@
             $sql = $conectionDB -> prepare("UPDATE proveedores SET Provname = ?, ProvAdress = ?, Email = ?, Estado = ? WHERE IdProveedor = ?");
             $sql -> execute(array($name, $provad, $email, $estado, $id));
         }
+
+        public static function countprov()
+        {
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> query("SELECT * FROM proveedores");
+            $rowcount = $sql -> rowCount();
+            return $rowcount;
+        }
     }
 ?>

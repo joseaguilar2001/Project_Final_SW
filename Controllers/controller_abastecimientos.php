@@ -2,6 +2,7 @@
     include_once("./Models/abastecimientos.php");
     include_once("./Models/productos.php");
     include_once("./Models/proveedores.php");
+    include_once("./Models/contacto.php");
     include_once("./db.php");
     DB::createInstant();
     class ControlAbastecimientos
@@ -69,10 +70,27 @@
 
         public function Delete()
         {
-            print_r($_GET);
             $id = $_GET['id'];
             Abastecimientos::delete($id);
             header("Location: ./index.php?controller=abastecimientos&action=home");
+        }
+
+        public function Dashboard()
+        {
+            $abas = Abastecimientos::consultNew();
+            $abasC = Abastecimientos::countabas();
+            $prodC = Productos::countprod();
+            $product = Productos::consult();
+            $provs = Proveedores::countprov();
+            $contacto = Contacto::countcontacto();
+            $proveedores = Proveedores::consult();
+            include_once("./Views/Abastecimientos/dashboard.php");
+        }
+
+        public function TableAbastecimiento()
+        {
+            $date = $_GET['fecha'];
+            
         }
     }
 ?>
