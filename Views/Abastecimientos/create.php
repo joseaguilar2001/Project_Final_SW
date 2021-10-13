@@ -37,7 +37,7 @@
     <div class="field">
     <label class="label">Cantidad</label>
     <div class="control">
-        <input class="input" pattern="^[0-9]{0,100}?$" type="text" name="cnt" placeholder="Cantidad">
+        <input class="input" pattern="^[0-9]{0,1000}?$" type="text" name="cnt" placeholder="Cantidad">
     </div>
     <p class="help">Ingrese aquí la cantidad de productos.</p>
     </div>

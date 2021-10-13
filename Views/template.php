@@ -95,6 +95,12 @@
       <?php include_once("./router.php"); ?>
     </div>
   </section>
-
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>BIORAD</strong> es para todos una solución, es calidad y es seguridad.
+      </p>
+    </div>
+  </footer>
   </body>
 </html>
