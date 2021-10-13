@@ -11,6 +11,7 @@ $resultado=mysqli_query($conn,$consulta);
 
 $filas=mysqli_fetch_array($resultado);
 $_SESSION['Rol'] = $filas['Rol'];
+$_SESSION['id'] = $filas['idUsuario'];
 
 if($filas != null){
   
