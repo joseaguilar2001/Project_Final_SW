@@ -87,10 +87,35 @@
             include_once("./Views/Abastecimientos/dashboard.php");
         }
 
-        public function TableAbastecimiento()
+        public function CreateNew()
         {
-            $date = $_GET['fecha'];
-            
+            $proveedores = Proveedores::consult();
+            $productos = Productos::consult();
+            if($_POST)
+            {
+                // print_r($_POST);
+                $idPv = $_POST['idPrv'];
+                $idPr = $_POST['idPrd'];
+                $cant = $_POST['cnt'];
+                $date = $_POST['fecha'];
+                if($idPr == '0' || $idPr == 0)
+                {
+                    $idPr = null;
+                }
+                else
+                {
+                    $cantidad = Productos::cantiprod($idPr);
+                    $n = (int)($cantidad + $cant);
+                    Productos::updatecant($idPr, $n); 
+                }
+                if($idPv == '0' || $idPv == 0)
+                {
+                    $idPv = null;
+                }
+                Abastecimientos::create($idPv,$idPr,$cant,$date,1);
+                header("Location: ./index.php?controller=abastecimientos&action=dashboard");
+            }
+            include_once("./Views/Abastecimientos/create2.php");
         }
     }
 ?>

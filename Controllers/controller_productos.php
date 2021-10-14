@@ -53,6 +53,8 @@
             Productos::delete($id);
             header("Location: ./index.php?controller=productos&action=home");
         }
+
+        
     }
 
 ?>

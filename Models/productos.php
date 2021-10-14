@@ -75,5 +75,21 @@
             $count = $sql -> rowCount();
             return $count;
         }
+
+        public static function cantiprod($id)
+        {
+            $cant = '';
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB->prepare("SELECT Existencias FROM productos WHERE IdProducto = ?");
+            $sql -> execute(array($id));
+            $cant = $sql -> fetch();
+            return $cant['Existencias'];
+        }
+        public static function updatecant($id, $cant)
+        {
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> prepare("UPDATE productos SET Existencias = ? WHERE IdProducto = ?");
+            $sql -> execute(array($cant, $id));
+        }
     }
 ?>

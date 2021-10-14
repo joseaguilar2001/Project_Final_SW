@@ -14,18 +14,21 @@
             <article class="tile is-child box">
                 <p class="title"><?php echo $provs; ?></p>
                 <p class="subtitle">Proveedores</p>
+                <a class="button is-link">Añadir</a>
             </article>
         </div>
         <div class="tile is-parent">
             <article class="tile is-child box">
                 <p class="title"><?php echo $prodC; ?></p>
                 <p class="subtitle">Productos</p>
+                <a class="button is-link">Añadir</a>
             </article>
         </div>
         <div class="tile is-parent">
             <article class="tile is-child box">
                 <p class="title"><?php echo $abasC; ?></p>
                 <p class="subtitle">Abastecimientos</p>
+                <a class="button is-link" href="?controller=abastecimientos&action=createNew">Añadir</a>
             </article>
         </div>
     </div>
@@ -94,6 +97,10 @@
             </footer>
         </div>
     </div>
+    </div>
+    <div class="box">
+        <h1> Abastecimientos </h1>
+        <a class="button is-link">Añadir</a>
     </div>
     <table class="table" width="100%" id="tabla">
     <!-- En está parte veremos los datos de todos los abastecimientos, tener en cuenta que el tfoot es un pie de página -->

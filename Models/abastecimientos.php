@@ -71,7 +71,7 @@
             {
                    $listN []= new Abastecimientos(
                         null,
-                        $ab['ProvName'],
+                        $ab['Provname'],
                         $ab['ProdName'],
                         $ab['Cantidad'],
                         $ab['AbasDate'],
