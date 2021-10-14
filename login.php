@@ -13,7 +13,7 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
 
-    <title>Pacial 2</title>
+    <title>BIORAD</title>
 </head>
 <body>
     <!------ Login Form  ---------->

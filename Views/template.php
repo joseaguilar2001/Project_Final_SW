@@ -1,4 +1,6 @@
-<?php session_start();?>
+<?php session_start();
+error_reporting(0);
+?>
 <!DOCTYPE html>
 <html>  <head>
     <meta charset="utf-8">
@@ -46,12 +48,16 @@
             <a class="navbar-item" href="index.php">
               Inicio
             </a>
-      
-            <a class="navbar-item" href="index.php?controller=usuario&action=home">
-              Usuarios
-            </a>
+            
+            <?php  if($_SESSION['Rol'] == "01" or $_SESSION['Rol' == "02"]):?>
+                <a class="navbar-item" href="index.php?controller=usuarios&action=home">
+                  Usuarios
+                </a>
+            <?php else: ?>
+            <?php endif ?>  
+
             <a class="navbar-item" href="index.php?controller=abastecimientos&action=home">
-              Abastecimientos
+                  Abastecimientos
             </a>
             <a class="navbar-item" href="index.php?controller=autorizaciones&action=home">
               Autorizaciones

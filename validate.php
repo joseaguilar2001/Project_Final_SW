@@ -23,6 +23,12 @@ if($filas != null){
         case "02":
             header("location:data/");
             break;
+        case "03":
+            header("location:data/");
+          break;
+        case "04":
+            header("location:data/");
+          break;
         default:
             header("location:data/");
             break;
