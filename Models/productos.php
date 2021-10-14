@@ -68,5 +68,12 @@
             $sql = $conectionDB->prepare("UPDATE productos SET ProdName = ?, ProdPrice = ?, Existencias = ?, ProdMedida = ? , ProdLimite = ?, ProdDateOff = ? , Estado = ? WHERE IdProducto=?");
             $sql -> execute(array($name, $price, $exist, $medida, $limite, $dateoff, $state, $id));
         }
+        public static function countprod()
+        {
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> query("SELECT * FROM productos");
+            $count = $sql -> rowCount();
+            return $count;
+        }
     }
 ?>

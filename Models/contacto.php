@@ -79,6 +79,14 @@
             $sql=$conectionDB->prepare("UPDATE contacto VALUES IdPRoveedor = ?, ContactoName = ?, ContactoApe = ?, ContactoCell = ?, ContactoMail = ?, Estado = ?    WHERE IdContacto = ?");
             $sql -> execute($prov, $name, $lastname, $celular, $email, $estado, $id);
         }
+
+        public static function countcontacto()
+        {
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> query("SELECT * FROM proveedores");
+            $count = $sql -> rowCount();
+            return $count;
+        }
     }
 
 ?>

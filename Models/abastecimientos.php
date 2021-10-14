@@ -59,14 +59,53 @@
         {
             $conectionDB = DB::createInstant();
             $sql = $conectionDB->prepare("UPDATE abastecimientos SET IdProveedor = ?, IdProducto = ?, Cantidad = ?, AbasDate = ?, Estado = ?  WHERE IdAbas=?");
-            $sql->execute(array(
-                $idprov, 
-                $idprod, 
-                $cant, 
-                $date, 
-                $state, 
-                $id)
-            );
+            $sql->execute(array($idprov, $idprod, $cant, $date, $state, $id));
+        }
+
+        public static function consultNew()
+        {
+            $listN =[];
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB->query("SELECT ProdName, Provname, Cantidad, AbasDate FROM abastecimientos INNER JOIN productos USING(IdProducto) INNER JOIN proveedores USING(IdProveedor) WHERE abastecimientos.Estado = 1");
+            foreach($sql -> fetchAll() as $ab)
+            {
+                   $listN []= new Abastecimientos(
+                        null,
+                        $ab['ProvName'],
+                        $ab['ProdName'],
+                        $ab['Cantidad'],
+                        $ab['AbasDate'],
+                        null
+                   );
+            }
+            return $listN;
+        }
+
+        public static function searchDate($date)
+        {
+            $listF = [];
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB->query("SELECT ProdName, Provname, Cantidad, AbasDate FROM abastecimientos INNER JOIN productos USING(IdProducto) INNER JOIN proveedores USING(IdProveedor) WHERE abastecimientos.Estado = 1 AND abastecimientos.AbasDate = ?");
+            $sql -> execute(array($date));
+            $abastecimiento = $sql -> fetchAll();
+            foreach($abastecimiento as $aba)
+            {
+                $listF[] = new Abastecimientos(
+                    null,
+                    $aba['ProvName'],
+                    $aba['ProdName'],
+                    $aba['Cantidad'],
+                    $aba['AbasDate'],
+                    null
+                );
+            }
+        }
+        public static function countabas()
+        {
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> query("SELECT * FROM abastecimientos");
+            $rowcount = $sql -> rowCount();
+            return $rowcount;
         }
     }
 

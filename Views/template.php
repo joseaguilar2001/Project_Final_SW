@@ -10,26 +10,15 @@ error_reporting(0);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
     <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
-    <style type="text/css">
-      body{
-      padding: 0;
-      margin: 0;
-      }
-      .hero{
-      height: 100vh;
-      position: relative;
-      }
-      .notification{
-      padding-top: 20px;
-      padding-bottom: 30px;
-      }
-      .button{
-      margin-top: 10px;
-      }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.9.0-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/admin.css">
   </head>
   <body>
+  
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           
@@ -96,11 +85,10 @@ error_reporting(0);
       </div>
     </div>
       </nav>
-  <section class="section" style="margin-top: 10px;">
-    <div class="container">
+      <div class="container">
+    
       <?php include_once("./router.php"); ?>
-    </div>
-  </section>
+  </div>
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
