@@ -47,7 +47,7 @@
                     $user['NombreUsuario'],
                     $user['ApellidoUsuario'],
                     $user['Username'],
-                    $user['PasswordUser'],
+                    $user['Password'],
                     $user['Email'],
                     $user['Telefono'],
                     $user['Rol'],
@@ -60,7 +60,7 @@
         public static function create($id, $name, $lastname, $user, $password, $email, $tel, $rol, $estado)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->prepare("INSERT INTO usuario(idUsuario, NombreUsuario, ApellidoUsuario, Username, PasswordUser, Email, Telefono, Rol, Estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $sql=$conectionDB->prepare("INSERT INTO usuario(idUsuario, NombreUsuario, ApellidoUsuario, Username, Password, Email, Telefono, Rol, Estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $sql->execute(array($id, $name, $lastname, $user, $password, $email, $tel, $rol, $estado));
         }
 
@@ -82,7 +82,7 @@
                 $iusers['NombreUsuario'],
                 $iusers['ApellidoUsuario'],
                 $iusers['Username'],
-                $iusers['PasswordUser'],
+                $iusers['Password'],
                 $iusers['Email'],
                 $iusers['Telefono'],
                 $iusers['Rol'],
@@ -92,7 +92,7 @@
         public static function edit($id, $name, $lastname, $user, $password, $email, $tel, $rol, $estado)
         {
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->prepare("UPDATE usuario SET NombreUsuario = ?, ApellidoUsuario = ?, Username = ?, PasswordUser = ?, Email = ?, Telefono = ?, Rol = ?, Estado = ? WHERE idUsuario = ?");
+            $sql=$conectionDB->prepare("UPDATE usuario SET NombreUsuario = ?, ApellidoUsuario = ?, Username = ?, Password = ?, Email = ?, Telefono = ?, Rol = ?, Estado = ? WHERE idUsuario = ?");
             $sql -> execute(array($name, $lastname, $user, $password, $email, $tel, $rol, $estado, $id));
         }
 
@@ -148,12 +148,7 @@
 
         public static function IdUser($length = 5)
         {
-            $characters = '0123456789';
-            $charactersLength = strlen($characters);
-            $randomString = '';
-            for ($i = 0; $i < $length; $i++) {
-                $randomString .= $characters[rand(0, $charactersLength - 1)];
-            }
+            $randomString = rand(0,9999);
             return $randomString;
         }
     }

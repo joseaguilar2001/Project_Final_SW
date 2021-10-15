@@ -16,7 +16,7 @@
             $rol = Rol::consult();
             if($_POST)
             {
-                $id = Usuario::IdUser(3);
+                $id = Usuario::IdUser(5);
                 $name = $_POST['nombre'];
                 $last = $_POST['apellido'];
                 $usern = $_POST['username'];
