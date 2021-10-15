@@ -56,7 +56,7 @@
 </div>
 <div class="field is-grouped">
           <div class="control">
-            <button type="submit" class="button is-link">Crear</button>
+            <button type="submit" value="crear" class="button is-link">Crear</button>
           </div>
           <div class="control">
           <a href="index.php?controller=usuario&action=home" class="button is-text">Cancelar</a>

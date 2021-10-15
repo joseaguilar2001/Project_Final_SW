@@ -28,10 +28,11 @@
                 {
                     $rol = null;
                 }
-                $id = $rol . $id;
-                
+                else 
+                {
+                    $id = $rol . $id;
+                }
                 Usuario::create($id, $name, $last, $usern, $pass, $mail, $cel, $rol, 1);
-                
                 header("Location: ./index.php?controller=usuario&action=home");
             }
             include_once("./Views/Usuario/create.php");
