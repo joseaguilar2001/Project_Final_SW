@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <!-- Bulma Version 0.9.0-->
     <link rel="stylesheet" type="text/css" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/Deradado_cards.css">
   </head>
   <body>
   
