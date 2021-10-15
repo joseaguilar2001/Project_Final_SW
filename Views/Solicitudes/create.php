@@ -40,7 +40,7 @@
   <select name="user">
     <option value="0" selected>Usuario desconocido</option>
     <?php foreach($user as $us){ ?>
-    <option value="<?php echo $us -> IdUser; ?>"><?php echo $us -> Name . " " . $us -> Lastname; ?></option>
+    <option value="<?php echo $us -> Id; ?>"><?php echo $us -> Nombre . " " . $us -> Apellido; ?></option>
     <?php } ?>
   </select>
     </div>
