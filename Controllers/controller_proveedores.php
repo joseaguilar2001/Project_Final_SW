@@ -43,5 +43,24 @@
             Proveedores::delete($id);
             header("Location: ./index.php?controller=proveedores&action=home");
         }
+        public function Dashboard()
+        {
+            $countpro = Proveedores::countprov();
+            $provs = Proveedores::consult();
+            include_once("./Views/Proveedores/dashboard.php");
+        }
+
+        public function CreateTwo()
+        {
+            if($_POST)
+            {
+                $name = $_POST['nombre'];
+                $direccion = $_POST['direction'];
+                $email = $_POST['email'];
+                Proveedores::create($name, $direccion, $email, 1);
+                header("Location: ./index.php?controller=proveedores&action=dashboard");
+            }
+            include_once("./Views/Proveedores/create2.php");
+        }
     }
 ?>
