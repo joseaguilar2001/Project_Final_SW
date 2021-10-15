@@ -13,23 +13,12 @@
         {
             if($_POST)
             {
-                $rol = '';
-                $vRol = '';
+                $id = $_POST['id'];
                 $name = $_POST['rol'];
                 $dscrip = $_POST['dscrip'];
                 $stado = $_POST['estado'];
-                $idn = strlen($name);
                 
-                if($idn >= 2)
-                {
-                    for($i = 0; $i < $idn; $i++)
-                    {
-                        $rol .= $name[$i];
-                    }
-                    
-                }
-                $vRol = $rol . "-". rand(0, 10);
-                Rol::create($vRol, $name, $dscrip, $stado);
+                Rol::create($id, $name, $dscrip, $stado);
                 header("Location: ./index.php?controller=rol&action=home");
             }
             include_once("./Views/Rol/create.php");
@@ -41,23 +30,10 @@
 
             if($_POST)
             {
-                $rol = '';
-                $vRol = '';
                 $name = $_POST['rol'];
                 $dscrip = $_POST['dscrip'];
                 $stado = $_POST['estado'];
-                $idn = strlen($name);
-                
-                if($idn >= 2)
-                {
-                    for($i = 0; $i < $idn; $i++)
-                    {
-                        $rol .= $name[$i];
-                    }
-                    
-                }
-                $vRol = $rol . "-". rand(0, 10);
-                Rol::edit($id, $name, $dscrip, $stado, $vRol);
+                Rol::edit($name, $dscrip, $stado, $id);
                 header("Location: ./index.php?controller=rol&action=home");
             }
                 

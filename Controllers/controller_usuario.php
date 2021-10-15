@@ -16,7 +16,7 @@
             $rol = Rol::consult();
             if($_POST)
             {
-                $id = Usuario::IdUser(10);
+                $id = Usuario::IdUser(3);
                 $name = $_POST['nombre'];
                 $last = $_POST['apellido'];
                 $usern = $_POST['username'];
@@ -28,7 +28,7 @@
                 {
                     $rol = null;
                 }
-                $idN = Usuario::existId($id);
+                $id = $rol . $id;
                 
                 Usuario::create($id, $name, $last, $usern, $pass, $mail, $cel, $rol, 1);
                 
