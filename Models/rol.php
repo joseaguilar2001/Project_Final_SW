@@ -65,11 +65,11 @@
             );
         }
 
-        public static function edit($id, $name, $desc, $estado, $idnew)
+        public static function edit($id, $name, $desc, $estado)
         {
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB->prepare("UPDATE rol SET idRol = ?, Nombre_Rol = ?, Descripcion = ?, Estado = ? WHERE idRol = ?");
-            $sql -> execute(array($idnew, $name, $desc, $estado, $id));
+            $sql = $conectionDB->prepare("UPDATE rol SET  Nombre_Rol = ?, Descripcion = ?, Estado = ? WHERE idRol = ?");
+            $sql -> execute(array($name, $desc, $estado, $id));
         }
     }
 

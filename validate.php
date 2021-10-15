@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 $usuario=$_POST['nameuser'];
 $contraseña=$_POST['password'];
 session_start();
@@ -21,16 +22,16 @@ if($filas != null){
             header("location:index.php");
             break;
         case "02":
-            header("location:data/");
+            header("location:index.php");
             break;
         case "03":
-            header("location:data/");
+            header("location:index.php");
           break;
         case "04":
-            header("location:data/");
+            header("location:index.php");
           break;
         default:
-            header("location:data/");
+            header("location:index.php");
             break;
     }
     

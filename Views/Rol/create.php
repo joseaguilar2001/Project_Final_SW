@@ -5,6 +5,13 @@
     Roles, por favor tener en cuenta que fecha se realizo.
 </p>
 <form method="POST" action="">
+<div class="field">
+      <label class="label">
+    Id del rol:</label>
+      <div class="control">
+        <input class="input" name="id" type="text" placeholder="Rol">
+      </div>
+    </div>
     <div class="field">
       <label class="label">
     Nombre del rol:</label>

@@ -1,6 +1,12 @@
 <?php session_start();
 error_reporting(0);
 ?>
+
+<?php if($_SESSION["nameuser"]==null || $_SESSION["nameuser"]==""): 
+    header("location: login.php");
+    die();  
+?>
+<?php else :?> 
 <!DOCTYPE html>
 <html>  <head>
     <meta charset="utf-8">
@@ -39,37 +45,65 @@ error_reporting(0);
               Inicio
             </a>
             
-            <?php  if($_SESSION['Rol'] == "01" or $_SESSION['Rol' == "02"]):?>
-                <a class="navbar-item" href="index.php?controller=usuarios&action=home">
+            <?php  if($_SESSION['Rol'] == "01"):?>
+                <a class="navbar-item" href="index.php?controller=usuario&action=home">
                   Usuarios
                 </a>
-            <?php else: ?>
-            <?php endif ?>  
 
-            <a class="navbar-item" href="index.php?controller=abastecimientos&action=home">
+                <a class="navbar-item" href="index.php?controller=rol&action=home">
+                  Roles de usuario
+                </a>
+            <?php endif ?> 
+
+            <?php if($_SESSION['Rol'] ==  "02" or $_SESSION['Rol']  ==  "01"):?>
+                <a class="navbar-item" href="index.php?controller=autorizaciones&action=home">
+                  Autorizaciones
+                </a>
+
+                <a class="navbar-item" href="index.php?controller=areas&action=home">
+                  Areas
+                </a>
+            <?php endif ?>
+
+            <?php if($_SESSION['Rol'] != "01" or $_SESSION['Rol'] != "02"):?>
+                <a class="navbar-item" href="index.php?controller=productos&action=home">
+                  Productos
+                </a>
+            <?php endif ?>
+          
+            <?php if($_SESSION['Rol'] == "03"):?>
+                <a class="navbar-item" href="index.php?controller=abastecimientos&action=dashboard">
                   Abastecimientos
-            </a>
-            <a class="navbar-item" href="index.php?controller=autorizaciones&action=home">
-              Autorizaciones
-            </a>
-            <a class="navbar-item" href="index.php?controller=productos&action=home">
-              Productos
-            </a>
-            <a class="navbar-item" href="index.php?controller=Solicitudes&action=home">
-              Solicitudes
-            </a>
-            <a class="navbar-item" href="index.php?controller=Proveedores&action=home">
-              Proveedores
-            </a>
-            <a class="navbar-item" href="index.php?controller=contacto&action=home">
-              Contactos
-            </a>
-            <a class="navbar-item" href="index.php?controller=areas&action=home">
-              Areas
-            </a>
-            <a class="navbar-item" href="index.php?controller=rol&action=home">
-              Roles de usuario
-            </a>
+                </a>
+                <a class="navbar-item" href="index.php?controller=Solicitudes&action=home">
+                  Solicitudes
+                </a>
+            <?php endif ?>
+
+            <?php if($_SESSION['Rol'] ==  "04"):?>
+                <a class="navbar-item" href="index.php?controller=Proveedores&action=home">
+                  Proveedores
+                </a>
+                <a class="navbar-item" href="index.php?controller=contacto&action=home">
+                  Contactos
+                </a>
+            <?php endif?>
+
+            <?php if($_SESSION['Rol'] != "03" AND $_SESSION['Rol'] != "04"): ?>
+                  <a class="navbar-item" href="index.php?controller=abastecimientos&action=home">
+                    Abastecimientos
+                  </a>
+                  <a class="navbar-item" href="index.php?controller=Solicitudes&action=home">
+                    Solicitudes
+                  </a>         
+                  <a class="navbar-item" href="index.php?controller=Proveedores&action=home">
+                    Proveedores
+                  </a>
+                  <a class="navbar-item" href="index.php?controller=contacto&action=home">
+                    Contactos
+                  </a>     
+            <?php endif ?>
+           
           </div>
         </div>
 
@@ -99,3 +133,4 @@ error_reporting(0);
   </footer>
   </body>
 </html>
+<?php endif?>
