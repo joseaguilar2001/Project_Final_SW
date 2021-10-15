@@ -54,6 +54,12 @@
             header("Location: ./index.php?controller=productos&action=home");
         }
 
+        public function View()
+        {
+            $producto = Productos::consult();
+            include_once("./Views/Productos/views.php");
+        }
+
         
     }
 
