@@ -80,7 +80,7 @@ error_reporting(0);
                 <a class="navbar-item" href="index.php?controller=abastecimientos&action=dashboard">
                   Abastecimientos
                 </a>
-                <a class="navbar-item" href="index.php?controller=Solicitudes&action=home">
+                <a class="navbar-item" href="index.php?controller=Solicitudes&action=vista">
                   Solicitudes
                 </a>
             <?php endif ?>
