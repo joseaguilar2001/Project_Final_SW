@@ -5,31 +5,31 @@
                 <div class="card card_deg_green">
                     <div class="card-content">
                         <div class="content is-size-3">
-                            Solicitudes echas
+                            Solicitudes ya echas
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <p class="card-footer-item">
-                            <span>
-                                 <a href="#">Ver</a>
-                            </span>
-                        </p>
+                    <p class="card-footer-item">
+                                <span>
+                                <a class="button is-link" href="?controller=solicitudes&action=vistas">ver</a>
+                                </span>
+                            </p>
                     </footer>
                 </div>
             </div>
             <div class="column is-4-tablet is-3-desktop">
                 <div class="card card_deg_warinig">
-                    <div class="card-content"> 
+                    <div class="card-content">
                         <div class="content is-size-3">
                             Solicitudes en espera
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <p class="card-footer-item">
-                            <span>
-                                 <a href="#">Ver</a>
-                            </span>
-                        </p>
+                            <p class="card-footer-item">
+                                <span>
+                                <button value="Exsitentes" type="submit" class="button is-link">Ver</button>
+                                </span>
+                            </p>
                     </footer>
                 </div>
             </div>
@@ -41,11 +41,11 @@
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <p class="card-footer-item">
-                            <span>
-                                 <a href="#">Ver</a>
-                            </span>
-                        </p>
+                            <p class="card-footer-item">
+                                <span>
+                                <button value="Exsitentes" type="submit" class="button is-link">Ver</button>
+                                </span>
+                            </p>
                     </footer>
                 </div>
             </div>
@@ -59,7 +59,9 @@
 <table class="table" width="100%" id="tabla">
   <thead>
       <tr>
-          <th><abbr title="Names">Nombre</abbr></th>
+          <th><abbr title="Are">Area</abbr></th>
+          <th><abbr title="Prod">Producto</abbr></th>
+          <th><abbr title="Usu">Usuario</abbr></th>
           <th><abbr title="Fech">Fecha</abbr></th>
           <th><abbr title="Cant">Cantidad</abbr></th>
          
@@ -67,17 +69,21 @@
   </thead>
   <tfoot>
       <tr>
-      <th><abbr title="Names">Nombre</abbr></th>
-          <th><abbr title="Fech">Fecha</abbr></th>
+      <th><abbr title="Are">Area</abbr></th>
+      <th><abbr title="Prod">Producto</abbr></th>
+          <th><abbr title="Usu">Usuario</abbr></th>
+      <th><abbr title="Fech">Fecha</abbr></th>
           <th><abbr title="Cant">Cantidad</abbr></th>
          
       </tr> 
   </tfoot>
   <tbody>
     <?php foreach($solicitud as $soli) { ?>
-    <?php if($soli -> Estado != '4' || $soli -> Estado < 4){ ?>
+    <?php if($soli -> Estado != '1' || $soli -> Estado < 4){ ?>
       <tr>
-        <td><?php echo $soli->Names; ?></td>
+      <td><?php echo $soli->Are; ?></td>
+      <td><?php echo $soli->Prod; ?></td>
+        <td><?php echo $soli->Usu; ?></td>
         <td><?php echo $soli->Fech; ?></td>
         <td><?php echo $soli->Cant; ?></td>
         <td>

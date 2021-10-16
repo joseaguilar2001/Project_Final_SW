@@ -86,6 +86,27 @@
             $sql=$conectionDB->prepare("UPDATE solicitudes SET IdArea = ?, IdProducto = ?, idUsuario = ?, Fecha = ?, Cantidad = ?, Estado = ? WHERE IdSolicitud = ?");
             $sql -> execute(array($area, $product, $user, $date, $cant, $estado, $id));
         }
+
+
+        public static function solisitudesaceptadas()
+        {
+            $listStudes = [];
+            $conectionDB = DB::createInstant();
+            $sql=$conectionDB->query("SELECT a.NombreArea, p.ProdName, u.NombreUsuario, s.Fecha, s.Cantidad FROM solicitudes  AS s INNER JOIN areas AS a ON s.IdArea = a.IdAreas INNER JOIN productos AS p ON s.IdProducto = p.IdProducto INNER JOIN usuario AS u ON s.IdPerfil = u.idUsuario WHERE s.Estado = 1");
+            foreach($sql -> fetchAll() as $sol)
+            {
+                $listStudes []= new Solicitudes(
+                    $sol['NombreArea'],
+                    $sol['ProdName'],
+                    $sol['NombreUsuario'],
+                    $sol['Fecha'],
+                    $sol['Cantidad'],
+                   
+                );
+            }
+            return $listStudes;
+        }
+
     }
 
 ?>
