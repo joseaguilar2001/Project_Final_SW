@@ -12,7 +12,7 @@
                         <footer class="card-footer">
                             <p class="card-footer-item">
                                 <span>
-                                <button value="Exsitentes" type="submit" class="button is-link">Ver</button>
+                                    <a class="button is-link" href="?controller=productos&action=ViewE">ver</a>
                                 </span>
                             </p>
                         </footer>
@@ -28,7 +28,7 @@
                         <footer class="card-footer">
                             <p class="card-footer-item">
                                 <span>
-                                <button value="agotarse" type="submit" class="button is-link">Ver</button>
+                                    <a class="button is-link" href="?controller=productos&action=ViewA">ver</a>   
                                 </span>
                             </p>
                         </footer>
@@ -44,7 +44,7 @@
                         <footer class="card-footer">
                             <p class="card-footer-item">
                                 <span>
-                                <button value="sin existensia" type="submit" class="button is-link">Ver</button>
+                                    <a class="button is-link" href="?controller=productos&action=ViewE">ver</a>
                                 </span>
                             </p>
                         </footer>
@@ -82,67 +82,23 @@
   <tbody>
     <?php foreach($producto as $prod) { ?>
     <?php if($prod -> Estado != '4' || $prod -> Estado < 4){ ?>
-        <?php if ($_POST["Exsitentes"] == "Exsitentes"){?>
-            <?php if( $prod -> Limite < $prod -> Exist){ ?>
-            <tr>
-                <td><?php echo $prod->Name; ?></td>
-                <td><?php echo $prod->Price; ?></td>
-                <td><?php echo $prod->Exist; ?></td>
-                <td><?php echo $prod->Medida; ?></td>
-                <td><?php echo $prod->DateOff; ?></td>
-                <td>
-                <div class="field is-grouped">
-                    <p class="control">
-                    <a class="button is-warning" href="?controller=productos&action=edit&id=<?php echo $prod->IdProd; ?>">
-                        Editar
-                    </a>
-                    </p>
-                </div>
-                </td>
-            </tr>
-            <?php } ?>
+        <tr>
+            <td><?php echo $prod->Name; ?></td>
+            <td><?php echo $prod->Price; ?></td>
+            <td><?php echo $prod->Exist; ?></td>
+            <td><?php echo $prod->Medida; ?></td>
+            <td><?php echo $prod->DateOff; ?></td>
+            <td>
+            <div class="field is-grouped">
+                <p class="control">
+                <a class="button is-warning" href="?controller=productos&action=edit&id=<?php echo $prod->IdProd; ?>">
+                    Editar
+                </a>
+                </p>
+            </div>
+            </td>
+        </tr>
         <?php } ?>
-        <?php if ($_POST["agotarse"] == "agotarse"){?>
-            <?php if($prod -> Exist < $prod -> Limite){ ?>
-            <tr>
-                <td><?php echo $prod->Name; ?></td>
-                <td><?php echo $prod->Price; ?></td>
-                <td><?php echo $prod->Exist; ?></td>
-                <td><?php echo $prod->Medida; ?></td>
-                <td><?php echo $prod->DateOff; ?></td>
-                <td>
-                <div class="field is-grouped">
-                    <p class="control">
-                    <a class="button is-warning" href="?controller=productos&action=edit&id=<?php echo $prod->IdProd; ?>">
-                        Editar
-                    </a>
-                    </p>
-                </div>
-                </td>
-            </tr>
-            <?php } ?>
-        <?php } ?>
-        <?php if ($_POST["sin existensia"] == "sin existensia"){?>
-            <?php if($prod -> Exist == 0){ ?>
-            <tr>
-                <td><?php echo $prod->Name; ?></td>
-                <td><?php echo $prod->Price; ?></td>
-                <td><?php echo $prod->Exist; ?></td>
-                <td><?php echo $prod->Medida; ?></td>
-                <td><?php echo $prod->DateOff; ?></td>
-                <td>
-                <div class="field is-grouped">
-                    <p class="control">
-                    <a class="button is-warning" href="?controller=productos&action=edit&id=<?php echo $prod->IdProd; ?>">
-                        Editar
-                    </a>
-                    </p>
-                </div>
-                </td>
-            </tr>
-            <?php } ?>
-        <?php } ?>
-        <?php } ?>  
     <?php } ?>
   </tbody>
 </table>
@@ -155,4 +111,3 @@
     perPageSelect:[5, 10, 15, 20]
   });
 </script>
-</section>

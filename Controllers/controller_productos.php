@@ -60,6 +60,17 @@
             include_once("./Views/Productos/views.php");
         }
 
+        public function ViewE()
+        {
+            $producto = Productos::productosexistenes();
+            include_once("./Views/Productos/views.php");
+        }
+        
+        public function ViewA()
+        {
+            $producto = Productos::productosporagotarse();
+            include_once("./Views/Productos/views.php");
+        }
         
     }
 
