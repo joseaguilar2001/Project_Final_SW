@@ -74,12 +74,12 @@
       </tr> 
   </tfoot>
   <tbody>
-    <?php foreach($solicitud as $soli) { ?>
+    <?php foreach($solicitudes as $soli) { ?>
     <?php if($soli -> Estado != '4' || $soli -> Estado < 4){ ?>
       <tr>
-        <td><?php echo $soli->Names; ?></td>
-        <td><?php echo $soli->Fech; ?></td>
-        <td><?php echo $soli->Cant; ?></td>
+        <td><?php echo $soli->IdSolicitud; ?></td>
+        <td><?php echo $soli->Fecha; ?></td>
+        <td><?php echo $soli->Cantidad; ?></td>
         <td>
           <div class="field is-grouped">
             <p class="control">
