@@ -80,5 +80,12 @@
             Solicitudes::delete($id);
             header("Location: ./index.php?controller=solicitudes&action=home");
         }
+
+        public function vista()
+        {
+            $solicitudes = Solicitudes::consult();
+            include_once("./Views/Solicitudes/vista.php");
+        }
+        
     }
 ?>
