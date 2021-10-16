@@ -10,8 +10,8 @@
           <th><abbr title="Name">Nombre</abbr></th>
           <th><abbr title="Lastname">Apellido</abbr></th>
           <th><abbr title="Username">Usuario</abbr></th>
-          <th><abbr title="Email">Email</abbr></th>
           <th><abbr title="Password">Contraseña</abbr></th>
+          <th><abbr title="Email">Email</abbr></th>
           <th><abbr title="Email">Telefono</abbr></th>
           <th><abbr title="Rol">Rol</abbr></th>
           <th><abbr title="Estado">Estado</abbr></th>
@@ -24,8 +24,8 @@
           <th><abbr title="Name">Nombre</abbr></th>
           <th><abbr title="Lastname">Apellido</abbr></th>
           <th><abbr title="Username">Usuario</abbr></th>
-          <th><abbr title="Email">Email</abbr></th>
           <th><abbr title="Password">Contraseña</abbr></th>
+          <th><abbr title="Email">Email</abbr></th>
           <th><abbr title="Email">Telefono</abbr></th>
           <th><abbr title="Rol">Rol</abbr></th>
           <th><abbr title="Estado">Estado</abbr></th>
