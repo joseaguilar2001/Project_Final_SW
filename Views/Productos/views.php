@@ -6,7 +6,7 @@
                     <div class="card card_deg_green">
                         <div class="card-content">
                             <div class="content is-size-3">
-                                Productos Existentes
+                                Productos existentes
                             </div>
                         </div>
                         <footer class="card-footer">
@@ -22,7 +22,7 @@
                     <div class="card card_deg_warinig">
                         <div class="card-content">
                             <div class="content is-size-3">
-                                productos por agotarse
+                                Productos por agotarse
                             </div>
                         </div>
                         <footer class="card-footer">
@@ -38,7 +38,7 @@
                     <div class="card card_deg_red">
                         <div class="card-content">
                             <div class="content is-size-3">
-                            productos sin existensia
+                            Productos Agotados
                             </div>
                         </div>
                         <footer class="card-footer">
@@ -56,7 +56,7 @@
 </section>
 
 <section>
-<a class="button is-link" href="?controller=productos&action=create">Create</a>
+<a class="button is-link" href="?controller=productos&action=create">Crear</a>
 <br>
 <table class="table" width="100%" id="tabla">
   <thead>

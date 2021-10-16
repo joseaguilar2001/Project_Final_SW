@@ -8,11 +8,12 @@
             </h2>
     </div>
 </section>
+
 <section class="info-tiles">
     <div class="tile is-ancestor has-text-centered">
         <div class="tile is-parent">
             <article class="tile is-child box">
-                <p class="title"><?php echo $countprov; ?></p>
+                <p class="title"><?php echo $countpro; ?></p>
                 <p class="subtitle">Proveedores</p>
             </article>
         </div>
@@ -22,6 +23,7 @@
         <h1> Proveedores </h1>
         <a class="button is-link" href="?controller=proveedores&action=createTwo">Añadir</a>
 </div>
+
 <table class="table" width="100%" id="tabla">
     <thead>
         <tr>
@@ -42,6 +44,7 @@
         <?php endforeach ?>
     </tbody>
 </table>
+
 <script>
   var tabla = document.querySelector("#tabla");
 

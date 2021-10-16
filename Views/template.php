@@ -66,8 +66,12 @@ error_reporting(0);
                 </a>
             <?php endif ?>
 
-            <?php if($_SESSION['Rol'] != "01" or $_SESSION['Rol'] != "02"):?>
-                <a class="navbar-item" href="index.php?controller=productos&action=home">
+            <?php if($_SESSION['Rol'] != "01" AND $_SESSION['Rol'] != "02"):?>
+                <a class="navbar-item" href="index.php?controller=productos&action=view">
+                  Productos
+                </a>
+            <?php else :?>
+              <a class="navbar-item" href="index.php?controller=productos&action=home">
                   Productos
                 </a>
             <?php endif ?>
@@ -82,7 +86,7 @@ error_reporting(0);
             <?php endif ?>
 
             <?php if($_SESSION['Rol'] ==  "04"):?>
-                <a class="navbar-item" href="index.php?controller=Proveedores&action=home">
+                <a class="navbar-item" href="index.php?controller=Proveedores&action=dashboard">
                   Proveedores
                 </a>
                 <a class="navbar-item" href="index.php?controller=contacto&action=home">
