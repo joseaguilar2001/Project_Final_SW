@@ -19,7 +19,7 @@
             </div>
             <div class="column is-4-tablet is-3-desktop">
                 <div class="card card_deg_warinig">
-                    <div class="card-content">
+                    <div class="card-content"> 
                         <div class="content is-size-3">
                             Solicitudes en espera
                         </div>
