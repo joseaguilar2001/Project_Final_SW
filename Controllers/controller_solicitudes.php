@@ -86,6 +86,12 @@
             $solicitudes = Solicitudes::consult();
             include_once("./Views/Solicitudes/vista.php");
         }
+
+        public function vistas()
+        {
+            $solicitudes = Solicitudes::solisitudesaceptadas();
+            include_once("./Views/Solicitudes/vista.php");
+        }
         
     }
 ?>
