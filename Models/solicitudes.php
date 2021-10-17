@@ -116,6 +116,26 @@
             return $rowcount;
         }
 
+        public static function consultnew()
+        {
+            $lstSolicitudes = [];
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> query("SELECT NombreArea,  ProdName, Username, Fecha, Cantidad, Estado INNER JOIN areas USING(IdAreas) INNER JOIN productos USING(IdProducto) INNER JOIN usuario USING(idUsuario) WHERE solicitudes.Estado < 4");
+            foreach($sql -> fetchAll() as $solic)
+            {
+                $lstSolicitudes []= new Solicitudes(
+                    null,
+                    $solic['NombreArea'],
+                    $solic['ProdName'],
+                    $solic['Username'],
+                    $solic['Fecha'],
+                    $solic['Cantidad'],
+                    null
+                );
+            }
+            return $lstSolicitudes;
+        }
+
     }
 
 ?>
