@@ -42,5 +42,11 @@
             Areas::delete($id);
             header("Location: ./index.php?controller=areas&action=home");
         }
+
+        public function Dashboard()
+        {
+            $consult = Areas::consult();
+            include_once("./Views/Areas/dashboard.php");
+        }
     }
 ?>
