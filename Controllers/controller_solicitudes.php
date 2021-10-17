@@ -87,9 +87,21 @@
             include_once("./Views/Solicitudes/vista.php");
         }
 
-        public function vistas()
+        public function vistaS()
         {
             $solicitudes = Solicitudes::solisitudesaceptadas();
+            include_once("./Views/Solicitudes/vista.php");
+        }
+
+        public function vistaE()
+        {
+            $solicitudes = Solicitudes::solisitudesespera();
+            include_once("./Views/Solicitudes/vista.php");
+        }
+
+        public function vistaR()
+        {
+            $solicitudes = Solicitudes::solisitudesrechazadas();
             include_once("./Views/Solicitudes/vista.php");
         }
         

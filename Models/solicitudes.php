@@ -92,28 +92,61 @@
         {
             $listStudes = [];
             $conectionDB = DB::createInstant();
-            $sql=$conectionDB->query("SELECT a.NombreArea, p.ProdName, u.NombreUsuario, s.Fecha, s.Cantidad FROM solicitudes  AS s INNER JOIN areas AS a ON s.IdArea = a.IdAreas INNER JOIN productos AS p ON s.IdProducto = p.IdProducto INNER JOIN usuario AS u ON s.IdPerfil = u.idUsuario WHERE s.Estado = 1");
+            $sql=$conectionDB->query("SELECT areas.NombreArea, productos.ProdName, usuario.NombreUsuario, solicitudes.Fecha, solicitudes.Cantidad FROM solicitudes INNER JOIN areas ON solicitudes.IdArea = areas.IdAreas INNER JOIN productos ON solicitudes.IdProducto = productos.IdProducto INNER JOIN usuario ON solicitudes.idUsuario = usuario.idUsuario WHERE solicitudes.Estado = 1");
             foreach($sql -> fetchAll() as $sol)
             {
                 $listStudes []= new Solicitudes(
-                    null,
+                    $sol['IdSolicitud'],
                     $sol['NombreArea'],
                     $sol['ProdName'],
                     $sol['NombreUsuario'],
                     $sol['Fecha'],
                     $sol['Cantidad'],
-                   null
+                    $sol['Estado']
                 );
             }
             return $listStudes;
         }
 
-        public static function countsolit()
+
+        public static function solisitudesespera()
         {
+            $listStudes = [];
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB -> query("SELECT COUNT(*) total FROM solicitudes");
-            $rowcount = $sql -> fetchColumn();
-            return $rowcount;
+            $sql=$conectionDB->query("SELECT areas.NombreArea, productos.ProdName, usuario.NombreUsuario, solicitudes.Fecha, solicitudes.Cantidad FROM solicitudes INNER JOIN areas ON solicitudes.IdArea = areas.IdAreas INNER JOIN productos ON solicitudes.IdProducto = productos.IdProducto INNER JOIN usuario ON solicitudes.idUsuario = usuario.idUsuario WHERE solicitudes.Estado = 2");
+            foreach($sql -> fetchAll() as $sol)
+            {
+                $listStudes []= new Solicitudes(
+                    $sol['IdSolicitud'],
+                    $sol['NombreArea'],
+                    $sol['ProdName'],
+                    $sol['NombreUsuario'],
+                    $sol['Fecha'],
+                    $sol['Cantidad'],
+                    $sol['Estado']
+                );
+            }
+            return $listStudes;
+        }
+
+        public static function solisitudesrechazadas()
+        {
+            $listStudes = [];
+            $conectionDB = DB::createInstant();
+            $sql=$conectionDB->query("SELECT areas.NombreArea, productos.ProdName, usuario.NombreUsuario, solicitudes.Fecha, solicitudes.Cantidad FROM solicitudes INNER JOIN areas ON solicitudes.IdArea = areas.IdAreas INNER JOIN productos ON solicitudes.IdProducto = productos.IdProducto INNER JOIN usuario ON solicitudes.idUsuario = usuario.idUsuario WHERE solicitudes.Estado = 3");
+            foreach($sql -> fetchAll() as $sol)
+            {
+                $listStudes []= new Solicitudes(
+                    $sol['IdSolicitud'],
+                    $sol['NombreArea'],
+                    $sol['ProdName'],
+                    $sol['NombreUsuario'],
+                    $sol['Fecha'],
+                    $sol['Cantidad'],
+                    $sol['Estado']
+                );
+            }
+            return $listStudes;
         }
 
     }

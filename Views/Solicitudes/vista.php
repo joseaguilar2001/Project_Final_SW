@@ -5,31 +5,31 @@
                 <div class="card card_deg_green">
                     <div class="card-content">
                         <div class="content is-size-3">
-                            Solicitudes echas
+                            Solicitudes ya echas
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <p class="card-footer-item">
-                            <span>
-                                 <a href="#">Ver</a>
-                            </span>
-                        </p>
+                    <p class="card-footer-item">
+                                <span>
+                                    <a class="button is-link" href="?controller=solicitudes&action=vistaS">ver</a>
+                                </span>
+                            </p>
                     </footer>
                 </div>
             </div>
             <div class="column is-4-tablet is-3-desktop">
                 <div class="card card_deg_warinig">
-                    <div class="card-content"> 
+                    <div class="card-content">
                         <div class="content is-size-3">
                             Solicitudes en espera
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <p class="card-footer-item">
-                            <span>
-                                 <a href="#">Ver</a>
-                            </span>
-                        </p>
+                            <p class="card-footer-item">
+                                <span>
+                                <a class="button is-link" href="?controller=solicitudes&action=vistaE">ver</a>
+                                </span>
+                            </p>
                     </footer>
                 </div>
             </div>
@@ -41,11 +41,11 @@
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <p class="card-footer-item">
-                            <span>
-                                 <a href="#">Ver</a>
-                            </span>
-                        </p>
+                            <p class="card-footer-item">
+                                <span>
+                                <a class="button is-link" href="?controller=solicitudes&action=vistaR">ver</a>
+                                </span>
+                            </p>
                     </footer>
                 </div>
             </div>
@@ -53,37 +53,41 @@
     </div>
 </section>
 
-<section>
-<a class="button is-link" href="?controller=solicitudes&action=create">Create</a>
-<br>
 <table class="table" width="100%" id="tabla">
+    <!-- En está parte veremos los datos de todos los abastecimientos, tener en cuenta que el tfoot es un pie de página -->
   <thead>
       <tr>
-          <th><abbr title="Names">Nombre</abbr></th>
-          <th><abbr title="Fech">Fecha</abbr></th>
-          <th><abbr title="Cant">Cantidad</abbr></th>
-         
+          <th><abbr title="IdArea">Area</abbr></th>
+          <th><abbr title="IdProducto">Producto</abbr></th>
+          <th><abbr title="IdUser">Usuario</abbr></th>
+          <th><abbr title="Fecha">Fecha</abbr></th>
+          <th><abbr title="Cantidad">Cantidad</abbr></th>
+          <th><abbr title="Actions">Acciones</abbr></th>
       </tr>
   </thead>
   <tfoot>
       <tr>
-      <th><abbr title="Names">Nombre</abbr></th>
-          <th><abbr title="Fech">Fecha</abbr></th>
-          <th><abbr title="Cant">Cantidad</abbr></th>
-         
+          <th><abbr title="IdArea">Area</abbr></th>
+          <th><abbr title="IdProducto">Producto</abbr></th>
+          <th><abbr title="IdUser">Usuarios</abbr></th>
+          <th><abbr title="Fecha">Fecha</abbr></th>
+          <th><abbr title="Cantidad">Cantidad</abbr></th>
+          <th><abbr title="Actions">Acciones</abbr></th>
       </tr> 
   </tfoot>
-  <tbody>
-    <?php foreach($solicitudes as $soli) { ?>
-    <?php if($soli -> Estado != '4' || $soli -> Estado < 4){ ?>
+  <tbody> 
+    <?php foreach($solicitudes as $a) { ?>
+    <?php if($a -> Estado != '4' || $a -> Estado < 4){ ?>
       <tr>
-        <td><?php echo $soli->IdSolicitud; ?></td>
-        <td><?php echo $soli->Fecha; ?></td>
-        <td><?php echo $soli->Cantidad; ?></td>
+        <td><?php echo $a->Area; ?></td>
+        <td><?php echo $a->Producto; ?></td>
+        <td><?php echo $a->Usuario; ?></td>
+        <td><?php echo $a->Fecha; ?></td>
+        <td><?php echo $a->Cantidad; ?></td>
         <td>
           <div class="field is-grouped">
             <p class="control">
-              <a class="button is-warning" href="?controller=solicitudes&action=edit&id=<?php echo $soli->IdSoli; ?>">
+              <a class="button is-warning" href="?controller=solicitudes&action=edit&id=<?php echo $a->IdSolicitud; ?>">
                 Editar
               </a>
             </p>
@@ -91,10 +95,9 @@
         </td>
       </tr>
       <?php } ?>
-    <?php } ?>  
+    <?php } ?>
   </tbody>
 </table>
-<tbody>
 <script>
   var tabla = document.querySelector("#tabla");
 
@@ -103,4 +106,3 @@
     perPageSelect:[5, 10, 15, 20]
   });
 </script>
-</section>
