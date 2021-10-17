@@ -108,6 +108,14 @@
             return $listStudes;
         }
 
+        public static function countsolit()
+        {
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> query("SELECT COUNT(*) total FROM solicitudes");
+            $rowcount = $sql -> fetchColumn();
+            return $rowcount;
+        }
+
     }
 
 ?>

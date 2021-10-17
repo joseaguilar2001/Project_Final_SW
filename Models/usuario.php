@@ -151,6 +151,14 @@
             $randomString = rand(0,9999);
             return $randomString;
         }
+        
+        public static function countuser()
+        {
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> query("SELECT COUNT(*) total FROM usuario");
+            $rowcount = $sql -> fetchColumn();
+            return $rowcount;
+        }
     }
 
     
