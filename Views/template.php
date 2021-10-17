@@ -46,7 +46,7 @@ error_reporting(0);
               Inicio
             </a>
             
-<!--             <?php  if($_SESSION['Rol'] == "01"):?>
+             <?php  if($_SESSION['Rol'] == "01"):?>
                 <a class="navbar-item" href="index.php?controller=usuario&action=home">
                   Usuarios
                 </a>
@@ -107,8 +107,8 @@ error_reporting(0);
                   <a class="navbar-item" href="index.php?controller=contacto&action=home">
                     Contactos
                   </a>     
-            <?php endif ?> -->
-            <?php if($_SESSION['Rol'] == "01"): ?>
+            <?php endif ?> 
+<!--             <?php if($_SESSION['Rol'] == "01"): ?>
               <a class="navbar-item" href="index.php?controller=usuario&action=home">Usuarios</a>
               <a class="navbar-item" href="index.php?controller=rol&action=home">Roles de usuario</a>
               <a class="navbar-item" href="index.php?controller=autorizaciones&action=home">Autorizaciones</a>
@@ -135,7 +135,7 @@ error_reporting(0);
             <a class="navbar-item" href="index.php?controller=solicitudes&action=dashboard">Solicitudes</a>
               <a class="navbar-item" href="index.php?controller=productos&action=dashboard">Productos</a>
               <a class="navbar-item" href="index.php?controller=areas&action=dashboard">Areas</a>
-              <?php endif?>
+              <?php endif?> -->
           </div>
         </div>
 
