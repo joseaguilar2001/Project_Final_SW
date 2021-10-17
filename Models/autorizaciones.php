@@ -79,6 +79,24 @@
             $rowcount = $sql -> fetchColumn();
             return $rowcount;
         }
+
+        public static function consultNew()
+        {
+            $lstnew = [];
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> query("SELECT IdSolicitud, Username, Fecha, CodigoAuth FROM autorizaciones INNER JOIN usuario USING (idUsuario) WHERE autorizaciones.Estado < 4");
+            foreach($sql -> fetchAll() as $l)
+            {
+                $lstnew [] = new Autorizaciones(
+                    null,
+                    $l['IdSolicitud'],
+                    $l['Username'],
+                    $l['Fecha'],
+                    $l['CodigoAuth'],
+                    null
+                );
+            }
+        }
     }    
 
 ?>

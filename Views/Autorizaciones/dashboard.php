@@ -12,8 +12,20 @@
     <div class="tile is-ancestor has-text-centered">
         <div class="tile is-parent">
             <article class="tile is-child box">
-                <p class="title"></p>
-                <p class="subtitle"></p>
+                <p class="title"><?php echo $soli; ?></p>
+                <p class="subtitle">Solicitudes</p>
+            </article>
+        </div>
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <p class="title"><?php echo $user; ?></p>
+                <p class="subtitle">Usuarios</p>
+            </article>
+        </div>
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <p class="title"><?php echo $aut; ?></p>
+                <p class="subtitle">Autorizaciones</p>
             </article>
         </div>
     </div>
@@ -21,13 +33,21 @@
 <table class="table" width="100%" id="tabla">
     <thead>
         <tr>
-            <th></th>
+            <th>Solicitud</th>
+            <th>Usuario</th>
+            <th>Fecha</th>
+            <th>Codigo Autorización</th>
         </tr>
     </thead>
     <tbody>
+        <?php foreach($autoriza as $aut): ?>
         <th>
-            <th></th>
+            <th><?php echo $aut -> IdSoli;  ?></th>
+            <th><?php echo $aut -> IdUser; ?></th>
+            <th><?php echo $aut -> Date; ?></th>
+            <th><?php echo $aut -> CodA; ?></th>
         </th>
+        <?php endforeach  ?>
     </tbody>
 </table>
 <script>

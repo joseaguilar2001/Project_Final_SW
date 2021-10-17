@@ -12,12 +12,18 @@
     <div class="tile is-ancestor has-text-centered">
         <div class="tile is-parent">
             <article class="tile is-child box">
-                <p class="title"></p>
-                <p class="subtitle"></p>
+                <p class="title"><?php echo $area; ?></p>
+                <p class="subtitle">Areas</p>
             </article>
         </div>
     </div>
 </section>
+<div class="box">
+        <h1> Areas </h1>
+        <p>
+            En está parte encontrarás las diferentes áreas que se trabajan en la empresa.
+        </p>
+    </div>
 <table class="table" width="100%" id="tabla">
     <thead>
         <tr>

@@ -63,6 +63,14 @@
             header("Location: ./index.php?controller=contacto&action=home");
         }
 
+        public function Dashboard()
+        {
+            $contactos = Contacto::consultNew();
+            $prov = Proveedores::countprov();
+            $cont = Contacto::countcontacto();
+            include_once("./Views/Contacto/dashboard.php");
+        }
+
     }
 
 ?>

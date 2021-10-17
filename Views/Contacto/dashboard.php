@@ -12,8 +12,14 @@
     <div class="tile is-ancestor has-text-centered">
         <div class="tile is-parent">
             <article class="tile is-child box">
-                <p class="title"></p>
-                <p class="subtitle"></p>
+                <p class="title"><?php echo $prov; ?></p>
+                <p class="subtitle">Proveedores</p>
+            </article>
+        </div>
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <p class="title"><?php echo $cont; ?></p>
+                <p class="subtitle">Contactos</p>
             </article>
         </div>
     </div>
@@ -21,13 +27,23 @@
 <table class="table" width="100%" id="tabla">
     <thead>
         <tr>
-            <th></th>
+            <th>Proveedor</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Celular</th>
+            <th>Email</th>
         </tr>
     </thead>
     <tbody>
+        <?php foreach($contactos as $cnt): ?>
         <th>
-            <th></th>
+            <th><?php echo $cnt -> Proveedor; ?></th>
+            <th><?php echo $cnt -> Name; ?></th>
+            <th><?php echo $cnt -> LatName; ?></th>
+            <th><?php echo $cnt -> Celular; ?></th>
+            <th><?php echo $cnt -> Email; ?></th>
         </th>
+        <?php endforeach ?>
     </tbody>
 </table>
 <script>

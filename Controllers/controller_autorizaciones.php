@@ -69,6 +69,15 @@
             Autorizaciones::delete($id);
             header("Location: ./index.php?controller=autorizaciones&action=home");
         }
+
+        public function Dashboard()
+        {
+            $soli = Solicitudes::countsoli();
+            $user = Usuario::countuser();
+            $aut = Autorizaciones::countautor();
+            $autoriza = Autorizaciones::consultNew();
+            include_once("./Views/Autorizaciones/dashboard.php");
+        }
     }
 
 ?>

@@ -12,8 +12,8 @@
     <div class="tile is-ancestor has-text-centered">
         <div class="tile is-parent">
             <article class="tile is-child box">
-                <p class="title"></p>
-                <p class="subtitle"></p>
+                <p class="title"><?php echo $rol; ?></p>
+                <p class="subtitle">Roles existentes</p>
             </article>
         </div>
     </div>
@@ -21,13 +21,17 @@
 <table class="table" width="100%" id="tabla">
     <thead>
         <tr>
-            <th></th>
+            <th>Nombre</th>
+            <th>Descripción</th>
         </tr>
     </thead>
     <tbody>
+        <?php foreach($roles as $rl): ?>
         <th>
-            <th></th>
+            <th><?php echo $rl -> Nombre; ?></th>
+            <th><?php echo $rl -> Descripcion ?></th>
         </th>
+        <?php endforeach ?>
     </tbody>
 </table>
 <script>

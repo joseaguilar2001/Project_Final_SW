@@ -45,5 +45,12 @@
             Rol::delete($id);
             header("Location: ./index.php?controller=rol&action=home");
         }
+
+        public function Dashboard()
+        {
+            $roles = Rol::consult();
+            $rol = Rol::countrol();
+            include_once("./Views/Rol/dashboard.php");
+        }
     } 
 ?>

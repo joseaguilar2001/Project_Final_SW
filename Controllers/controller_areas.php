@@ -45,6 +45,7 @@
 
         public function Dashboard()
         {
+            $area = Areas::countarea();
             $consult = Areas::consult();
             include_once("./Views/Areas/dashboard.php");
         }
