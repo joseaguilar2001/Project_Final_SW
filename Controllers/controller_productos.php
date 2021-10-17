@@ -71,6 +71,11 @@
             $producto = Productos::productosporagotarse();
             include_once("./Views/Productos/views.php");
         }
+        public function ViewN()
+        {
+            $producto = Productos::productosagotados();
+            include_once("./Views/Productos/views.php");
+        }
         
     }
 

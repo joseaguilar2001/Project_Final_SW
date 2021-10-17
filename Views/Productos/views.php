@@ -44,7 +44,7 @@
                         <footer class="card-footer">
                             <p class="card-footer-item">
                                 <span>
-                                    <a class="button is-link" href="?controller=productos&action=ViewE">ver</a>
+                                    <a class="button is-link" href="?controller=productos&action=ViewN">ver</a>
                                 </span>
                             </p>
                         </footer>
