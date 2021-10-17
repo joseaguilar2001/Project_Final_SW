@@ -96,12 +96,13 @@
             foreach($sql -> fetchAll() as $sol)
             {
                 $listStudes []= new Solicitudes(
+                    null,
                     $sol['NombreArea'],
                     $sol['ProdName'],
                     $sol['NombreUsuario'],
                     $sol['Fecha'],
                     $sol['Cantidad'],
-                   
+                   null
                 );
             }
             return $listStudes;

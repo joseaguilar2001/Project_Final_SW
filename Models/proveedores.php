@@ -79,8 +79,8 @@
         public static function countprov()
         {
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB -> query("SELECT * FROM proveedores");
-            $rowcount = $sql -> rowCount();
+            $sql = $conectionDB -> query("SELECT COUNT(*) total FROM proveedores");
+            $rowcount = $sql -> fetchColumn();
             return $rowcount;
         }
     }

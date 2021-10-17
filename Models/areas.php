@@ -55,6 +55,14 @@
             $sql = $conectionDB->prepare("UPDATE areas SET NombreArea = ? , DescAreas = ? WHERE IdAreas = ?");
             $sql -> execute(array($name, $dscr, $id));
         }
+
+        public static function countarea()
+        {
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> query("SELECT COUNT(*) total FROM areas");
+            $rowcount = $sql -> fetchColumn();
+            return $rowcount;
+        }
     }
 
 ?>

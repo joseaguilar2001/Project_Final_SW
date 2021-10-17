@@ -103,8 +103,8 @@
         public static function countabas()
         {
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB -> query("SELECT * FROM abastecimientos");
-            $rowcount = $sql -> rowCount();
+            $sql = $conectionDB -> query("SELECT COUNT(*) total FROM abastecimientos");
+            $rowcount = $sql -> fetchColumn();
             return $rowcount;
         }
     }

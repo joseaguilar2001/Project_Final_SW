@@ -71,9 +71,9 @@
         public static function countprod()
         {
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB -> query("SELECT * FROM productos");
-            $count = $sql -> rowCount();
-            return $count;
+            $sql = $conectionDB -> query("SELECT COUNT(*) total FROM productos");
+            $rowcount = $sql -> fetchColumn();
+            return $rowcount;
         }
 
         public static function cantiprod($id)

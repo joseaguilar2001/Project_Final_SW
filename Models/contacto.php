@@ -83,9 +83,9 @@
         public static function countcontacto()
         {
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB -> query("SELECT * FROM proveedores");
-            $count = $sql -> rowCount();
-            return $count;
+            $sql = $conectionDB -> query("SELECT COUNT(*) total FROM contacto");
+            $rowcount = $sql -> fetchColumn();
+            return $rowcount;
         }
     }
 

@@ -71,6 +71,14 @@
             $sql = $conectionDB->prepare("UPDATE rol SET  Nombre_Rol = ?, Descripcion = ?, Estado = ? WHERE idRol = ?");
             $sql -> execute(array($name, $desc, $estado, $id));
         }
+
+        public static function countrol()
+        {
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> query("SELECT COUNT(*) total FROM rol");
+            $rowcount = $sql -> fetchColumn();
+            return $rowcount;
+        }
     }
 
 ?>

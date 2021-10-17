@@ -71,6 +71,14 @@
             $sql = $conectionDB -> prepare("UPDATE autorizaciones SET IdSolicitud = ?, Usuario_ID = ?, Fecha = ?, CodigoAuth = ?, Estado = ? WHERE IdAutorizaciones = ?");
             $sql -> execute(array( $idSol, $user, $date, $codA, $state, $id));
         }
+
+        public static function countautor()
+        {
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> query("SELECT COUNT(*) total FROM autorizaciones");
+            $rowcount = $sql -> fetchColumn();
+            return $rowcount;
+        }
     }    
 
 ?>
