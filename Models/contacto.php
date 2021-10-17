@@ -87,6 +87,26 @@
             $rowcount = $sql -> fetchColumn();
             return $rowcount;
         }
+
+        public static function consultNew()
+        {
+            $lstContacto = [];
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> query("SELECT Provname, ContactoName, ContactoApe, ContactoCell, ContactoMail FROM contacto INNER JOIN proveedores USING(IdProveedor) WHERE contacto.Estado = 1");
+            foreach($sql -> fetchAll() as $contacto)
+            {
+                $lstContacto []= new Contacto(
+                    null,
+                    $contacto['ProvName'],
+                    $contacto['ContactoName'],
+                    $contacto['ContactoApe'],
+                    $contacto['ContactoCell'],
+                    $contacto['ContactoMail'],
+                    null
+                );
+            }
+            return $lstContacto;
+        }
     }
 
 ?>
