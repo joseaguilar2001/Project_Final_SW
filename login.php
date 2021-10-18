@@ -1,66 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Body Style -->
-    <link rel="stylesheet" href="assets/css/login.css">
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
-    <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BIORAD</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <!-- Bulma Version 0.9.0-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="shortcut icon" href="logo_svg.svg">
 </head>
+
 <body>
-    <!------ Login Form  ---------->
-<form class="vh-100 gradient-custom" action="validate.php" method="post">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card bg-dark text-white" style="border-radius: 1rem;">
-          <div class="card-body p-5 text-center">
+    <section class="hero is-success is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-white">Inicio de sesión</h3>
+                    <hr class="login-hr">
+                    <p class="subtitle has-text-white">Ingrese su Usuario y Contraseña para continuar</p>
+                    <div class="box">
+                        <figure class="avatar">
+                            <img src="logo_svg.svg" width="80%">
+                        </figure>
+                        <form action="validate.php" method="post">
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-large" name="nameuser" type="text" placeholder="Nombre de Usuario" autofocus="">
+                                </div>
+                            </div>
 
-            <!------ Login Components ---------->
-            <div class="mb-md-5 mt-md-4 pb-5">
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-large" name="password" type="password" placeholder="Contraseña">
+                                </div>
+                            </div>
+                            <button class="button is-block is-info is-large is-fullwidth">Iniciar Sesion </button>
+                        </form>
+                    </div>
 
-              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-              <p class="text-white-50 mb-5">Ingrese su nombre de usuario y contraseña</p>
-
-              <!------ Usuario Field ---------->
-              <div class="form-outline form-white mb-4">
-                <input type="text" name="nameuser" id="typeEmailX" class="form-control form-control-lg" />
-                <label class="form-label" for="typeEmailX">Usuario</label>
-              </div>
-
-              <!------ Password Field ---------->
-              <div class="form-outline form-white mb-4">
-                <input type="password" name="password" id="typePasswordX" class="form-control form-control-lg" />
-                <label class="form-label" for="typePasswordX">Contraseña</label>
-              </div>
-
-              <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Olvide mi contraseña</a></p>
-
-              <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-
-            <!------ Social Networks ---------->
-              <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                <a href="https://www.mesoamericana.edu.gt" class="text-white"><i class="fab fa-qq fa-lg"></i></a>
-              </div>
-
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</form>
+    </section>
+    <script async type="text/javascript" src="../js/bulma.js"></script>
 </body>
-
-<!-- MDB -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
 
 </html>

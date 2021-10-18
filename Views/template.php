@@ -24,6 +24,8 @@ error_reporting(0);
     <!-- Bulma Version 0.9.0-->
     <link rel="stylesheet" type="text/css" href="../assets/css/admin.css">
     <link rel="stylesheet" href="../assets/css/Deradado_cards.css">
+
+    <link rel="shortcut icon" href="logo_svg.svg">
   </head>
   <body>
   
