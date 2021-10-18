@@ -23,7 +23,7 @@
         <div class="tile is-parent">
             <article class="tile is-child box">
                 <p class="title">Contactos</p>
-                <a class="button is-focused" href="index?controller=contacto&action=home" >Administrar</a>
+                <a class="button is-focused" href="index?controller=contacto&action=dashboard" >Administrar</a>
             </article>
         </div>
         <div class="tile is-parent">
@@ -33,5 +33,27 @@
             </article>
         </div>
     </div>
-  <?php endif ?>    
+  <?php endif ?> 
+  <?php if($_SESSION['Rol'] == "03" ): ?>
+    <div class="tile is-ancestor has-text-centered">
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <p class="title">Productos</p>
+                <a class="button is-focused" href="index?controller=productos&action=view">Administrar</a>
+            </article>
+        </div>
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <p class="title">Abastecimientos</p>
+                <a class="button is-focused" href="index?controller=abastecimientos&action=dashboard" >Administrar</a>
+            </article>
+        </div>
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <p class="title">Solicitudes</p>
+                <a class="button is-focused" href="index?controller=solicitudes&action=vista">Administrar</a>
+            </article>
+        </div>
+    </div>
+  <?php endif ?>   
 </section>

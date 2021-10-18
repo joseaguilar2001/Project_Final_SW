@@ -1,3 +1,15 @@
+<section class="hero is-small is-info welcome">
+    <div class="hero-body">
+            <h1 class="title">
+                ¡Bienvenido!
+            </h1>
+            <h2 class="subtitle">
+                ¡Esperamos que tengas un buen día!
+            </h2>
+
+            <a class="button is-primary" href="index.php?controller=solicitudes&action=create">Realizar una nueva solicitud</a>
+    </div>
+</section>
 <section class="section">
     <div class="container">
         <div class="columns is-4-tablet is-2-descktop is-centered">

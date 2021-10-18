@@ -1,8 +1,10 @@
-<h3 class="title mb-6">Abastecimientos</h3>
+<h3 class="title mb-2">Abastecimientos</h3>
     <p class="help is-success">
     En esté formulario, por favor colocar cada uno de los campos solicitados,
     se le recomienda que tenga mucho cuidado.
 </p>
+<br>
+<section class="columns">
     <form action="" method="post">
     <div class="field">
     <label class="label">Escoger el Proveedor:</label>
@@ -40,20 +42,21 @@
     <p class="help">Ingrese aquí la cantidad de productos.</p>
     </div>
 
-    <div class="field">
-    <label class="label" for="fecha">Fecha:</label>
-    <div class="control">
-        <input type="date" id="fecha" name="fecha" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
-    </div>
-    <p class="help">Ingrese aquí la fecha en la que se hizo el abastecimiento.</p>
-    </div>
+   <div class="field">
+  <label class="label">Fecha</label>
+  <div class="control">
+    <input class="input" name="fecha" type="date" placeholder="Fecha Solicitud">
+  </div>
+</div>
 
     <div class="field is-grouped">
     <div class="control">
         <button value="Crear" type="submit" class="button is-link">Crear</button>
     </div>
     <div class="control">
-        <a name="cancel" href="index.php?controller=abastecimientos&action=home" class="button is-text">Cancelar</a>
+        <a name="cancel" href="index.php?controller=abastecimientos&action=dashboard" class="button is-text">Cancelar</a>
     </div>
     </div>
     </form>
+</section>
+<br>

@@ -6,6 +6,8 @@
             <h2 class="subtitle">
                 ¡Esperamos que tengas un buen día!
             </h2>
+
+            <a class="button is-primary" href="index.php?controller=contacto&action=create">Añadir un contacto</a>
     </div>
 </section>
 <section class="info-tiles">
@@ -36,13 +38,11 @@
     </thead>
     <tbody>
         <?php foreach($contactos as $cnt): ?>
-        <th>
             <th><?php echo $cnt -> Proveedor; ?></th>
             <th><?php echo $cnt -> Name; ?></th>
-            <th><?php echo $cnt -> LatName; ?></th>
+            <th><?php echo $cnt -> LastName; ?></th>
             <th><?php echo $cnt -> Celular; ?></th>
             <th><?php echo $cnt -> Email; ?></th>
-        </th>
         <?php endforeach ?>
     </tbody>
 </table>

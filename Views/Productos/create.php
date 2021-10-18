@@ -59,9 +59,18 @@
     <div class="control">
       <button value="crear" type="submit" class="button is-link">Crear</button>
     </div>
-    <div class="control">
-    <a href="index.php?controller=productos&action=home" class="button is-text">Cancelar</a>
-    </div>
+    <?php if($_SESSION['Rol'] == "04"): ?>
+          <a href="index.php?controller=productoss&action=view" class="button is-text">Cancelar</a>
+        <?php endif ?>
+        <?php if($_SESSION['Rol'] == "03"): ?>
+          <a href="index.php?controller=productos&action=view" class="button is-text">Cancelar</a>
+        <?php endif ?>
+        <?php if($_SESSION['Rol'] == "02"): ?>
+          <a href="index.php?controller=productos&action=home" class="button is-text">Cancelar</a>
+        <?php endif ?>
+        <?php if($_SESSION['Rol'] == "01"): ?>
+          <a href="index.php?controller=productos&action=home" class="button is-text">Cancelar</a>
+        <?php endif ?>
   </div>
 </form>
 </div>

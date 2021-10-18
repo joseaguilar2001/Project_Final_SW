@@ -27,10 +27,10 @@
     </thead>
     <tbody>
         <?php foreach($roles as $rl): ?>
-        <th>
-            <th><?php echo $rl -> Nombre; ?></th>
-            <th><?php echo $rl -> Descripcion ?></th>
-        </th>
+        <tr>
+            <td><?php echo $rl -> Nombre; ?></td>
+            <td><?php echo $rl -> Descripcion ?></td>
+        </tr>
         <?php endforeach ?>
     </tbody>
 </table>

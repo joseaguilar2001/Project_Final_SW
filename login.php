@@ -52,11 +52,6 @@
               </div>
 
             </div>
-
-            <div>
-              <p class="mb-0">No posee un usuario <a href="#!" class="text-white-50 fw-bold">Crear Usuario</a></p>
-            </div>
-
           </div>
         </div>
       </div>

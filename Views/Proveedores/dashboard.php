@@ -6,9 +6,10 @@
             <h2 class="subtitle">
                 ¡Esperamos que tengas un buen día!
             </h2>
+
+            <a class="button is-primary" href="index.php?controller=proveedores&action=CreateTwo">Añadir un proveedor</a>
     </div>
 </section>
-
 <section class="info-tiles">
     <div class="tile is-ancestor has-text-centered">
         <div class="tile is-parent">
@@ -19,10 +20,6 @@
         </div>
     </div>
 </section>
-<div class="box">
-        <h1> Proveedores </h1>
-        <a class="button is-link" href="?controller=proveedores&action=createTwo">Añadir</a>
-</div>
 
 <table class="table" width="100%" id="tabla">
     <thead>

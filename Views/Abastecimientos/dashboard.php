@@ -6,7 +6,10 @@
             <h2 class="subtitle">
                 ¡Esperamos que tengas un buen día!
             </h2>
+
+            <a class="button is-primary" href="index.php?controller=abastecimientos&action=createnew">Registrar un nuevo Abastecimiento</a>
     </div>
+</section>
 </section>
 <section class="info-tiles">
     <div class="tile is-ancestor has-text-centered">
@@ -14,21 +17,21 @@
             <article class="tile is-child box">
                 <p class="title"><?php echo $provs; ?></p>
                 <p class="subtitle">Proveedores</p>
-                <a class="button is-link">Añadir</a>
+                <a class="button is-link" href="?controller=proveedores&action=createtwo">Añadir</a>
             </article>
         </div>
         <div class="tile is-parent">
             <article class="tile is-child box">
                 <p class="title"><?php echo $prodC; ?></p>
                 <p class="subtitle">Productos</p>
-                <a class="button is-link">Añadir</a>
+                <a class="button is-link" href="index?controller=productos&action=create">Añadir</a>
             </article>
         </div>
         <div class="tile is-parent">
             <article class="tile is-child box">
                 <p class="title"><?php echo $abasC; ?></p>
                 <p class="subtitle">Abastecimientos</p>
-                <a class="button is-link" href="?controller=abastecimientos&action=createNew">Añadir</a>
+                <p class="subtitle is-3">Registrados en el sistema</p>
             </article>
         </div>
     </div>
@@ -61,7 +64,7 @@
                 </div>
             </div>
             <footer class="card-footer">
-                <a href="#" class="card-footer-item">View All</a>
+                <!-- <a href="#" class="card-footer-item">View All</a> -->
             </footer>
         </div>
     </div>
@@ -93,14 +96,10 @@
                 </div>
             </div>
             <footer class="card-footer">
-                <a href="#" class="card-footer-item">View All</a>
+                <!-- <a href="#" class="card-footer-item">View All</a> -->
             </footer>
         </div>
     </div>
-    </div>
-    <div class="box">
-        <h1> Abastecimientos </h1>
-        <a class="button is-link">Añadir</a>
     </div>
     <table class="table" width="100%" id="tabla">
     <!-- En está parte veremos los datos de todos los abastecimientos, tener en cuenta que el tfoot es un pie de página -->

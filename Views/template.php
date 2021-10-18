@@ -51,17 +51,17 @@ error_reporting(0);
                   Usuarios
                 </a>
 
-                <a class="navbar-item" href="index.php?controller=rol&action=home">
+                <a class="navbar-item" href="index.php?controller=rol&action=dashboard">
                   Roles de usuario
                 </a>
             <?php endif ?> 
 
             <?php if($_SESSION['Rol'] ==  "02" or $_SESSION['Rol']  ==  "01"):?>
-                <a class="navbar-item" href="index.php?controller=autorizaciones&action=home">
+                <a class="navbar-item" href="?controller=autorizaciones&action=home">
                   Autorizaciones
                 </a>
 
-                <a class="navbar-item" href="index.php?controller=areas&action=home">
+                <a class="navbar-item" href="index.php?controller=areas&action=dashboard">
                   Areas
                 </a>
             <?php endif ?>
@@ -80,7 +80,7 @@ error_reporting(0);
                 <a class="navbar-item" href="index.php?controller=abastecimientos&action=dashboard">
                   Abastecimientos
                 </a>
-                <a class="navbar-item" href="index.php?controller=Solicitudes&action=home">
+                <a class="navbar-item" href="index.php?controller=Solicitudes&action=vistas">
                   Solicitudes
                 </a>
             <?php endif ?>
@@ -89,7 +89,7 @@ error_reporting(0);
                 <a class="navbar-item" href="index.php?controller=Proveedores&action=dashboard">
                   Proveedores
                 </a>
-                <a class="navbar-item" href="index.php?controller=contacto&action=home">
+                <a class="navbar-item" href="index.php?controller=contacto&action=dashboard ">
                   Contactos
                 </a>
             <?php endif?>

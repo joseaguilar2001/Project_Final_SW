@@ -70,9 +70,18 @@
           <div class="control">
             <button type="submit" value="Crear" class="button is-link">Crear</button>
           </div>
-          <div class="control">
-          <a href="index.php?controller=solicitudes&action=home" class="button is-text">Cancelar</a>
-          </div>
+          <?php if($_SESSION['Rol'] == "04"): ?>
+          <a href="index.php?controller=solicitudes&action=vista" class="button is-text">Cancelar</a>
+        <?php endif ?>
+        <?php if($_SESSION['Rol'] == "03"): ?>
+          <a href="index.php?controller=solicitudes&action=vista" class="button is-text">Cancelar</a>
+        <?php endif ?>
+        <?php if($_SESSION['Rol'] == "02"): ?>
+          <a href="index.php?controller=proveedores&action=home" class="button is-text">Cancelar</a>
+        <?php endif ?>
+        <?php if($_SESSION['Rol'] == "01"): ?>
+          <a href="index.php?controller=proveedores&action=home" class="button is-text">Cancelar</a>
+        <?php endif ?>
         </div>
     </form>
 </div>

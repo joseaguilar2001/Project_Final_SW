@@ -33,10 +33,10 @@
     </thead>
     <tbody>
         <?php foreach($consult as $c): ?>
-        <th>
-            <th><?php echo $c -> NombreArea; ?></th>
-            <th><?php echo $c -> DescAreas; ?></th>
-        </th>
+        <tr>
+            <td><?php echo $c -> NombreArea; ?></td>
+            <td><?php echo $c -> DescAreas; ?></td>
+        </tr>
         <?php endforeach ?>
     </tbody>
 </table>
