@@ -38,12 +38,14 @@
     </thead>
     <tbody>
         <?php foreach($contactos as $cnt): ?>
-            <th><?php echo $cnt -> Proveedor; ?></th>
-            <th><?php echo $cnt -> Name; ?></th>
-            <th><?php echo $cnt -> LastName; ?></th>
-            <th><?php echo $cnt -> Celular; ?></th>
-            <th><?php echo $cnt -> Email; ?></th>
+        <tr>
+            <td><?php echo $cnt -> Proveedor; ?></td>
+            <td><?php echo $cnt -> Name; ?></td>
+            <td><?php echo $cnt -> LastName; ?></td>
+            <td><?php echo $cnt -> Celular; ?></td>
+            <td><?php echo $cnt -> Email; ?></td>
         <?php endforeach ?>
+        </tr>
     </tbody>
 </table>
 <script>

@@ -60,7 +60,7 @@
       <button value="crear" type="submit" class="button is-link">Crear</button>
     </div>
     <?php if($_SESSION['Rol'] == "04"): ?>
-          <a href="index.php?controller=productoss&action=view" class="button is-text">Cancelar</a>
+          <a href="index.php?controller=productos&action=view" class="button is-text">Cancelar</a>
         <?php endif ?>
         <?php if($_SESSION['Rol'] == "03"): ?>
           <a href="index.php?controller=productos&action=view" class="button is-text">Cancelar</a>
