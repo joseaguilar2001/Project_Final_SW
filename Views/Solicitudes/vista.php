@@ -17,7 +17,7 @@
                 <div class="card card_deg_green">
                     <div class="card-content">
                         <div class="content is-size-3">
-                            Solicitudes ya echas
+                            Solicitudes ya hechas
                         </div>
                     </div>
                     <footer class="card-footer">
@@ -74,7 +74,6 @@
           <th><abbr title="IdUser">Usuario</abbr></th>
           <th><abbr title="Fecha">Fecha</abbr></th>
           <th><abbr title="Cantidad">Cantidad</abbr></th>
-          <th><abbr title="Actions">Acciones</abbr></th>
       </tr>
   </thead>
   <tfoot>
@@ -84,7 +83,6 @@
           <th><abbr title="IdUser">Usuarios</abbr></th>
           <th><abbr title="Fecha">Fecha</abbr></th>
           <th><abbr title="Cantidad">Cantidad</abbr></th>
-          <th><abbr title="Actions">Acciones</abbr></th>
       </tr> 
   </tfoot>
   <tbody> 
@@ -96,15 +94,7 @@
         <td><?php echo $a->Usuario; ?></td>
         <td><?php echo $a->Fecha; ?></td>
         <td><?php echo $a->Cantidad; ?></td>
-        <td>
-          <div class="field is-grouped">
-            <p class="control">
-              <a class="button is-warning" href="?controller=solicitudes&action=edit&id=<?php echo $a->IdSolicitud; ?>">
-                Editar
-              </a>
-            </p>
-          </div>
-        </td>
+
       </tr>
       <?php } ?>
     <?php } ?>

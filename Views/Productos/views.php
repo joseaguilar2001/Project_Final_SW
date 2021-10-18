@@ -78,7 +78,6 @@
           <th><abbr title="Exist">Existencias</abbr></th>
           <th><abbr title="Medida">Medida</abbr></th>
           <th><abbr title="Fecha">Producto Fecha</abbr></th>
-          <th><abbr title="Actions">Acciones</abbr></th>
       </tr>
   </thead>
   <tfoot>
@@ -88,7 +87,6 @@
           <th><abbr title="Exist">Existencias</abbr></th>
           <th><abbr title="Medida">Medida</abbr></th>
           <th><abbr title="Fecha">Producto Fecha</abbr></th>
-          <th><abbr title="Actions">Acciones</abbr></th>
       </tr> 
   </tfoot>
   <tbody>
@@ -100,15 +98,6 @@
             <td><?php echo $prod->Exist; ?></td>
             <td><?php echo $prod->Medida; ?></td>
             <td><?php echo $prod->DateOff; ?></td>
-            <td>
-            <div class="field is-grouped">
-                <p class="control">
-                <a class="button is-warning" href="?controller=productos&action=edit&id=<?php echo $prod->IdProd; ?>">
-                    Editar
-                </a>
-                </p>
-            </div>
-            </td>
         </tr>
         <?php } ?>
     <?php } ?>

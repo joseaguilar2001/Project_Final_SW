@@ -154,7 +154,7 @@ error_reporting(0);
       </div>
     </div>
       </nav>
-      <div class="container">
+      <div class="">
     
       <?php include_once("./router.php"); ?>
   </div>
