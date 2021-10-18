@@ -110,34 +110,6 @@ error_reporting(0);
                     Contactos
                   </a>     
             <?php endif ?> 
-<!--             <?php if($_SESSION['Rol'] == "01"): ?>
-              <a class="navbar-item" href="index.php?controller=usuario&action=home">Usuarios</a>
-              <a class="navbar-item" href="index.php?controller=rol&action=home">Roles de usuario</a>
-              <a class="navbar-item" href="index.php?controller=autorizaciones&action=home">Autorizaciones</a>
-              <a class="navbar-item" href="index.php?controller=areas&action=home">Areas</a>
-              <a class="navbar-item" href="index.php?controller=productos&action=home">Productos</a>
-              <a class="navbar-item" href="index.php?controller=abastecimientos&action=home">Abastecimientos</a>
-              <a class="navbar-item" href="index.php?controller=solicitudes&action=home">Solicitudes</a>
-              <a class="navbar-item" href="index.php?controller=proveedores&action=home">Proveedores</a>
-              <a class="navbar-item" href="index.php?controller=contacto&action=home">Contactos</a>
-              <?php endif?>
-            <?php  if($_SESSION['Rol'] == "02"):?>
-                <a class="navbar-item" href="index.php?controller=usuario&action=dashboard">Abastecimientos</a>
-                <a class="navbar-item" href="index.php?controller=rol&action=dashboard">Contactos</a>
-                <a class="navbar-item" href="index.php?controller=proveedores&action=dashboard">Proveedores</a>
-                <?php endif?>
-
-            <?php if($_SESSION['Rol'] ==  "03"):?>
-                <a class="navbar-item" href="index.php?controller=autorizaciones&action=dashboard">Autorizaciones</a>
-                <a class="navbar-item" href="index.php?controller=areas&action=dashboard">Areas</a>
-                <a class="navbar-item" href="index.php?controller=solicitudes&action=vista">Solicitudes</a>
-                <a class="navbar-item" href="index.php?controller=abastecimientos&action=dashboard">Abastecimientos</a>
-                <?php endif?>
-            <?php if($_SESSION['Rol'] == "04"): ?>
-            <a class="navbar-item" href="index.php?controller=solicitudes&action=dashboard">Solicitudes</a>
-              <a class="navbar-item" href="index.php?controller=productos&action=dashboard">Productos</a>
-              <a class="navbar-item" href="index.php?controller=areas&action=dashboard">Areas</a>
-              <?php endif?> -->
           </div>
         </div>
 
@@ -154,10 +126,11 @@ error_reporting(0);
       </div>
     </div>
       </nav>
-      <div class="">
-    
+      <section class="section">
+
       <?php include_once("./router.php"); ?>
-  </div>
+      </section>
+  
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
