@@ -7,7 +7,7 @@
             if(!isset(self::$instant))
             {
                 $optionPDO[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
-                self::$instant = new PDO('mysql:host=localhost;dbname=ing_otro','root','',$optionPDO);
+                self::$instant = new PDO('mysql:host=localhost;dbname=prueba_nueva','root','',$optionPDO);
             }
             return self::$instant;
         }

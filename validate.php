@@ -5,7 +5,7 @@ $contraseña=$_POST['password'];
 session_start();
 $_SESSION['nameuser']=$usuario;
 
-$conn = mysqli_connect('localhost',  'root',  '',  'ing_otro') or die(mysqli_error($conn));
+$conn = mysqli_connect('localhost',  'root',  '',  'prueba_nueva') or die(mysqli_error($conn));
 
 $consulta="SELECT*FROM usuario where Username='$usuario' and Password='$contraseña'";
 $resultado=mysqli_query($conn,$consulta);

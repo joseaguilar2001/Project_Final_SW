@@ -1,13 +1,13 @@
 <?php 
 session_start();
-error_reporting(0);
+
 ?>
 
 <?php if($_SESSION["nameuser"]==null || $_SESSION["nameuser"]==""): 
     header("location: login.php");
     die();  
 ?>
-<?php else :?> 
+<?php else: ?>
 <!DOCTYPE html>
 <html>  <head>
     <meta charset="utf-8">
@@ -23,13 +23,14 @@ error_reporting(0);
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <!-- Bulma Version 0.9.0-->
     <link rel="stylesheet" type="text/css" href="../assets/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/Deradado_cards.css">
 
     <link rel="shortcut icon" href="logo_svg.svg">
   </head>
   <body>
   
-      <nav class="navbar" role="navigation" aria-label="main navigation">
+      <nav class="navbar is-link is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           
           <a class="navbar-item" href="../index.php">
@@ -116,7 +117,7 @@ error_reporting(0);
         <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary" href="index.php?controller=usuario&action=edit&id=<?php echo $_SESSION['id'];?>">
+          <a class="button is-linked" href="index.php?controller=usuario&action=edit&id=<?php echo $_SESSION['id'];?>">
             <strong><?php echo $_SESSION['nameuser'];?></strong>
           </a>
           <a class="button is-light" href="../closesesion.php">
@@ -126,15 +127,13 @@ error_reporting(0);
       </div>
     </div>
       </nav>
-      <section class="section">
-
+      <main>
       <?php include_once("./router.php"); ?>
-      </section>
-  
+      </main>
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>BIORAD</strong> es para todos una solución, es calidad y es seguridad.
+        <strong>BIORAD</strong> seguridad y certeza es lo que nosotros proveemos.
       </p>
     </div>
   </footer>
