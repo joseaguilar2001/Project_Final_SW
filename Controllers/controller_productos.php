@@ -54,29 +54,28 @@
             header("Location: ./index.php?controller=productos&action=home");
         }
 
-        public function View()
+        public function Dashboard()
         {
-            $producto = Productos::consult();
-            include_once("./Views/Productos/views.php");
-        }
-
-        public function ViewE()
-        {
-            $producto = Productos::productosexistenes();
-            include_once("./Views/Productos/views.php");
-        }
-        
-        public function ViewA()
-        {
-            $producto = Productos::productosporagotarse();
-            include_once("./Views/Productos/views.php");
-        }
-        public function ViewN()
-        {
-            $producto = Productos::productosagotados();
-            include_once("./Views/Productos/views.php");
-        }
-        
+            $id = $_GET['idN'];
+            $producto = '';
+            if($id == '0')
+            {
+                $producto = Productos::consult();
+            }
+            if($id == '1')
+            {
+                $producto = Productos::productosagotados();
+            }
+            if($id == '2')
+            {
+                $producto = Productos::productosexistenes();
+            }
+            if($id == '3')
+            {
+                $producto = Productos::productosporagotarse();
+            }
+            include_once("./Views/Productos/dashboard.php");
+        }        
     }
 
 ?>

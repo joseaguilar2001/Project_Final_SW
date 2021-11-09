@@ -108,7 +108,7 @@
         public static function productosporagotarse(){
             $lispr = [];
             $conectionDB=DB::createInstant();
-            $sql=$conectionDB->query("SELECT * FROM productos WHERE Existencias < ProdLimite AND Existencias > 0");
+            $sql=$conectionDB->query("SELECT * FROM productos WHERE Existencias == ProdLimite AND Existencias > 0");
             foreach($sql->fetchAll() as $prod)
             {
                 $lispr []= new Productos($prod['IdProducto'],
@@ -122,7 +122,7 @@
         public static function productosagotados(){
             $lispr = [];
             $conectionDB=DB::createInstant();
-            $sql=$conectionDB->query("SELECT * FROM productos WHERE Existencias == 0");
+            $sql=$conectionDB->query("SELECT * FROM productos WHERE Existencias < ProdLimite");
             foreach($sql->fetchAll() as $prod)
             {
                 $lispr []= new Productos($prod['IdProducto'],
