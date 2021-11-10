@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 ?>
 
 <?php if($_SESSION["nameuser"]==null || $_SESSION["nameuser"]==""): 
