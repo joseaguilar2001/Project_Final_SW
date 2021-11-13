@@ -1,6 +1,7 @@
 <h3 class="title mb-6">Registros sobre los Abastecimientos.</h3>
 <br>
 <a class="button is-link" href="?controller=abastecimientos&action=create">Create</a>
+<a id="GeneratePDF" href="?controller=abastecimientos&action=imprimir"  class="button is-primary">Imprimir</a>
 <br>
 <table class="table" width="100%" id="tabla">
     <!-- En está parte veremos los datos de todos los abastecimientos, tener en cuenta que el tfoot es un pie de página -->
@@ -59,10 +60,12 @@
   </tbody>
 </table>
 <script>
+
   var tabla = document.querySelector("#tabla");
 
   var dataTable = new DataTable(tabla, {
     perPage:5,
     perPageSelect:[5, 10, 15, 20]
   });
+
 </script>

@@ -84,7 +84,7 @@
         {
             $lstnew = [];
             $conectionDB = DB::createInstant();
-            $sql = $conectionDB -> query("SELECT IdSolicitud, Username, Fecha, CodigoAuth FROM autorizaciones INNER JOIN usuario USING (idUsuario) WHERE autorizaciones.Estado < 4");
+            $sql = $conectionDB -> query("SELECT IdSolicitud, Username, Fecha, CodigoAuth FROM autorizaciones t1 INNER JOIN usuario t2 ON t1.Usuario_ID = t2.idUsuario");
             foreach($sql -> fetchAll() as $l)
             {
                 $lstnew [] = new Autorizaciones(

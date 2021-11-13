@@ -153,10 +153,10 @@
             }
             include_once("./Views/Abastecimientos/create2.php");
         }
-
         public function Imprimir()
         {
-            
+            $abas = Abastecimientos::consult();
+            include_once('./Views/Abastecimientos/imprimir.php');
         }
     }
 ?>

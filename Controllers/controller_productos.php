@@ -64,15 +64,21 @@
             }
             if($id == '1')
             {
-                $producto = Productos::productosagotados();
+                $c = Productos::numProductosAgotados();
+                if($c == 0 || $c == '0')
+                {
+                    $producto = null;
+                }
+                
             }
             if($id == '2')
             {
-                $producto = Productos::productosexistenes();
+                $producto = Productos::productosNormales();
             }
             if($id == '3')
             {
                 $producto = Productos::productosporagotarse();
+                
             }
             include_once("./Views/Productos/dashboard.php");
         }        

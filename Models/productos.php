@@ -91,24 +91,10 @@
             $sql = $conectionDB -> prepare("UPDATE productos SET Existencias = ? WHERE IdProducto = ?");
             $sql -> execute(array($cant, $id));
         }
-        public static function productosexistenes(){
-            $lispr = [];
-            $conectionDB=DB::createInstant();
-            $sql=$conectionDB->query("SELECT * FROM productos WHERE Existencias > ProdLimite");
-            foreach($sql->fetchAll() as $prod)
-            {
-                $lispr []= new Productos($prod['IdProducto'],
-                $prod['ProdName'], $prod['ProdPrice'], $prod['Existencias'],
-                $prod['ProdMedida'], $prod['ProdLimite'], $prod['ProdDateOff'],
-                $prod['Estado']);
-            }
-            return $lispr;
-            
-        }
         public static function productosporagotarse(){
             $lispr = [];
             $conectionDB=DB::createInstant();
-            $sql=$conectionDB->query("SELECT * FROM productos WHERE Existencias == ProdLimite AND Existencias > 0");
+            $sql=$conectionDB->query("SELECT * FROM productos WHERE Existencias <= ProdLimite");
             foreach($sql->fetchAll() as $prod)
             {
                 $lispr []= new Productos($prod['IdProducto'],
@@ -122,7 +108,7 @@
         public static function productosagotados(){
             $lispr = [];
             $conectionDB=DB::createInstant();
-            $sql=$conectionDB->query("SELECT * FROM productos WHERE Existencias < ProdLimite");
+            $sql=$conectionDB->query("SELECT * FROM productos WHERE Existencias == 0");
             foreach($sql->fetchAll() as $prod)
             {
                 $lispr []= new Productos($prod['IdProducto'],
@@ -130,8 +116,27 @@
                 $prod['ProdMedida'], $prod['ProdLimite'], $prod['ProdDateOff'],
                 $prod['Estado']);
             }
-            return $lispr;;
-            
+            return $lispr;
+        }
+        public static function numProductosAgotados()
+        {
+            $conectionDB=DB::createInstant();
+            $sql=$conectionDB->query("SELECT COUNT(*) FROM productos WHERE Existencias = 0");
+            $rowcount = $sql -> fetchColumn();
+            return $rowcount;
+        }
+        public static function productosNormales(){
+            $lispr = [];
+            $conectionDB=DB::createInstant();
+            $sql=$conectionDB->query("SELECT * FROM productos WHERE Existencias > ProdLimite + 5");
+            foreach($sql->fetchAll() as $prod)
+            {
+                $lispr []= new Productos($prod['IdProducto'],
+                $prod['ProdName'], $prod['ProdPrice'], $prod['Existencias'],
+                $prod['ProdMedida'], $prod['ProdLimite'], $prod['ProdDateOff'],
+                $prod['Estado']);
+            }
+            return $lispr;
         }
     }
 ?>

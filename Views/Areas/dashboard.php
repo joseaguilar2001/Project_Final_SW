@@ -1,4 +1,4 @@
-<section class="hero is-small is-info welcome">
+<section class="hero is-link is-large is-large-with-navbar has-text-centered">
     <div class="hero-body">
             <h1 class="title">
                 ¡Bienvenido!
@@ -18,10 +18,10 @@
         </div>
     </div>
 </section>
-<div class="box">
-        <h1> Areas </h1>
+<div class="box has-text-centered">
+        <h1 class="title"> Áreas </h1>
         <p>
-            En está parte encontrarás las diferentes áreas que se trabajan en la empresa.
+            En está parte encontrará las diferentes áreas que se trabajan en la empresa, aquí es para que usted puede tener un excelente descripción de que se trata cadea una.
         </p>
     </div>
 <table class="table" width="100%" id="tabla">
