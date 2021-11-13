@@ -1,4 +1,4 @@
-<section class="hero is-link is-fullheight-with-navbar has-text-centered">
+<section class="hero is-link is-large is-large-with-navbar has-text-centered">
     <div class="hero-body">
         <div class="container">
         <h1 class="title is-1">
@@ -7,8 +7,12 @@
             <h2 class="subtitle is-3">
                 ¡Esperamos que tengas un buen día!
             </h2>
-
+            <p>En está área encontrará reportes sobres los productos existentes en la empresa, cada uno tiene un limite.</p>
+            <br>
+            <?php if($idU == '04'): ?>
+            <?php elseif($idU != '04'): ?>
             <a class="button is-primary" href="index.php?controller=productos&action=create">Añadir un producto</a>
+            <?php endif ?>
         </div>
     </div>
 </section>

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once("./Models/productos.php");
     include_once("./db.php");
     DB::createInstant();
@@ -56,6 +57,7 @@
 
         public function Dashboard()
         {
+            $idU = $_SESSION['Rol'];
             $id = $_GET['idN'];
             $producto = '';
             if($id == '0')
@@ -69,7 +71,10 @@
                 {
                     $producto = null;
                 }
-                
+                else 
+                {
+                    $producto = Productos::productosagotados();
+                }
             }
             if($id == '2')
             {

@@ -1,3 +1,4 @@
+<div class="modal-content has-background-whyte py-5 px-5">
 <h3 class="title mb-2">Abastecimientos</h3>
     <p class="help is-success">
     En esté formulario, por favor colocar cada uno de los campos solicitados,
@@ -59,4 +60,4 @@
     </div>
     </form>
 </section>
-<br>
+</div>

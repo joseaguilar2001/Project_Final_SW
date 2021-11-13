@@ -29,7 +29,7 @@ session_start();
   </head>
   <body>
   
-      <nav class="navbar is-link is-fixed-top" role="navigation" aria-label="main navigation">
+      <nav class="navbar is-white is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           
           <a class="navbar-item" href="../index.php">
@@ -47,70 +47,157 @@ session_start();
             <a class="navbar-item" href="index.php">
               Inicio
             </a>
-            
-             <?php  if($_SESSION['Rol'] == "01"):?>
-                <a class="navbar-item" href="index.php?controller=usuario&action=home">
-                  Usuarios
-                </a>
-
-                <a class="navbar-item" href="index.php?controller=rol&action=home">
-                  Roles de usuario
-                </a>
-            <?php endif ?> 
-
-            <?php if($_SESSION['Rol'] ==  "02" or $_SESSION['Rol']  ==  "01"):?>
-                <a class="navbar-item" href="?controller=autorizaciones&action=home">
-                  Autorizaciones
-                </a>
-
-                <a class="navbar-item" href="index.php?controller=areas&action=home">
-                  Areas
-                </a>
-            <?php endif ?>
-
-            <?php if($_SESSION['Rol'] != "01" AND $_SESSION['Rol'] != "02"):?>
-                <a class="navbar-item" href="index.php?controller=productos&action=view">
-                  Productos
-                </a>
-            <?php else :?>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Productos
+            </a>
+            <div class="navbar-dropdown">
+          <?php if($_SESSION['Rol'] == '01'): ?>
               <a class="navbar-item" href="index.php?controller=productos&action=home">
-                  Productos
-                </a>
-            <?php endif ?>
-          
-            <?php if($_SESSION['Rol'] == "03"):?>
-                <a class="navbar-item" href="index.php?controller=abastecimientos&action=dashboard">
-                  Abastecimientos
-                </a>
-                <a class="navbar-item" href="index.php?controller=Solicitudes&action=vistas">
-                  Solicitudes
-                </a>
-            <?php endif ?>
-
-            <?php if($_SESSION['Rol'] ==  "04"):?>
-                <a class="navbar-item" href="index.php?controller=Proveedores&action=dashboard">
-                  Proveedores
-                </a>
-                <a class="navbar-item" href="index.php?controller=contacto&action=dashboard ">
-                  Contactos
-                </a>
-            <?php endif?>
-
-            <?php if($_SESSION['Rol'] != "03" AND $_SESSION['Rol'] != "04"): ?>
-                  <a class="navbar-item" href="index.php?controller=abastecimientos&action=home">
-                    Abastecimientos
-                  </a>
-                  <a class="navbar-item" href="index.php?controller=Solicitudes&action=home">
-                    Solicitudes
-                  </a>         
-                  <a class="navbar-item" href="index.php?controller=Proveedores&action=home">
-                    Proveedores
-                  </a>
-                  <a class="navbar-item" href="index.php?controller=contacto&action=home">
-                    Contactos
-                  </a>     
-            <?php endif ?> 
+                Registros
+              </a>
+              <a class="navbar-item" href="index.php?controller=productos&action=create">
+                Crear
+              </a>
+              <a class="navbar-item" href="index.php?controller=productos&action=dashboard&idN=0">
+                Productos
+              </a>
+          <?php elseif($_SESSION['Rol']=='02' OR $_SESSION['Rol']=='03' OR $_SESSION['Rol']=='04'): ?>
+            <a class="navbar-item" href="index.php?controller=productos&action=dashboard&idN=0">
+                Productos
+              </a>
+          <?php endif ?>
+            </div>
           </div>
+          <!-- Abastecimientos -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Abastecimientos
+            </a>
+            <div class="navbar-dropdown">
+          <?php if($_SESSION['Rol'] == '01'): ?>
+              <a class="navbar-item" href="index.php?controller=abastecimientos&action=home">
+                Registros
+              </a>
+              <a class="navbar-item" href="index.php?controller=abastecimientos&action=create">
+                Crear
+              </a>
+              <a class="navbar-item" href="index.php?controller=abastecimientos&action=dashboard">
+                Abastecimientos
+              </a>
+          <?php elseif($_SESSION['Rol']=='02' OR $_SESSION['Rol']=='03'): ?>
+            <a class="navbar-item" href="index.php?controller=abastecimientos&action=dashboard">
+                Abastecimientos
+              </a>
+          <?php endif ?>
+            </div>
+            </div>
+            <!-- Autorizaciones -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+            <span><i class="fa-solid fa-abacus"></i></span><span>Autorizaciones</span>  
+            </a>
+            <div class="navbar-dropdown">
+          <?php if($_SESSION['Rol'] == '01'): ?>
+              <a class="navbar-item" href="index.php?controller=autorizaciones&action=home">
+                Registros
+              </a>
+              <a class="navbar-item" href="index.php?controller=autorizaciones&action=create">
+                Crear
+              </a>
+              <a class="navbar-item" href="index.php?controller=autorizaciones&action=dashboard">
+                Autorizaciones
+              </a>
+          <?php elseif($_SESSION['Rol']=='02' OR $_SESSION['Rol']=='03'): ?>
+            <a class="navbar-item" href="index.php?controller=autorizaciones&action=dashboard">
+                Autorizaciones
+              </a>
+          <?php endif ?>
+            </div>
+          </div>
+          <!-- Solicitudes -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+            Proveedores  
+            </a>
+            <div class="navbar-dropdown">
+          <?php if($_SESSION['Rol'] == '01'): ?>
+              <a class="navbar-item" href="index.php?controller=proveedores&action=home">
+                Registros
+              </a>
+              <a class="navbar-item" href="index.php?controller=proveedores&action=create">
+                Crear
+              </a>
+              <a class="navbar-item" href="index.php?controller=proveedores&action=dashboard">
+                Proveedores
+              </a>
+              <a class="navbar-item" href="index.php?controller=contacto&action=home">
+                Contactos
+              </a>
+              <a class="navbar-item" href="index.php?controller=contacto&action=dashboard">
+                Lista de Contactos
+              </a>
+          <?php elseif($_SESSION['Rol']=='02' OR $_SESSION['Rol']=='03' OR $_SESSION['Rol']=='04'): ?>
+            <a class="navbar-item" href="index.php?controller=solicitudes&action=dashboard">
+                Solicitudes
+              </a>
+              <a class="navbar-item" href="index.php?controller=contacto&action=dashboard">
+                Contactos
+              </a>
+          <?php endif ?>
+            </div>
+          </div>
+          <!-- Proveedores -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+            Solicitudes  
+            </a>
+            <div class="navbar-dropdown">
+          <?php if($_SESSION['Rol'] == '01'): ?>
+              <a class="navbar-item" href="index.php?controller=solicitudes&action=home">
+                Registros
+              </a>
+              <a class="navbar-item" href="index.php?controller=solicitudes&action=create">
+                Crear
+              </a>
+              <a class="navbar-item" href="index.php?controller=solicitudes&action=dashboard">
+                Solicitudes
+              </a>
+              <a class="navbar-item" href="index.php?controller=areas&action=home">
+                Control de Áreas
+              </a>
+          <?php elseif($_SESSION['Rol']=='02' OR $_SESSION['Rol']=='03' OR $_SESSION['Rol']=='03'): ?>
+            <a class="navbar-item" href="index.php?controller=solicitudes&action=dashboard">
+                Solicitudes
+              </a>
+              <a class="navbar-item" href="index.php?controller=areas&action=dashboard">
+                Áreas
+              </a>
+          <?php endif ?>
+            </div>
+          </div>
+          <!-- Usuarios -->
+          <?php if($_SESSION['Rol'] == '01'): ?>
+            <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+            Usuarios  
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="index.php?controller=usuario&action=home">
+                Registros
+              </a>
+              <a class="navbar-item" href="index.php?controller=usuario&action=create">
+                Crear
+              </a>
+              <a class="navbar-item" href="index.php?controller=rol&action=home">
+                Control de Roles
+              </a>
+            </div>
+          </div>
+            <?php else: ?>
+            <?php endif ?>
+          </div>
+          
         </div>
 
         <div class="navbar-end">
@@ -120,7 +207,7 @@ session_start();
             <strong><?php echo $_SESSION['nameuser'];?></strong>
           </a>
           <a class="button is-danger" href="../closesesion.php">
-            Cerrar Sesion
+           <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span><span>Cerrar Sesion</span>
           </a>
         </div>
       </div>

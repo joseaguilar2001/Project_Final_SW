@@ -1,7 +1,7 @@
 <section class="hero is-link is-large is-large-with-navbar has-text-centered">
     <div class="hero-body">
             <h1 class="title">
-                ¡Bienvenido!
+                Contactos de Proveedores
             </h1>
             <h2 class="subtitle">
                 ¡Esperamos que tengas un buen día!
