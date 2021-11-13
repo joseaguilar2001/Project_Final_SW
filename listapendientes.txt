@@ -1,0 +1,11 @@
+Te hace falta las siguientes actividades: 
+0. Rutear las solicitudes conforme a los roles o la persona en sesión.
+1. Email cada vez que el usuario exiga un producto que ya se va a vencer.
+2. Email cada vez que se haga una solicitud. 
+3. Email cada vez que se haga una autorización, al usuario y al gerente.
+4. Imprimir los siguientes productos:
+    4.1 autorizaciónes
+    4.2 solicitudes
+    4.3 productos
+5. Lograr que el usuario pueda pedir más de un producto.
+6. Colocar un checkbox para que sea más facil de enviar el codigo de autorización para el bodeguero.

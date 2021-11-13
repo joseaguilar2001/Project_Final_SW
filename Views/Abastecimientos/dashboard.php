@@ -17,7 +17,7 @@
             <article class="tile is-child box">
                 <p class="title"><?php echo $provs; ?></p>
                 <p class="subtitle">Proveedores</p>
-                <a class="button is-link" href="?controller=proveedores&action=createtwo">Añadir</a>
+                <a class="button is-link" href="?controller=proveedores&action=create">Añadir</a>
             </article>
         </div>
         <div class="tile is-parent">
