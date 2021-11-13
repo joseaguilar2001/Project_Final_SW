@@ -24,27 +24,29 @@
             En está parte encontrará las diferentes áreas que se trabajan en la empresa, aquí es para que usted puede tener un excelente descripción de que se trata cadea una.
         </p>
     </div>
-<table class="table" width="100%" id="tabla">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Descripción</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach($consult as $c): ?>
-        <tr>
-            <td><?php echo $c -> NombreArea; ?></td>
-            <td><?php echo $c -> DescAreas; ?></td>
-        </tr>
-        <?php endforeach ?>
-    </tbody>
-</table>
-<script>
-  var tabla = document.querySelector("#tabla");
+    <div id="app" class="row columns is-multiline">
+    <?php foreach($consult as $c): ?>
+    
+          <div v-for="card in cardData" key="card.id" class="column is-4">
+            <div class="card large">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="/imagen.jpg" alt="Image">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4 no-padding"><?php echo $c -> NombreArea; ?></p>
 
-  var dataTable = new DataTable(tabla, {
-    perPage:5,
-    perPageSelect:[5, 10, 15, 20]
-    });
-</script>
+                  </div>
+                </div>
+                <div class="content">
+                  <?php echo $c -> DescAreas; ?>
+                  <div class="background-icon"><span class="icon-twitter"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php endforeach ?>
+    </div>

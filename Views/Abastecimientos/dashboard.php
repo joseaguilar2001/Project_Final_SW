@@ -7,7 +7,7 @@
                 ¡Esperamos que tengas un buen día!
             </h2>
 
-            <a class="button is-primary" href="index.php?controller=abastecimientos&action=createnew">Registrar un nuevo Abastecimiento</a>
+            <a class="button is-primary" href="index.php?controller=abastecimientos&action=create">Registrar un nuevo Abastecimiento</a>
     </div>
 </section>
 </section>

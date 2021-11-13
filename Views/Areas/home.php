@@ -1,4 +1,13 @@
-<h3 class="title mb-6">Registros sobre las Áreas.</h3>
+<section class="hero is-link is-large is-large-with-navbar has-text-centered">
+    <div class="hero-body">
+            <h1 class="title">
+                Áreas Existentes
+            </h1>
+            <h2 class="subtitle">
+                Las diferentes áreas que existen en la empresa.
+            </h2>
+    </div>
+</section>
 <br>
 <a class="button is-link" href="?controller=areas&action=create">Create</a>
 <br>

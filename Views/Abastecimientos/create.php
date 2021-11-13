@@ -49,7 +49,7 @@
     </div>
     <p class="help">Ingrese aquí la fecha en la que se hizo el abastecimiento.</p>
     </div>
-
+    <?php if($idU == '01'): ?>
     <div class="control">
     <div class="select">
         <select name="estado">
@@ -61,6 +61,7 @@
     </div>
     <p class="help">Ingrese aquí el estado del abastecimiento.</p>
     </div>
+    <?php endif ?>
     
 
     <div class="field is-grouped">

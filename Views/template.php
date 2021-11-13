@@ -108,7 +108,7 @@ session_start();
               <a class="navbar-item" href="index.php?controller=autorizaciones&action=dashboard">
                 Autorizaciones
               </a>
-          <?php elseif($_SESSION['Rol']=='02' OR $_SESSION['Rol']=='03'): ?>
+          <?php elseif($_SESSION['Rol']=='02' OR $_SESSION['Rol']=='03' OR $_SESSION['Rol']=='04'): ?>
             <a class="navbar-item" href="index.php?controller=autorizaciones&action=dashboard">
                 Autorizaciones
               </a>
@@ -137,7 +137,7 @@ session_start();
               <a class="navbar-item" href="index.php?controller=contacto&action=dashboard">
                 Lista de Contactos
               </a>
-          <?php elseif($_SESSION['Rol']=='02' OR $_SESSION['Rol']=='03' OR $_SESSION['Rol']=='04'): ?>
+          <?php elseif($_SESSION['Rol']=='02' OR $_SESSION['Rol']=='03'): ?>
             <a class="navbar-item" href="index.php?controller=solicitudes&action=dashboard">
                 Solicitudes
               </a>
@@ -166,7 +166,7 @@ session_start();
               <a class="navbar-item" href="index.php?controller=areas&action=home">
                 Control de Áreas
               </a>
-          <?php elseif($_SESSION['Rol']=='02' OR $_SESSION['Rol']=='03' OR $_SESSION['Rol']=='03'): ?>
+          <?php elseif($_SESSION['Rol']=='02' OR $_SESSION['Rol']=='03' OR $_SESSION['Rol']=='04'): ?>
             <a class="navbar-item" href="index.php?controller=solicitudes&action=dashboard">
                 Solicitudes
               </a>

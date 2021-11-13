@@ -29,36 +29,32 @@
         public function Create()
         {
             $idU = $_SESSION['Rol'];
-            if($idU == '01')
+            $proveedores = Proveedores::consult();
+            $productos = Productos::consult();
+            if($_POST)
             {
-                $proveedores = Proveedores::consult();
-                $productos = Productos::consult();
-                if($_POST)
+                $idPv = $_POST['idPrv'];
+                $idPr = $_POST['idPrd'];
+                $cant = $_POST['cnt'];
+                $date = $_POST['fecha'];
+                $stt = $_POST['estado'];
+                if($idU != '01')
                 {
-                    // print_r($_POST);
-                    $idPv = $_POST['idPrv'];
-                    $idPr = $_POST['idPrd'];
-                    $cant = $_POST['cnt'];
-                    $date = $_POST['fecha'];
-                    $stt = $_POST['estado'];
-                    if($idPr == '0' || $idPr == 0)
-                    {
-                        $idPr = null;
-                    }
-                    if($idPv == '0' || $idPv == 0)
-                    {
-                        $idPv = null;
-                    }
-                    Abastecimientos::create($idPv,$idPr,$cant,$date,$stt);
-                    header("Location: ./index.php?controller=abastecimientos&action=home");
+                    $stt = '1';
                 }
-                include_once("./Views/Abastecimientos/create.php");
+                if($idPr == '0' || $idPr == 0)
+                {
+                    $idPr = null;
+                }
+                if($idPv == '0' || $idPv == 0)
+                {
+                    $idPv = null;
+                }
+                Abastecimientos::create($idPv,$idPr,$cant,$date,$stt);
+                header("Location: ./index.php?controller=abastecimientos&action=home");
             }
-            else 
-            {
-                include_once("./Views/Abastecimientos/error.php");
-            }
-            
+            include_once("./Views/Abastecimientos/create.php");
+
         }
 
         public function Edit()
@@ -115,6 +111,7 @@
 
         public function Dashboard()
         {
+            $idU = $_SESSION['Rol'];
             $abas = Abastecimientos::consultNew();
             $abasC = Abastecimientos::countabas();
             $prodC = Productos::countprod();
@@ -125,39 +122,8 @@
             include_once("./Views/Abastecimientos/dashboard.php");
         }
 
-        public function CreateNew()
-        {
-            $proveedores = Proveedores::consult();
-            $productos = Productos::consult();
-            if($_POST)
-            {
-                // print_r($_POST);
-                $idPv = $_POST['idPrv'];
-                $idPr = $_POST['idPrd'];
-                $cant = $_POST['cnt'];
-                $date = $_POST['fecha'];
-                if($idPr == '0' || $idPr == 0)
-                {
-                    $idPr = null;
-                }
-                else
-                {
-                    $cantidad = Productos::cantiprod($idPr);
-                    $n = (int)($cantidad + $cant);
-                    Productos::updatecant($idPr, $n); 
-                }
-                if($idPv == '0' || $idPv == 0)
-                {
-                    $idPv = null;
-                }
-                Abastecimientos::create($idPv,$idPr,$cant,$date,1);
-                header("Location: ./index.php?controller=abastecimientos&action=dashboard");
-            }
-            include_once("./Views/Abastecimientos/create2.php");
-        }
         public function Imprimir()
         {
-            
             $dompdf = new Dompdf();
             $abas = Abastecimientos::consult();
             include_once('./Views/Abastecimientos/imprimir.php');
