@@ -5,6 +5,8 @@
     include_once("./Models/proveedores.php");
     include_once("./Models/contacto.php");
     include_once("./Models/usuario.php");
+    include_once('./Lib/dompdf/autoload.inc.php');
+    use Dompdf\Dompdf;
     include_once("./db.php");
     DB::createInstant();
     class ControlAbastecimientos
@@ -155,6 +157,8 @@
         }
         public function Imprimir()
         {
+            
+            $dompdf = new Dompdf();
             $abas = Abastecimientos::consult();
             include_once('./Views/Abastecimientos/imprimir.php');
         }

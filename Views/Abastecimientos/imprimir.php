@@ -56,9 +56,6 @@
 <?php
     $html = ob_get_clean();
     echo $html;
-    require_once './Lib/dompdf/autoload.inc.php';
-    use Dompdf\Dompdf;
-    $dompdf = new Dompdf();
     $options = $dompdf -> getOptions();
     $options -> set(array('isRemoteEnabled' => true));
     $dompdf -> setOptions($options);
@@ -71,12 +68,11 @@
     error_reporting(E_ALL ^ E_NOTICE);
     if($result)
     {
-        $dompdf -> stream($filename, array("Attachment" => true));
+        $dompdf -> stream($filename, array("Attachment" => false));
     }
     else 
     {
-
+      
     }
-    $dompdf -> stream($filename, array("Attachment" => false));
     exit();
 ?>

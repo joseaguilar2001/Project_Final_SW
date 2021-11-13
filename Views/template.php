@@ -53,7 +53,7 @@ session_start();
                   Usuarios
                 </a>
 
-                <a class="navbar-item" href="index.php?controller=rol&action=dashboard">
+                <a class="navbar-item" href="index.php?controller=rol&action=home">
                   Roles de usuario
                 </a>
             <?php endif ?> 
@@ -63,7 +63,7 @@ session_start();
                   Autorizaciones
                 </a>
 
-                <a class="navbar-item" href="index.php?controller=areas&action=dashboard">
+                <a class="navbar-item" href="index.php?controller=areas&action=home">
                   Areas
                 </a>
             <?php endif ?>
@@ -116,10 +116,10 @@ session_start();
         <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-linked" href="index.php?controller=usuario&action=edit&id=<?php echo $_SESSION['id'];?>">
+          <a class="button is-primary" href="index.php?controller=usuario&action=edit&id=<?php echo $_SESSION['id'];?>">
             <strong><?php echo $_SESSION['nameuser'];?></strong>
           </a>
-          <a class="button is-light" href="../closesesion.php">
+          <a class="button is-danger" href="../closesesion.php">
             Cerrar Sesion
           </a>
         </div>
