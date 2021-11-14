@@ -21,9 +21,7 @@ if($filas != null){
       $_SESSION['start'] = time();
       $_SESSION['expire'] = $_SESSION['start'] + (40 * 60);
       header('location:index.php');
-      echo "run";
-    
-
+      echo "En session";
 }else{
     ?>
     <?php

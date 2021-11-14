@@ -1,5 +1,4 @@
 <?php
-    include("connection.php");
     error_reporting(0);
     session_start();
 
@@ -11,7 +10,7 @@
       if($currentTime > $_SESSION['expire']) {
         session_unset();
         session_destroy();
-        header('location:login.php');
+        header('refresh:1; url=login.php');
         die();
       }
       else {
