@@ -26,6 +26,7 @@
         <input class="input" name="email" type="email" placeholder="Email del proveedor">
       </div>
     </div>
+<?php if($idU == '01'): ?>
     <div class="select">
   <select name="estado">
     <option value="0">Seleccione el estado: </option>
@@ -34,12 +35,17 @@
     <option value="3">Inactivo</option>
   </select>
 </div>
+<?php endif ?>
     <div class="field is-grouped">
       <div class="control">
         <button value="crear" type="submit" class="button is-link">Crear</button>
       </div>
       <div class="control">
-      <a href="index.php?controller=proveedores&action=home" class="button is-text">Cancelar</a>
+      <?php if($idU == '01'): ?>
+        <a href="index.php?controller=proveedores&action=home" class="button is-text">Cancelar</a>
+      <?php elseif($idU == '02' OR $idU == '03'): ?>
+        <a href="index.php?controller=proveedores&action=dashboard" class="button is-text">Cancelar</a>
+      <?php endif ?>
       </div>
     </div>
 </form>

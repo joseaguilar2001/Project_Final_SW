@@ -13,22 +13,8 @@
           <th><abbr title="Limite">Limite</abbr></th>
           <th><abbr title="Fecha">Producto Fecha</abbr></th>
           <th><abbr title="Estado">Estado</abbr></th>
-          <th><abbr title="Actions">Acciones</abbr></th>
       </tr>
   </thead>
-  <tfoot>
-      <tr>
-      <th><abbr title="IdProd">IdProducto</abbr></th>
-          <th><abbr title="Name">Nombre</abbr></th>
-          <th><abbr title="Price">Precio</abbr></th>
-          <th><abbr title="Exist">Existencias</abbr></th>
-          <th><abbr title="Medida">Medida</abbr></th>
-          <th><abbr title="Limite">Limite</abbr></th>
-          <th><abbr title="Fecha">Producto Fecha</abbr></th>
-          <th><abbr title="Estado">Estado</abbr></th>
-          <th><abbr title="Actions">Acciones</abbr></th>
-      </tr> 
-  </tfoot>
   <tbody>
     <?php foreach($producto as $prod) { ?>
     <?php if($prod -> Estado != '4' || $prod -> Estado < 4){ ?>
@@ -41,20 +27,6 @@
         <td><?php echo $prod->Limite; ?></td>
         <td><?php echo $prod->DateOff; ?></td>
         <td><?php echo $prod->Estado; ?></td>
-        <td>
-          <div class="field is-grouped">
-            <p class="control">
-              <a class="button is-warning" href="?controller=productos&action=edit&id=<?php echo $prod->IdProd; ?>">
-                Editar
-              </a>
-            </p>
-            <p class="control">
-              <a class="button is-danger" href="?controller=productos&action=delete&id=<?php echo $prod->IdProd; ?>">
-                Borrar
-              </a>
-            </p>
-          </div>
-        </td>
       </tr>
       <?php } ?>
     <?php } ?>  

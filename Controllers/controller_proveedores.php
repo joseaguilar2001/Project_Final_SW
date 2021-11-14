@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once("./Models/proveedores.php");
     include_once("./db.php");
     DB::createInstant();
@@ -11,6 +12,7 @@
         }
         public function Create()
         {
+            $idU = $_SESSION['Rol'];
             if($_POST)
             {
                 $name = $_POST['nombre'];
@@ -18,7 +20,14 @@
                 $email = $_POST['email'];
                 $estado = $_POST['estado'];
                 Proveedores::create($name, $direccion, $email, $estado);
-                header("Location: ./index.php?controller=proveedores&action=home");
+                if($idU == '01')
+                {
+                    header("Location: ./index.php?controller=proveedores&action=home");
+                }
+                else 
+                {
+                    header("Location: ./index.php?controller=proveedores&action=dashboard");
+                }
             }
             include_once("./Views/Proveedores/create.php");
         }
@@ -48,19 +57,6 @@
             $countpro = Proveedores::countprov();
             $provs = Proveedores::consult();
             include_once("./Views/Proveedores/dashboard.php");
-        }
-
-        public function CreateTwo()
-        {
-            if($_POST)
-            {
-                $name = $_POST['nombre'];
-                $direccion = $_POST['direction'];
-                $email = $_POST['email'];
-                Proveedores::create($name, $direccion, $email, 1);
-                header("Location: ./index.php?controller=proveedores&action=dashboard");
-            }
-            include_once("./Views/Proveedores/create2.php");
         }
     }
 ?>

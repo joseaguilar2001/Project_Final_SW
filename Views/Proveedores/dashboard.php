@@ -1,13 +1,19 @@
-<section class="hero is-small is-info welcome">
+<section class="hero is-info welcome is-large is-large-with-navbar has-text-centered">
     <div class="hero-body">
-            <h1 class="title">
+        <div class="container">
+        <h1 class="title is-1">
                 ¡Bienvenido!
             </h1>
-            <h2 class="subtitle">
+            <h2 class="subtitle is-3">
                 ¡Esperamos que tengas un buen día!
             </h2>
-
-            <a class="button is-primary" href="index.php?controller=proveedores&action=CreateTwo">Añadir un proveedor</a>
+            <p>En está área encontrará los proveedores de los productos existentes en la empresa, cada uno tiene un limite.</p>
+            <br>
+            <?php if($idU == '04'): ?>
+            <?php elseif($idU != '04'): ?>
+            <a class="button is-primary" href="index.php?controller=proveedores&action=create">Añadir un producto</a>
+            <?php endif ?>
+        </div>
     </div>
 </section>
 <section class="info-tiles">

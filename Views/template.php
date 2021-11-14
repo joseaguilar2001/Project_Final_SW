@@ -22,11 +22,9 @@
     <title>Sistema BIORAD
     </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
     <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <!-- Bulma Version 0.9.0-->
     <link rel="stylesheet" type="text/css" href="../assets/css/admin.css">
@@ -147,7 +145,7 @@
               </a>
           <?php elseif($_SESSION['Rol']=='02' OR $_SESSION['Rol']=='03'): ?>
             <a class="navbar-item" href="index.php?controller=proveedores&action=dashboard">
-                Solicitudes
+                Proveedores
               </a>
               <a class="navbar-item" href="index.php?controller=contacto&action=dashboard">
                 Contactos
