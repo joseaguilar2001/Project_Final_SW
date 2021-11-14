@@ -16,31 +16,18 @@ $_SESSION['id'] = $filas['idUsuario'];
 
 if($filas != null){
   
-    switch($filas['Rol'])
-    {
-        case "01":
-            header("location:index.php");
-            break;
-        case "02":
-            header("location:index.php");
-            break;
-        case "03":
-            header("location:index.php");
-          break;
-        case "04":
-            header("location:index.php");
-          break;
-        default:
-            header("location:index.php");
-            break;
-    }
+  session_start();
+      $_SESSION['auth'] = true;
+      $_SESSION['start'] = time();
+      $_SESSION['expire'] = $_SESSION['start'] + (40 * 60);
+      header('location:index.php');
+      echo "run";
     
 
 }else{
     ?>
     <?php
     include("login.php");
-
   ?>
   <section>
   <div class="notification">

@@ -1,12 +1,20 @@
-<?php 
-session_start();
-?>
+<?php
+    include("connection.php");
+    error_reporting(0);
+    session_start();
 
-<?php if($_SESSION["nameuser"]==null || $_SESSION["nameuser"]==""): 
-    header("location: login.php");
-    die();  
+    if(!$_SESSION['auth']) {
+      header('location:index.php');
+    }
+    else {
+      $currentTime = time();
+      if($currentTime > $_SESSION['expire']) {
+        session_unset();
+        session_destroy();
+        header('location:index.php');
+      }
+      else {
 ?>
-<?php else: ?>
 <!DOCTYPE html>
 <html>  <head>
     <meta charset="utf-8">
@@ -224,5 +232,8 @@ session_start();
     </div>
   </footer>
   </body>
+  <?php
+        }
+      }
+    ?>
 </html>
-<?php endif?>
