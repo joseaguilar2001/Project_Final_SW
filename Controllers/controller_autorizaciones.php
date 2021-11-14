@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include_once("./Models/autorizaciones.php");
     include_once("./Models/solicitudes.php");
     include_once("./Models/usuario.php");
@@ -16,10 +17,22 @@
         {
             $solicitud = Solicitudes::consult();
             $usuarios = Usuario::consult();
+            $cadena = Autorizaciones::generateRandomString(15);
+            $user = '';
+            $idU = $_SESSION['Rol'];
+            
             if($_POST)
             {
                 $soli = $_POST['idsolicitud'];
-                $user = $_POST['iduser'];
+                if($idU != '01')
+                {
+                    $user = $_SESSION['id'];
+                }
+                else
+                {
+                    $user = $_POST['iduser'];
+                }
+                
                 $fecha = $_POST['fecha'];
                 $codi = $_POST['codigoAuth'];
                 $stt = $_POST['estado'];
@@ -72,12 +85,15 @@
 
         public function Dashboard()
         {
+            $idU = $_SESSION['Rol'];
             $soli = Solicitudes::countsoli();
             $user = Usuario::countuser();
             $aut = Autorizaciones::countautor();
             $autoriza = Autorizaciones::consultNew();
             include_once("./Views/Autorizaciones/dashboard.php");
         }
+         
+        
     }
 
 ?>

@@ -138,7 +138,7 @@ session_start();
                 Lista de Contactos
               </a>
           <?php elseif($_SESSION['Rol']=='02' OR $_SESSION['Rol']=='03'): ?>
-            <a class="navbar-item" href="index.php?controller=solicitudes&action=dashboard">
+            <a class="navbar-item" href="index.php?controller=proveedores&action=dashboard">
                 Solicitudes
               </a>
               <a class="navbar-item" href="index.php?controller=contacto&action=dashboard">

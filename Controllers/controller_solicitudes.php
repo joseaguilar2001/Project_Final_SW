@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once("./Models/solicitudes.php");
     include_once("./Models/areas.php");
     include_once("./Models/productos.php");
@@ -14,6 +15,7 @@
         }
         public function Create()
         {
+            $idU = $_SESSION['Rol'];
             $prod = Productos::consult();
             $area = Areas::consult();
             $user = Usuario::consult();
@@ -21,7 +23,14 @@
             {
                 $area = $_POST['idarea'];
                 $prod = $_POST['idprod'];
-                $user = $_POST['user'];
+                if($idU != '01')
+                {
+                    $user = $_SESSION['id'];
+                }
+                else
+                {
+                    $user = $_POST['user'];
+                }
                 $fecha = $_POST['fecha'];
                 $cant = $_POST['cant'];
                 $stado = $_POST['estado'];
@@ -81,29 +90,11 @@
             header("Location: ./index.php?controller=solicitudes&action=home");
         }
 
-        public function vista()
+        public function Dashboard()
         {
+            $idU = $_SESSION['Rol'];
             $solicitudes = Solicitudes::consult();
-            include_once("./Views/Solicitudes/vista.php");
+            include_once("./Views/Solicitudes/dashboard.php");
         }
-
-        public function vistaS()
-        {
-            $solicitudes = Solicitudes::solisitudesaceptadas();
-            include_once("./Views/Solicitudes/vista.php");
-        }
-
-        public function vistaE()
-        {
-            $solicitudes = Solicitudes::solisitudesespera();
-            include_once("./Views/Solicitudes/vista.php");
-        }
-
-        public function vistaR()
-        {
-            $solicitudes = Solicitudes::solisitudesrechazadas();
-            include_once("./Views/Solicitudes/vista.php");
-        }
-        
     }
 ?>

@@ -6,6 +6,7 @@
             <h2 class="subtitle">
                 ¡Esperamos que tengas un buen día!
             </h2>
+            <a class="button is-primary" href="index.php?controller=solicitudes&action=create">Solicitar Producto</a>
     </div>
 </section>
 <section class="info-tiles">
@@ -36,6 +37,9 @@
           <th><abbr title="IdUser">Usuarios</abbr></th>
           <th><abbr title="Fecha">Fecha</abbr></th>
           <th><abbr title="Cantidad">Cantidad</abbr></th>
+          <?php if( $idU == '01' OR $idU == '03' ): ?>
+            <th><abbr title="Confirmar">Confirmar | Rechazar</abbr></th>
+          <?php endif?>
       </tr> 
   </tfoot>
   <tbody> 
@@ -47,7 +51,18 @@
         <td><?php echo $a->Usuario; ?></td>
         <td><?php echo $a->Fecha; ?></td>
         <td><?php echo $a->Cantidad; ?></td>
-
+        <?php if( $idU == '01' OR $idU == '03' ): ?>
+          <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <!-- Any other Bulma elements you want -->
+              <form action="" method="post">
+                
+              </form>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+        <?php endif ?>
       </tr>
       <?php } ?>
     <?php } ?>

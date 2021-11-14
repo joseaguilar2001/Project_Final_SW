@@ -1,10 +1,10 @@
 <section class="hero is-link is-large is-large-with-navbar has-text-centered">
     <div class="hero-body">
             <h1 class="title">
-                Contactos de Proveedores
+                Autorizaciones
             </h1>
             <h2 class="subtitle">
-                ¡Esperamos que tengas un buen día!
+                En está página se podrá ver las autorizaciones hechas a las solicitudes.
             </h2>
     </div>
 </section>

@@ -32,7 +32,7 @@
     </div>
     </div>
     </div>
-
+<?php if($idU == '01'): ?>
     <div class="field">
     <label class="label">Escoger el Usuario:</label>
     <div class="control">
@@ -46,6 +46,7 @@
     </div>
     </div>
 </div>
+<?php endif ?>
 <div class="field">
   <label class="label">Fecha</label>
   <div class="control">

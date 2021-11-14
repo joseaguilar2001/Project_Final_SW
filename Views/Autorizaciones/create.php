@@ -19,7 +19,7 @@
   </div>
 </div>
 </div>
-
+<?php if($idU == '01'): ?>
 <div class="field">
 <label class="label">Escoger el usuario:</label>
   <div class="control">
@@ -33,6 +33,7 @@
 </div>
 </div>
 </div>
+<?php endif ?>
 <div class="field">
   <label class="label">Fecha</label>
   <div class="control">
@@ -42,7 +43,7 @@
 <div class="field">
   <label class="label">Codigo de Autorización: </label>
   <div class="control">
-    <input class="input" name="codigoAuth" type="input" placeholder="Text input">
+    <input class="input" name="codigoAuth" value="<?php echo $cadena; ?>" type="input" placeholder="Text input">
   </div>
 </div>
 <div class="select">
