@@ -69,7 +69,12 @@
         <button value="Crear" type="submit" class="button is-link">Crear</button>
     </div>
     <div class="control">
+    <?php if($idU == '01'): ?>
         <a name="cancel" href="index.php?controller=abastecimientos&action=home" class="button is-text">Cancelar</a>
+    <?php endif ?>
+    <?php if( $idU == '02' OR $idU == '03'): ?>
+        <a name="cancel" href="index.php?controller=abastecimientos&action=dashboard" class="button is-text">Cancelar</a>
+    <?php endif ?>
     </div>
     </div>
     </form>

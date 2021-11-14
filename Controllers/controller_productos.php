@@ -2,6 +2,9 @@
     session_start();
     include_once("./Models/productos.php");
     include_once("./db.php");
+    include_once('./Lib/dompdf/autoload.inc.php');
+    use Dompdf\Dompdf;
+    include_once("./db.php");
     DB::createInstant();
     class ControlProductos
     {
@@ -86,6 +89,12 @@
                 
             }
             include_once("./Views/Productos/dashboard.php");
+        }
+        public function Imprimir()
+        {
+            $dompdf = new Dompdf();
+            $producto = Productos::consult();
+            include_once('./Views/Productos/imprimir.php');
         }        
     }
 

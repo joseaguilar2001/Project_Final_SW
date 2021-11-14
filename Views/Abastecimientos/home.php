@@ -7,10 +7,10 @@
             <h2 class="subtitle is-3">
                 ¡Esperamos que tengas un buen día!
             </h2>
-            <p>En está área encontrará registros sobres los productos existentes en la empresa.</p>
+            <p>En está área encontrará registros sobres los abastecimientos hechos en la empresa.</p>
             <br>
             <a class="button is-warning" href="?controller=abastecimientos&action=create">Create</a>
-<a id="GeneratePDF" href="?controller=abastecimientos&action=imprimir"  class="button is-primary">Imprimir</a>
+            <a id="GeneratePDF" href="?controller=abastecimientos&action=imprimir"  class="button is-primary">Imprimir</a>
         </div>
     </div>
 </section>

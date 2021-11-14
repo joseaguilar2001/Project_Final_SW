@@ -4,7 +4,7 @@ Te hace falta las siguientes actividades:
 2. Email cada vez que se haga una solicitud. 
 3. Email cada vez que se haga una autorización, al usuario y al gerente.
 4. Imprimir los siguientes productos:
-    4.1 autorizaciónes
+    4.1 autorizaciones
     4.2 solicitudes
     4.3 productos
 5. Lograr que el usuario pueda pedir más de un producto.

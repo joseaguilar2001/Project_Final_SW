@@ -159,6 +159,25 @@
             $rowcount = $sql -> fetchColumn();
             return $rowcount;
         }
+        public static function emailUser($idRol)
+        {
+            $email = '';
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> prepare("SELECT Email FROM usuario WHERE Rol = ?");
+            $sql -> execute(array($idRol));
+            $email = $sql -> fetch();
+            return $email['Email'];
+        }
+
+        public static function emailUserId($id)
+        {
+            $email = '';
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB -> prepare("SELECT Email FROM usuario WHERE idUsuario = ?");
+            $sql -> execute(array($id));
+            $email = $sql -> fetch();
+            return $email['Email'];
+        }
     }
 
     

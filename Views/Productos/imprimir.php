@@ -1,19 +1,6 @@
-<section class="hero is-link is-medium is-medium-with-navbar has-text-centered">
-    <div class="hero-body">
-        <div class="container">
-        <h1 class="title is-1">
-              Registros sobre los productos.
-            </h1>
-            <h2 class="subtitle is-3">
-                ¡Esperamos que tengas un buen día!
-            </h2>
-            <p>En está área encontrará registros sobres los productos existentes en la empresa.</p>
-            <br>
-            <a class="button is-warning" href="?controller=productos&action=create">Create</a>
-            <a id="GeneratePDF" href="?controller=productos&action=imprimir"  class="button is-primary">Imprimir</a>
-        </div>
-    </div>
-</section>
+<?php
+    ob_start();
+?>
 <table class="table" width="100%" id="tabla">
     <!-- En está parte veremos los datos de todos los abastecimientos, tener en cuenta que el tfoot es un pie de página -->
   <thead>
@@ -73,11 +60,26 @@
     <?php } ?>  
   </tbody>
 </table>
-<script>
-  var tabla = document.querySelector("#tabla");
-
-  var dataTable = new DataTable(tabla, {
-    perPage:5,
-    perPageSelect:[5, 10, 15, 20]
-  });
-</script>
+<?php
+    $html = ob_get_clean();
+    echo $html;
+    $options = $dompdf -> getOptions();
+    $options -> set(array('isRemoteEnabled' => true));
+    $dompdf -> setOptions($options);
+    $dompdf -> loadHtml($html);
+    $dompdf -> setPaper('letter');
+    $dompdf -> render();
+    $output = $dompdf -> output();
+    $filename = 'reporte_Productos.pdf';
+    $result = file_put_contents($filename, $output);
+    error_reporting(E_ALL ^ E_NOTICE);
+    if($result)
+    {
+        $dompdf -> stream($filename, array("Attachment" => false));
+    }
+    else 
+    {
+      
+    }
+    exit();
+?>

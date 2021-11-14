@@ -50,6 +50,9 @@
                 {
                     $idPv = null;
                 }
+                $cant2 = Productos::cantiprod($idPr);
+                $cant3 = $cant2 + $cant;
+                Productos::updatecant($idPr, $cant3);
                 Abastecimientos::create($idPv,$idPr,$cant,$date,$stt);
                 header("Location: ./index.php?controller=abastecimientos&action=home");
             }
@@ -127,6 +130,7 @@
             $dompdf = new Dompdf();
             $abas = Abastecimientos::consult();
             include_once('./Views/Abastecimientos/imprimir.php');
+            header("Location: ./index.php?controller=abastecimientos&action=home");
         }
     }
 ?>

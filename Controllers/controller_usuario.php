@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once("./Models/usuario.php");
     include_once("./Models/rol.php");
     include_once("./db.php");
@@ -40,6 +41,7 @@
 
         public function Edit()
         {
+            $idU = $_SESSION['Rol'];
             $id = $_GET['id'];
             $user = Usuario::search($id);
             $rol = Rol::consult();

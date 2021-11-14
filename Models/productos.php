@@ -85,6 +85,15 @@
             $cant = $sql -> fetch();
             return $cant['Existencias'];
         }
+        public static function cantiprodLimite($id)
+        {
+            $cant = '';
+            $conectionDB = DB::createInstant();
+            $sql = $conectionDB->prepare("SELECT ProdLimite FROM productos WHERE IdProducto = ?");
+            $sql -> execute(array($id));
+            $cant = $sql -> fetch();
+            return $cant['ProdLimite'];
+        }
         public static function updatecant($id, $cant)
         {
             $conectionDB = DB::createInstant();

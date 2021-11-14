@@ -54,6 +54,7 @@
     </div>
   </div>
 </div>
+<?php if($idU == '01'): ?>
 <div class="field">
   <label class="label">Rol</label>
   <div class="control">
@@ -67,9 +68,10 @@
 </div>
   </div>
 </div>
+<?php endif ?>
 <div class="field is-grouped">
           <div class="control">
-            <button type="submit" class="button is-link">Crear</button>
+            <button type="submit" class="button is-link">Editar</button>
           </div>
           <div class="control">
           <a href="index.php?controller=usuario&action=home" class="button is-text">Cancelar</a>

@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     include_once("./Models/contacto.php");
     include_once("./Models/proveedores.php");
     include_once("./db.php");
@@ -14,6 +14,7 @@
 
         public function Create()
         {
+            $idU = $_SESSION['Rol'];
             $prov = Proveedores::consult();
             if($_POST)
             {
@@ -28,7 +29,15 @@
                     $pro = null;
                 }
                 Contacto::create($pro, $name, $lstna, $cel, $mail, $stado);
-                header("Location: ./index.php?controller=contacto&action=home");
+                if($idU == '01')
+                {
+                    header("Location: ./index.php?controller=contacto&action=home");
+                }
+                else
+                {
+                    header("Location: ./index.php?controller=contacto&action=dashboard");
+                }
+                
             }
             include_once("./Views/Contacto/create.php");
         }
