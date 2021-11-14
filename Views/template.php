@@ -4,14 +4,15 @@
     session_start();
 
     if(!$_SESSION['auth']) {
-      header('location:index.php');
+      header('location:login.php');
     }
     else {
       $currentTime = time();
       if($currentTime > $_SESSION['expire']) {
         session_unset();
         session_destroy();
-        header('location:index.php');
+        header('location:login.php');
+        die();
       }
       else {
 ?>
