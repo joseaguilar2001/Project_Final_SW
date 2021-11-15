@@ -5,12 +5,12 @@
               Registros sobre Abastecimientos
             </h1>
             <h2 class="subtitle is-3">
-                ¡Esperamos que tengas un buen día!
+              Todo el control de los Abastecimientos. 
             </h2>
             <p>En está área encontrará registros sobres los abastecimientos hechos en la empresa.</p>
             <br>
-            <a class="button is-warning" href="?controller=abastecimientos&action=create">Create</a>
-            <a id="GeneratePDF" href="?controller=abastecimientos&action=imprimir"  class="button is-primary">Imprimir</a>
+            <a class="button is-primary" href="?controller=abastecimientos&action=create">Create</a>
+            <a id="GeneratePDF" href="?controller=abastecimientos&action=imprimir"  class="button is-whyte">Imprimir</a>
         </div>
     </div>
 </section>
@@ -27,20 +27,9 @@
           <th><abbr title="Actions">Acciones</abbr></th>
       </tr>
   </thead>
-  <tfoot>
-      <tr>
-        <th><abbr title="IdAbas">IdAbas</abbr></th>
-        <th><abbr title="IdProveedor">IdProveedor</abbr></th>
-        <th><abbr title="IdProducto">IdProducto</abbr></th>
-        <th><abbr title="Cantidad">Cantidad</abbr></th>
-        <th><abbr title="AbasDate">Fecha</abbr></th>
-        <th><abbr title="Estado">Estado</abbr></th>
-        <th><abbr title="Actions">Acciones</abbr></th>
-      </tr> 
-  </tfoot>
   <tbody>
-    <?php foreach($abas as $a) { ?>
-    <?php if($a -> Estado != '4' || $a -> Estado < 4){ ?>
+    <?php foreach($abas as $a): ?>
+    <?php if($a -> Estado != '4' || $a -> Estado < 4): ?>
       <tr>
         <td><?php echo $a->Idbas; ?></td>
         <td><?php echo $a->IdProveedor; ?></td>
@@ -63,11 +52,8 @@
           </div>
         </td>
       </tr>
-      <?php } ?>
-    <?php } ?>
-    
-  
-      
+      <?php endif ?>
+    <?php endforeach ?>
   </tbody>
 </table>
 <script>

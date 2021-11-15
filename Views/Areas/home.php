@@ -1,4 +1,4 @@
-<section class="hero is-link is-large is-large-with-navbar has-text-centered">
+<section class="hero is-link is-medium is-medium-with-navbar has-text-centered">
     <div class="hero-body">
             <h1 class="title">
                 Áreas Existentes

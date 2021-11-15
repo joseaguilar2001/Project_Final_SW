@@ -167,13 +167,13 @@
                             $subject = 'Riesgo de producto';
                             $headers[] = 'MIME-Version: 1.0';
                             $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-                            $message = '
+                            $message1 = '
                             <html>
                             <head>
                             <title>Solicitud</title>
                             </head>
                             <body>
-                            <p>Se hizo una aprobo una solicitud el día '. date('Y-m-n') .'
+                            <p>Se hizo una aprobación de una solicitud el día '. date('Y-m-n') .'
                              Sin embargo el producto '. $prodInfor -> Name .' ya he llegado al
                              limite, o sea que está en riesgo, por favor tomar nota y comprar 
                              más producto de este.
@@ -182,7 +182,7 @@
                             </body>
                             </html>
                             ';
-                            mail($to, $subject, $message, implode("\r\n",$headers));
+                            mail($to, $subject, $message1, implode("\r\n",$headers));
                         }
                         else if($cant3 == 0)
                         {

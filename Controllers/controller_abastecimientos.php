@@ -37,10 +37,14 @@
                 $idPr = $_POST['idPrd'];
                 $cant = $_POST['cnt'];
                 $date = $_POST['fecha'];
-                $stt = $_POST['estado'];
+                $stt = '0';
                 if($idU != '01')
                 {
                     $stt = '1';
+                }
+                else 
+                {
+                    $stt = $_POST['estado'];
                 }
                 if($idPr == '0' || $idPr == 0)
                 {

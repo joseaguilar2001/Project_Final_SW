@@ -6,7 +6,7 @@
             <h2 class="subtitle">
                 ¡Esperamos que tengas un buen día!
             </h2>
-            <a class="button is-warning" href="index.php?controller=contacto&action=imprimir">Imprimir</a>
+            <a class="button is-whyte" href="index.php?controller=contacto&action=imprimir">Imprimir</a>
             <a class="button is-primary" href="index.php?controller=contacto&action=create">Añadir un contacto</a>
     </div>
 </section>

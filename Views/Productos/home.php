@@ -5,12 +5,12 @@
               Registros sobre los productos.
             </h1>
             <h2 class="subtitle is-3">
-                ¡Esperamos que tengas un buen día!
+              Control sobre los productos.
             </h2>
             <p>En está área encontrará registros sobres los productos existentes en la empresa.</p>
             <br>
-            <a class="button is-warning" href="?controller=productos&action=create">Create</a>
-            <a id="GeneratePDF" href="?controller=productos&action=imprimir"  class="button is-primary">Imprimir</a>
+            <a class="button is-primary" href="?controller=productos&action=create">Create</a>
+            <a id="GeneratePDF" href="?controller=productos&action=imprimir"  class="button is-whyte">Imprimir</a>
         </div>
     </div>
 </section>

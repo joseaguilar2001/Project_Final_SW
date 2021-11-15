@@ -12,9 +12,11 @@
   <div class="select">
   <select name="idsolicitud">
     <option value="0">Solicitud desconocida</option>
-    <?php foreach($solicitud as $sld){ ?>
-    <option value="<?php echo $sld -> IdSolicitud; ?>"><?php echo "Solicitud del producto: " . $sld -> Producto . "Para el area: " . $sld -> Area;?></option>
-    <?php } ?>
+    <?php foreach($solicitud as $sld): ?>
+      <?php if($solicitud -> Estado != '1' OR $solicitud -> Estado != '3' OR $solicitud -> Estado != 1 OR $solicitud -> Estado != 3): ?>
+      <option value="<?php echo $sld -> IdSolicitud; ?>"><?php echo "Solicitud del producto: " . $sld -> Producto . "Para el area: " . $sld -> Area;?></option>
+      <?php endif ?>
+  <?php endforeach ?>
   </select>
   </div>
 </div>
@@ -26,9 +28,9 @@
 <div class="select">
   <select name="iduser">
     <option value="0">Usuario desconocido</option>
-    <?php foreach($usuarios as $use){ ?>
+    <?php foreach($usuarios as $use): ?>
     <option value="<?php echo $use->IdUser; ?>"><?php echo $use->Username; ?></option>
-    <?php } ?>
+    <?php endforeach ?>
   </select>
 </div>
 </div>
@@ -50,7 +52,6 @@
   <select name="estado">
     <option value="0" selected>Selecciones el Estado:</option>
     <option value="1">Autorizado</option>
-    <option value="2">En proceso</option>
     <option value="3">Sin autorizar.</option>
   </select>
 </div>

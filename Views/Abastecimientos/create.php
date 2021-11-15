@@ -12,9 +12,11 @@
         <div class="select">
         <select name="idPrv">
             <option value="0">Proveedor desconocido</option>
-            <?php foreach($proveedores as $prov){ ?>
+            <?php foreach($proveedores as $prov): ?>
+                <?php if($prov -> Estado != '4' OR $prov -> Estado != 4): ?>
             <option value="<?php echo $prov -> IdProv; ?>"><?php echo $prov -> Name; ?></option>
-            <?php } ?>
+                <?php endif ?>
+            <?php endforeach ?>
         </select>
         </div>
     </div>
@@ -26,9 +28,11 @@
         <div class="select">
         <select name="idPrd">
             <option value="0">Producto Desconocido</option>
-            <?php foreach($productos as $prod){ ?>
-            <option value="<?php echo $prod -> IdProd; ?>"><?php echo $prod -> Name; ?></option>
-            <?php } ?>
+            <?php foreach($productos as $prod): ?>
+                <?php if($productos -> Estado != '4' OR $productos -> Estado != 4):  ?>
+                    <option value="<?php echo $prod -> IdProd; ?>"><?php echo $prod -> Name; ?></option>
+                <?php endif ?>
+            <?php endforeach ?>
         </select>
         </div>
     </div>

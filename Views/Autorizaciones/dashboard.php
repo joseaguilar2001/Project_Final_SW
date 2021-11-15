@@ -1,11 +1,14 @@
 <section class="hero is-link is-large is-large-with-navbar has-text-centered">
     <div class="hero-body">
-            <h1 class="title">
+            <h1 class="title is-1">
                 Autorizaciones
             </h1>
-            <h2 class="subtitle">
+            <h2 class="subtitle is-3">
                 En está página se podrá ver las autorizaciones hechas a las solicitudes.
             </h2>
+            <p>En está área encontrará registros sobres las autorizaciones hechass sobre las solicitudes.</p>
+            <br>
+            <a class="button is-primary" href="index.php?controller=autorizaciones&action=create">Autorizar una solicitud.</a>
     </div>
 </section>
 <section class="info-tiles">
@@ -41,12 +44,12 @@
     </thead>
     <tbody>
         <?php foreach($autoriza as $aut): ?>
-        <th>
+        <tr>
             <th><?php echo $aut -> IdSoli;  ?></th>
             <th><?php echo $aut -> IdUser; ?></th>
             <th><?php echo $aut -> Date; ?></th>
             <th><?php echo $aut -> CodA; ?></th>
-        </th>
+        </tr>
         <?php endforeach  ?>
     </tbody>
 </table>

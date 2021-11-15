@@ -24,6 +24,9 @@
             if($_POST)
             {
                 $soli = $_POST['idsolicitud'];
+                $solInfo = Solicitudes::search($soli);
+                $emailUser = Usuario::emailUser($solInfo -> Usuario);
+                $res = '';
                 if($idU != '01')
                 {
                     $user = $_SESSION['id'];
@@ -44,6 +47,67 @@
                 {
                     $user = null;
                 }
+                if( $stt == '1' OR $stt == 1 )
+                {
+                        $prodInfor = Productos::search($solInfo -> Producto);
+                        $cant = (int)$solInfo -> Cantidad;
+                        $cantP = (int)Productos::cantiprod($solInfo -> Producto);
+                        $cant3 = $cantP - $cant;
+                        if($cant3 > (int)$prodInfor -> Limite)
+                        {
+                            $res = 'Se confirmo su solicitud';
+                            Productos::updatecant($solInfo -> Producto, $cant3);
+                        }
+                        else if($cant3 <= (int)$prodInfor -> Limite AND $cant3 > 0)
+                        {
+                            $to = Usuario::emailUser('03');
+                            $subject = 'Riesgo de producto';
+                            $headers[] = 'MIME-Version: 1.0';
+                            $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+                            $message1 = '
+                            <html>
+                            <head>
+                            <title>Solicitud</title>
+                            </head>
+                            <body>
+                            <p>Se hizo una aprobación de una solicitud el día '. date('Y-m-n') .'
+                             Sin embargo el producto '. $prodInfor -> Name .' ya he llegado al
+                             limite, o sea que está en riesgo, por favor tomar nota y comprar 
+                             más producto de este.
+                             Este mensaje  viene de parte del departamento de control.
+                             </p>
+                            </body>
+                            </html>
+                            ';
+                            mail($to, $subject, $message1, implode("\r\n",$headers));
+                        }
+                        else if($cant3 == 0)
+                        {
+                            $stt = '3';
+                            $res = 'Se rechazo su solicitud por que no hay suficiente producto';
+                        }   
+                }
+                else if($stt == '3' OR $stt == 3)
+                {
+                    $res = 'Se rechazo su solicitud';
+                }
+                $message = '
+                <html>
+                <head>
+                <title>Solicitud</title>
+                </head>
+                <body>
+                <p> '. $res .' el día '. date('Y-m-n') .'.
+                Este fue un mensaje del departamento de administración.
+                </p>
+                </body>
+                </html>
+                ';
+                $to = Usuario::emailUser($solInfo -> Usuario);
+                $subject = 'Solicitud de producto';
+                $headers[] = 'MIME-Version: 1.0';
+                $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+                mail($to, $subject, $message, implode("\r\n",$headers));
                 Autorizaciones::create($soli, $user, $fecha, $codi, $stt);
                 header("Location: ./index.php?controller=autorizaciones&action=home");
             }

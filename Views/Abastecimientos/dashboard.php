@@ -1,13 +1,15 @@
 <section class="hero is-link is-large is-large-with-navbar has-text-centered">
     <div class="hero-body">
-            <h1 class="title">
+            <h1 class="title is-1">
                 ¡Bienvenido!
             </h1>
-            <h2 class="subtitle">
+            <h2 class="subtitle is-3">
                 ¡Esperamos que tengas un buen día!
             </h2>
-
-            <a class="button is-primary" href="index.php?controller=abastecimientos&action=create">Registrar un nuevo Abastecimiento</a>
+            <p>En está área encontrará registros sobres los abastecimientos hechos en la empresa.</p>
+            <br>
+            <a class="button is-primary" href="index.php?controller=abastecimientos&action=create">Abastecer</a>
+            <a id="GeneratePDF" href="?controller=abastecimientos&action=imprimir"  class="button is-whyte">Imprimir</a>
     </div>
 </section>
 </section>
@@ -16,22 +18,22 @@
         <div class="tile is-parent">
             <article class="tile is-child box">
                 <p class="title"><?php echo $provs; ?></p>
-                <p class="subtitle">Proveedores</p>
-                <a class="button is-link" href="?controller=proveedores&action=create">Añadir</a>
+                <p class="subtitle is-4">Proveedores</p>
+                <p class="subtitle">Registrados en el sistema</p>
             </article>
         </div>
         <div class="tile is-parent">
             <article class="tile is-child box">
                 <p class="title"><?php echo $prodC; ?></p>
-                <p class="subtitle">Productos</p>
-                <a class="button is-link" href="index?controller=productos&action=create">Añadir</a>
+                <p class="subtitle is-4">Productos</p>
+                <p class="subtitle">Registrados en el sistema</p>
             </article>
         </div>
         <div class="tile is-parent">
             <article class="tile is-child box">
                 <p class="title"><?php echo $abasC; ?></p>
-                <p class="subtitle">Abastecimientos</p>
-                <p class="subtitle is-3">Registrados en el sistema</p>
+                <p class="subtitle is-4">Abastecimientos</p>
+                <p class="subtitle">Registrados en el sistema</p>
             </article>
         </div>
     </div>
