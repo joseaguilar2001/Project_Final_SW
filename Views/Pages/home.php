@@ -22,11 +22,13 @@
         </p>
       </div>
     </div>
+    <img src="../logo_svg.svg" alt="" width="15%">
   </section>
+
   <section class="section" id="services">
     <div class="section-heading">
       <h3 class="title is-2">Servicios</h3>
-      <h4 class="subtitle is-5">Que puede hacer con este sistema?</h4>
+      <h4 class="subtitle is-5">¿Que puede hacer con este sistema?</h4>
     </div>
     <div class="container">
       <div class="columns">

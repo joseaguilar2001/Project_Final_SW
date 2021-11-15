@@ -7,7 +7,7 @@
 <form method="POST" action="">
 <div class="select">
   <select name="idsolicitud">
-    <option value="0" selected>Selecciones la Solicitud: Valor anterior <?php echo $auth->IdSoli; ?></option>
+    <option value="0" selected>Selecciones la Solicitud: Valor anterior <?php echo $auth->IdSolicitud; ?></option>
     <?php foreach($solicitud as $sld){ ?>
     <option value="<?php echo $sld -> IdSolicitud; ?>"><?php echo "Solicitud del producto: " . $sld -> Producto . "Para el area: " . $sld -> Area;?></option>
     <?php } ?>
@@ -17,7 +17,7 @@
   <select name="iduser">
     <option value="0" selected>Selecciones el Usuario:</option>
     <?php foreach($users as $us){ ?>
-    <option value="<?php echo $us->IdUser; ?>"><?php echo $us->Name." ".$us->Lastname; ?></option>
+    <option value="<?php echo $us->Id; ?>"><?php echo $us->Nombre." ".$us->Lastname; ?></option>
     <?php } ?>
   </select>
 </div>

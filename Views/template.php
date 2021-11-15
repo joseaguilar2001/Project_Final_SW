@@ -77,6 +77,7 @@
           <?php endif ?>
             </div>
           </div>
+          <?php if($_SESSION['Rol'] <> '04'): ?>
           <!-- Abastecimientos -->
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
@@ -100,6 +101,7 @@
           <?php endif ?>
             </div>
             </div>
+            <?php endif ?>
             <!-- Autorizaciones -->
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
@@ -124,6 +126,7 @@
             </div>
           </div>
           <!-- Solicitudes -->
+          <?php if($_SESSION['Rol'] <> '04'): ?>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
             Proveedores  
@@ -155,6 +158,7 @@
           <?php endif ?>
             </div>
           </div>
+          <?php endif ?>
           <!-- Proveedores -->
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">

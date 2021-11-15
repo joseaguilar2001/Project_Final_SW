@@ -54,16 +54,17 @@
                     <?php endif ?>
                 <?php else: ?>
                 <?php endif ?>
-            </td>
-            <div id="modal" class="modal">
+
+                <div id="modal" class="modal">
                 <div class="modal-background"></div>
                 <div class="modal-content">
                     <div class="box">
-                        <form action="" method="post">
+                        <form action="../../mails.php" method="post">
                         <div class="field">
                             <label class="label">Email</label>
                             <div class="control">
-                                <input value="<?php echo $pr -> Email; ?>" class="input" name="email" type="text" placeholder="Text input" disabled>
+                                <input value="<?php if($pr->Estado <> 4) echo $pr -> Email; ?>" class="input" name="email" type="text" placeholder="Text input" >
+                                <input value="<?php echo $pr -> Name; ?>" Class="input" name="name" type="text" placeholder="Proveedor">
                             </div>
                         </div>
                         <div class="field">
@@ -88,6 +89,7 @@
                 </div>
                 <button class="modal-close is-large" aria-label="close"></button>
             </div>
+            </td>
         </tr>
         <?php endif ?>
         <?php endforeach ?>

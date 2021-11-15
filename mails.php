@@ -11,6 +11,8 @@ require 'PHPMailer/SMTP.php';
 
 $email=$_POST['email'];
 $name=$_POST['name'];
+$asunto=$_POST['asunto'];
+$mensaje=$_POST['mensaje'];
 
 
 $serial= rand(1,99999);
@@ -35,14 +37,17 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Confirmacion de recepcion';
-    $mail->Body    = 'Codigo de prueba<b>clave</b>: '. $serial;
+    $mail->Subject = $asunto;
+    $mail->Body    = $mensaje;
 
     $mail->send();
     echo '<script> 
-        alert("Se ha enviado la autoriacion a su correo");
+        alert("Se a enviado un correo");
         window.history.go(-1);
+        </script>
     ';
+    header('location:index.php?controller=proveedores&action=dashboard');
+
 } catch (Exception $e) {
     echo "Ha ocurrido un error al enviar el correo: {$mail->ErrorInfo}";
 }
