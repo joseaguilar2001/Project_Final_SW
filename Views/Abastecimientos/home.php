@@ -9,7 +9,7 @@
             </h2>
             <p>En está área encontrará registros sobres los abastecimientos hechos en la empresa.</p>
             <br>
-            <a class="button is-primary" href="?controller=abastecimientos&action=create">Create</a>
+            <a class="button is-primary" href="?controller=abastecimientos&action=create">Registrar un abastecimiento</a>
             <a id="GeneratePDF" href="?controller=abastecimientos&action=imprimir"  class="button is-whyte">Imprimir</a>
         </div>
     </div>
@@ -60,8 +60,16 @@
 
   var tabla = document.querySelector("#tabla");
 
+  var labelData = {
+	placeholder: "Buscar abastecimiento...",
+	perPage: "Mostrar {select} abastecimientos por pagina",
+	noRows: "No hay abastecimientos para mostrar",
+	info: "Mostrando del {start} al {end} de {rows} abastecimientos (Pagina {page} de {pages} paginas)"
+};
+
   var dataTable = new DataTable(tabla, {
     perPage:5,
+    labels: labelData,
     perPageSelect:[5, 10, 15, 20]
   });
 

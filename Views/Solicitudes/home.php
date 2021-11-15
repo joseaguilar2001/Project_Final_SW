@@ -68,8 +68,16 @@
 <script>
   var tabla = document.querySelector("#tabla");
 
+  var labelData = {
+	placeholder: "Buscar solicitud...",
+	perPage: "Mostrar {select} solicitudes por pagina",
+	noRows: "No hay solicitudes para mostrar",
+	info: "Mostrando del {start} al {end} de {rows} solicitudes (Pagina {page} de {pages} paginas)"
+};
+
   var dataTable = new DataTable(tabla, {
     perPage:5,
+    labels: labelData,
     perPageSelect:[5, 10, 15, 20]
   });
 </script>

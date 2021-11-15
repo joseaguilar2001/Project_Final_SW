@@ -25,7 +25,7 @@
                     <p class="subtitle has-text-white">Ingrese su Usuario y Contraseña para continuar</p>
                     <div class="box">
                         <figure class="avatar">
-                            <img src="logo_svg.svg" width="80%">
+                            <img src="logo_svg.svg" width="100%">
                         </figure>
                         <form action="validate.php" method="post">
                             <div class="field">

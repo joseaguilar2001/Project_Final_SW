@@ -20,7 +20,7 @@
             }
             else if($idU == '03')
             {
-                $rol = 'Administrador de Bodegua';
+                $rol = 'Administrador de Bodega';
             }
             else if($idU == '04')
             {

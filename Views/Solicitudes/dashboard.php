@@ -56,7 +56,7 @@
         <td><?php echo $a->Cantidad; ?></td>
         <?php if( $idU == '01' OR $idU == '03' ): ?>
           <td>
-          <a class="button is-primary modal-button" data-target="#modal">Aceptar</a>
+          <a class="button is-primary modal-button" data-target="#modal">Ver detalles</a>
           </td>
           <div id="modal" class="modal">
             <div class="modal-background"></div>
@@ -109,8 +109,16 @@
 <script>
   var tabla = document.querySelector("#tabla");
 
+  var labelData = {
+	placeholder: "Buscar solicitud...",
+	perPage: "Mostrar {select} solicitudes por pagina",
+	noRows: "No hay solicitudes para mostrar",
+	info: "Mostrando del {start} al {end} de {rows} solicitudes (Pagina {page} de {pages} paginas)"
+};
+
   var dataTable = new DataTable(tabla, {
     perPage:5,
+    labels: labelData,
     perPageSelect:[5, 10, 15, 20]
   });
 

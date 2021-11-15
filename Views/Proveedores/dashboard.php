@@ -97,10 +97,19 @@
 <script>
   var tabla = document.querySelector("#tabla");
 
+  var labelData = {
+	placeholder: "Buscar proveedores...",
+	perPage: "Mostrar {select} proveedores por pagina",
+	noRows: "No hay proveedores para mostrar",
+	info: "Mostrando del {start} al {end} de {rows} proveedores (Pagina {page} de {pages} paginas)"
+};
+
   var dataTable = new DataTable(tabla, {
+    labels: labelData,
     perPage:5,
     perPageSelect:[5, 10, 15, 20]
   });
+
   $(".modal-button").click(function() {
             var target = $(this).data("target");
             $("html").addClass("is-clipped");

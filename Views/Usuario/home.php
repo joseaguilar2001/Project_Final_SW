@@ -1,6 +1,6 @@
 <h3 class="title mb-6">Registros sobre los Usuarios.</h3>
 <br>
-<a class="button is-link" href="?controller=usuario&action=create">Create</a>
+<a class="button is-link" href="?controller=usuario&action=create">Añadir un nuevo usuario</a>
 <br>
 <table class="table" width="100%" id="tabla">
     <!-- En está parte veremos los datos de todos los abastecimientos, tener en cuenta que el tfoot es un pie de página -->
@@ -43,7 +43,32 @@
         <td><?php echo $a->Contra;?></td>
         <td><?php echo $a->Email;?></td>
         <td><?php echo $a->Telefono;?></td>
-        <td><?php echo $a->Rol;?></td>
+        <td><?php 
+
+        switch($a->Rol)
+        {
+          case 1:
+            echo "Administrador";
+            break;
+          
+          case 2:
+            echo "Gerente";
+            break;
+          
+          case 3:
+            echo "Bodeguero";
+            break;
+          
+          case 4: 
+            echo "Trabajador";
+            break;
+            
+          default:
+            echo $a->$Rol;
+            break;
+        }
+
+          ?></td>
         <td><?php echo $a->Estado;?></td>
         <td>
           <div class="field is-grouped">
@@ -67,8 +92,16 @@
 <script>
   var tabla = document.querySelector("#tabla");
 
+  var labelData = {
+	placeholder: "Buscar usuario...",
+	perPage: "Mostrar {select} usuarios por pagina",
+	noRows: "No hay usuarios para mostrar",
+	info: "Mostrando del {start} al {end} de {rows} usuarios (Pagina {page} de {pages} paginas)"
+};
+
   var dataTable = new DataTable(tabla, {
     perPage:5,
+    labels: labelData,
     perPageSelect:[5, 10, 15, 20]
   });
 </script>

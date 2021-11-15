@@ -92,8 +92,16 @@
 <script>
   var tabla = document.querySelector("#tabla");
 
+  var labelData = {
+	placeholder: "Buscar contacto...",
+	perPage: "Mostrar {select} contactos por pagina",
+	noRows: "No hay contactos para mostrar",
+	info: "Mostrando del {start} al {end} de {rows} contactos (Pagina {page} de {pages} paginas)"
+};
+
   var dataTable = new DataTable(tabla, {
     perPage:5,
+    labels: labelData,
     perPageSelect:[5, 10, 15, 20]
     });
     $(".modal-button").click(function() {

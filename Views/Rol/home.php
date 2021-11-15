@@ -1,6 +1,6 @@
 <h3 class="title mb-6">Registros sobre los Roles.</h3>
 <br>
-<a class="button is-link" href="?controller=rol&action=create">Create</a>
+<a class="button is-link" href="?controller=rol&action=create">Crear un nuevo rol</a>
 <br>
 <table class="table" width="100%" id="tabla">
     <!-- En está parte veremos los datos de todos los abastecimientos, tener en cuenta que el tfoot es un pie de página -->
@@ -52,8 +52,16 @@
 <script>
   var tabla = document.querySelector("#tabla");
 
+  var labelData = {
+	placeholder: "Buscar rol...",
+	perPage: "Mostrar {select} roles por pagina",
+	noRows: "No hay roles para mostrar",
+	info: "Mostrando del {start} al {end} de {rows} roles (Pagina {page} de {pages} paginas)"
+};
+
   var dataTable = new DataTable(tabla, {
     perPage:5,
+    labels: labelData,
     perPageSelect:[5, 10, 15, 20]
   });
 </script>

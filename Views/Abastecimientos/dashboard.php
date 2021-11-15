@@ -140,8 +140,16 @@
 <script>
   var tabla = document.querySelector("#tabla");
 
+  var labelData = {
+	placeholder: "Buscar abastecimiento...",
+	perPage: "Mostrar {select} abastecimientos por pagina",
+	noRows: "No hay abastecimientos para mostrar",
+	info: "Mostrando del {start} al {end} de {rows} abastecimientos (Pagina {page} de {pages} paginas)"
+};
+
   var dataTable = new DataTable(tabla, {
     perPage:5,
+    labels: labelData,
     perPageSelect:[5, 10, 15, 20]
   });
 </script>

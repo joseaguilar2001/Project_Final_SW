@@ -56,8 +56,16 @@
 <script>
   var tabla = document.querySelector("#tabla");
 
+  var labelData = {
+	placeholder: "Buscar autorizacion...",
+	perPage: "Mostrar {select} autorizaciones por pagina",
+	noRows: "No hay autorizaciones para mostrar",
+	info: "Mostrando del {start} al {end} de {rows} autorizaciones (Pagina {page} de {pages} paginas)"
+};
+
   var dataTable = new DataTable(tabla, {
     perPage:5,
+    labels: labelData,
     perPageSelect:[5, 10, 15, 20]
     });
 </script>

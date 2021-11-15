@@ -9,7 +9,7 @@
             </h2>
             <p>En está área encontrará registros sobres los productos existentes en la empresa.</p>
             <br>
-            <a class="button is-primary" href="?controller=productos&action=create">Create</a>
+            <a class="button is-primary" href="?controller=productos&action=create">Añadir un producto</a>
             <a id="GeneratePDF" href="?controller=productos&action=imprimir"  class="button is-whyte">Imprimir</a>
         </div>
     </div>
@@ -76,8 +76,16 @@
 <script>
   var tabla = document.querySelector("#tabla");
 
+  var labelData = {
+	placeholder: "Buscar producto...",
+	perPage: "Mostrar {select} productos por pagina",
+	noRows: "No hay productos para mostrar",
+	info: "Mostrando del {start} al {end} de {rows} productos (Pagina {page} de {pages} paginas)"
+};
+
   var dataTable = new DataTable(tabla, {
     perPage:5,
+    labels: labelData,
     perPageSelect:[5, 10, 15, 20]
   });
 </script>
