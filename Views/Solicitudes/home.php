@@ -1,7 +1,14 @@
-<h3 class="title mb-6">Registros sobre las Solicitudes.</h3>
-<br>
-<a class="button is-link" href="?controller=solicitudes&action=create">Create</a>
-<br>
+<section class="hero is-link is-large is-large-with-navbar has-text-centered">
+    <div class="hero-body">
+            <h1 class="title">
+                ¡Bienvenido!
+            </h1>
+            <h2 class="subtitle">
+                ¡Esperamos que tengas un buen día!
+            </h2>
+            <a class="button is-primary" href="index.php?controller=solicitudes&action=create">Solicitar Producto</a>
+    </div>
+</section>
 <table class="table" width="100%" id="tabla">
     <!-- En está parte veremos los datos de todos los abastecimientos, tener en cuenta que el tfoot es un pie de página -->
   <thead>

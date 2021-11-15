@@ -130,7 +130,6 @@
             $dompdf = new Dompdf();
             $abas = Abastecimientos::consult();
             include_once('./Views/Abastecimientos/imprimir.php');
-            header("Location: ./index.php?controller=abastecimientos&action=home");
         }
     }
 ?>

@@ -11,7 +11,8 @@
             <br>
             <?php if($idU == '04'): ?>
             <?php elseif($idU != '04'): ?>
-            <a class="button is-primary" href="index.php?controller=proveedores&action=create">Añadir un producto</a>
+            <a class="button is-primary" href="index.php?controller=proveedores&action=create">Añadir un Proveedor</a>
+            <a class="button is-warning" href="index.php?controller=proveedores&action=imprimir">Imprimir</a>
             <?php endif ?>
         </div>
     </div>
@@ -33,15 +34,60 @@
             <th><abbr>Nombre</abbr></th>
             <th><abbr>Direccion</abbr></th>
             <th><abbr>Email</abbr></th>
+            <?php if($idU == '01' OR $idU == '03' OR $idU == '02'): ?>
+                <th><abbr>Enviar Email</abbr></th>
+            <?php else: ?>
+            <?php endif ?>
         </tr>
     </thead>
     <tbody>
     <?php foreach($provs as $pr): ?>
         <?php if($pr -> Estado != '4' || $pr -> Estado > 4): ?>
         <tr>
-            <th><?php echo $pr -> Name; ?></th>
-            <th><?php echo $pr -> Adress; ?></th>
-            <th><?php echo $pr -> Email; ?></th>
+            <td><?php echo $pr -> Name; ?></td>
+            <td><?php echo $pr -> Adress; ?></td>
+            <td><?php echo $pr -> Email; ?></td>
+            <td>
+                <?php if($idU == '01' OR $idU == '03' OR $idU == '02'): ?>
+                    <?php if($pr -> Email != '' OR $pr -> Email != null): ?>
+                        <a class="button is-primary modal-button" data-target="#modal">Enviar Email</a>
+                    <?php endif ?>
+                <?php else: ?>
+                <?php endif ?>
+            </td>
+            <div id="modal" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="box">
+                        <form action="" method="post">
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control">
+                                <input value="<?php echo $pr -> Email; ?>" class="input" name="email" type="text" placeholder="Text input" disabled>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Asunto</label>
+                            <div class="control">
+                                <input class="input" type="text" name="asunto" placeholder="Asunto">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Message</label>
+                            <div class="control">
+                                <textarea name="mensaje" class="textarea" placeholder="Textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button value="enviar" type="submit" class="button is-link">Enviar</button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
         </tr>
         <?php endif ?>
         <?php endforeach ?>
@@ -55,4 +101,14 @@
     perPage:5,
     perPageSelect:[5, 10, 15, 20]
   });
+  $(".modal-button").click(function() {
+            var target = $(this).data("target");
+            $("html").addClass("is-clipped");
+            $(target).addClass("is-active");
+         });
+         
+         $(".modal-close").click(function() {
+            $("html").removeClass("is-clipped");
+            $(this).parent().removeClass("is-active");
+         });
 </script>

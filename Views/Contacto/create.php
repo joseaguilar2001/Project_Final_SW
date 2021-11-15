@@ -8,9 +8,11 @@
 <div class="select">
   <select name="proveedor">
     <option value="0">Seleccione el proveedor: </option>
-    <?php foreach($prov as $p){ ?>
-    <option value="<?php echo $p -> IdProv ?>"><?php echo $p -> Name ?></option>
-    <?php } ?>
+    <?php foreach($prov as $p): ?>
+      <?php if($prov -> Estado != '4' OR $prov -> Estado != 4): ?>
+        <option value="<?php echo $p -> IdProv ?>"><?php echo $p -> Name ?></option>
+      <?php endif ?>
+    <?php endforeach ?>
   </select>
 </div>
   <div class="field">
@@ -41,14 +43,16 @@
       <input class="input" name="email" type="email" placeholder="Email del Contacto">
     </div>
   </div>
-  <div class="select">
-  <select name="estado">
-    <option value="0">Seleccione el estado: </option>
-    <option value="1">Activo</option>
-    <option value="2">Inconcluso</option>
-    <option value="3">Inactivo</option>
-  </select>
-</div>
+  <?php if($idU == "01"): ?>
+    <div class="select">
+      <select name="estado">
+        <option value="0">Seleccione el estado: </option>
+        <option value="1">Activo</option>
+        <option value="2">Inconcluso</option>
+        <option value="3">Inactivo</option>
+      </select>
+  </div>
+<?php endif ?>
   <div class="field is-grouped">
     <div class="control">
       <button value="crear" class="button is-link">Crear</button>

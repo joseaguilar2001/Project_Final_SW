@@ -54,8 +54,15 @@
                 $pass = $_POST['password'];
                 $mail = $_POST['mail'];
                 $cel = $_POST['cel'];
-                $rol = $_POST['rol'];
-
+                $rol = '';
+                if($idU == '01')
+                {
+                    $rol = $_POST['rol'];
+                }
+                else 
+                {
+                    $rol = $user -> Rol;
+                }
                 if($rol == '0')
                 {
                     $rol == 'null';

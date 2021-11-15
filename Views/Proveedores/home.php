@@ -11,7 +11,8 @@
             <br>
             <?php if($idU == '04'): ?>
             <?php elseif($idU != '04'): ?>
-            <a class="button is-primary" href="index.php?controller=proveedores&action=create">Añadir un producto</a>
+            <a class="button is-primary" href="index.php?controller=proveedores&action=create">Añadir un proveedor</a>
+            <a class="button is-warning" href="index.php?controller=proveedores&action=imprimir">Imprimir</a>
             <?php endif ?>
         </div>
     </div>

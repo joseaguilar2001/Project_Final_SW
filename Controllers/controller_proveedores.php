@@ -2,6 +2,8 @@
     session_start();
     include_once("./Models/proveedores.php");
     include_once("./db.php");
+    include_once('./Lib/dompdf/autoload.inc.php');
+    use Dompdf\Dompdf;
     DB::createInstant();
     class ControlProveedores
     {
@@ -54,9 +56,26 @@
         }
         public function Dashboard()
         {
+            $idU = $_SESSION['Rol'];
             $countpro = Proveedores::countprov();
             $provs = Proveedores::consult();
+            if($_POST)
+            {
+                
+                $emailU = $_POST['email'];
+                $asunto = $_POST['asunto'];
+                $mensaje = $_POST['mensaje'];
+                mail($emailU, $asunto, $mensaje);
+                header("Location: ./index.php?controller=proveedores&action=dashboard");
+            }
             include_once("./Views/Proveedores/dashboard.php");
+        }
+
+        public function Imprimir()
+        {
+            $dompdf = new Dompdf();
+            $provs = Proveedores::consult();
+            include_once("./Views/Proveedores/imprimir.php");
         }
     }
 ?>

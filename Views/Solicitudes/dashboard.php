@@ -55,43 +55,48 @@
         <td><?php echo $a->Fecha; ?></td>
         <td><?php echo $a->Cantidad; ?></td>
         <?php if( $idU == '01' OR $idU == '03' ): ?>
-          <div class="modal">
-            <div class="modal-background">Rechaza | Aceptar</div>
+          <td>
+          <a class="button is-primary modal-button" data-target="#modal">Aceptar</a>
+          </td>
+          <div id="modal" class="modal">
+            <div class="modal-background"></div>
             <div class="modal-content">
-              <form action="" method="post">
-                <div class="field">
-                  <label for="solicitud">Id Solicitud</label>
-                  <div class="control">
-                    <input id="solicitud" name="idsolicitud" type="text" class="input" value="<?php echo $a->IdSolicitud; ?>" disabled>
+              <div class="box">
+                <form action="" method="post">
+                  <div class="field">
+                    <label for="solicitud">Id Solicitud</label>
+                    <div class="control">
+                      <input id="solicitud" name="idsolicitud" type="text" class="input" value="<?php echo $a->IdSolicitud; ?>" disabled>
+                    </div>
                   </div>
-                </div>
-                <div class="field">
-                  <label for="codigo">Código de Autorización</label>
-                  <div class="control">
-                    <input type="text" name="codigo" class="input" value="<?php echo $cadena; ?>" disabled>
+                  <div class="field">
+                    <label for="codigo">Código de Autorización</label>
+                    <div class="control">
+                      <input type="text" name="codigo" class="input" value="<?php echo $cadena; ?>" disabled>
+                    </div>
                   </div>
-                </div>
-                <div class="field">
-                  <div class="control">
-                    <label class="radio">
-                      <input value="1" type="radio" name="question">
-                      Aceptar
-                    </label>
-                    <label>
-                    <input value="3" type="radio" name="question">
-                      Rechazar
-                    </label>
+                  <div class="field">
+                    <div class="control">
+                      <label class="radio">
+                        <input value="1" type="radio" name="question">
+                        Aceptar
+                      </label>
+                      <label>
+                      <input value="3" type="radio" name="question">
+                        Rechazar
+                      </label>
+                    </div>
                   </div>
-                </div>
-                <div class="field is-grouped">
-                  <div class="control">
-                    <button type="submit" value="submit" class="button is-link">Confirmar</button>
+                  <div class="field is-grouped">
+                    <div class="control">
+                      <button type="submit" value="submit" class="button is-link">Confirmar</button>
+                    </div>
+                    <div class="control">
+                      <a href="?controller=solicitudes&action=dashboard" class="button is-link is-light">Cancelar</a>
+                    </div>
                   </div>
-                  <div class="control">
-                    <a href="?controller=solicitudes&action=dashboard" class="button is-link is-light">Cancelar</a>
-                  </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
             <button class="modal-close is-large" aria-label="close"></button>
           </div>
@@ -108,4 +113,15 @@
     perPage:5,
     perPageSelect:[5, 10, 15, 20]
   });
+
+  $(".modal-button").click(function() {
+            var target = $(this).data("target");
+            $("html").addClass("is-clipped");
+            $(target).addClass("is-active");
+         });
+         
+         $(".modal-close").click(function() {
+            $("html").removeClass("is-clipped");
+            $(this).parent().removeClass("is-active");
+         });
 </script>
