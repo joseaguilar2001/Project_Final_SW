@@ -63,7 +63,7 @@
                         <div class="field">
                             <label class="label">Email</label>
                             <div class="control">
-                                <input value="<?php if($pr->Estado <> 4) echo $pr -> Email; ?>" class="input" name="email" type="text" placeholder="Text input" >
+                                <input value="<?php echo $pr -> Email; ?>" class="input" name="email" type="text" placeholder="Text input" >
                                 <input value="<?php echo $pr -> Name; ?>" Class="input" name="name" type="text" placeholder="Proveedor">
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="field">
-                            <label class="label">Message</label>
+                            <label class="label">Mensaje</label>
                             <div class="control">
                                 <textarea name="mensaje" class="textarea" placeholder="Textarea"></textarea>
                             </div>
